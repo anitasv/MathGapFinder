@@ -162,12 +162,8 @@ CSS lives inline in `src/mathprof.html`; all JavaScript lives in
 `src/mathprof.js`. There is no build step or framework, just vanilla
 JS and MathJax 3.
 
-There are some known bugs around math rendering (mostly because some
-theorems in `docs/Theorems.MD` use unescaped parentheses/brackets that
-MathJax does not pick up as math delimiters). **Math rendering issues
-are no longer eligible as new issues — I'm already aware of them.** If
-you want to help, fixing the offending entries in `docs/Theorems.MD`
-is the most useful contribution.
+There are some known bugs around math rendering, fix in javascript or 
+Theorems.MD not raise tickets.
 
 For everything else, please send a pull request, or open an issue on
 [GitHub](https://github.com/anitasv/MathGapFinder).
