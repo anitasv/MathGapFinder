@@ -13,6 +13,31 @@
         button { padding: 10px; text-align: left; cursor: pointer; border: 1px solid #3498db; background: #fff; border-radius: 4px; }
         button:hover { background: #3498db; color: #fff; }
         #score-board { margin-top: 20px; font-weight: bold; }
+        #course-scores { margin-top: 15px; font-size: 0.95em; }
+        #course-scores table { border-collapse: collapse; width: 100%; margin-top: 8px; }
+        #course-scores th, #course-scores td { border: 1px solid #ddd; padding: 6px 10px; text-align: left; }
+        #course-scores th { background: #f0f0f0; }
+        .level-row { margin: 10px 0; cursor: pointer; user-select: none; }
+        .level-header { display: flex; align-items: center; gap: 10px; font-weight: bold; }
+        .level-name { min-width: 130px; }
+        .level-bar { flex: 1; height: 16px; background: #eee; border-radius: 8px; overflow: hidden; position: relative; }
+        .level-bar-fill { height: 100%; background: linear-gradient(90deg, #3498db, #2ecc71); transition: width 0.3s; }
+        .level-stats { min-width: 140px; text-align: right; font-weight: normal; font-size: 0.9em; color: #555; }
+        .level-caret { width: 14px; display: inline-block; transition: transform 0.2s; }
+        .level-caret.open { transform: rotate(90deg); }
+        .level-detail { margin: 6px 0 0 28px; display: none; }
+        .level-detail.open { display: block; }
+        .course-row { display: flex; align-items: center; gap: 10px; margin: 4px 0; font-size: 0.9em; }
+        .course-name { min-width: 220px; }
+        .course-bar { flex: 1; height: 10px; background: #eee; border-radius: 5px; overflow: hidden; }
+        .course-bar-fill { height: 100%; background: #3498db; }
+        .course-stats { min-width: 140px; text-align: right; color: #555; }
+
+        .course-tag { display: inline-block; margin-top: 6px; color: #555; font-size: 0.9em; }
+        .nav { display: flex; justify-content: space-between; margin-top: 15px; }
+        .nav button { min-width: 100px; }
+        .nav button:disabled { opacity: 0.5; cursor: not-allowed; }
+        button.selected { background: #3498db; color: #fff; font-weight: bold; }
     </style>
     <script>
         window.MathJax = {
@@ -34,11 +59,71 @@
         <div id="quiz-content">Loading theorems...</div>
     </div>
     <div id="score-board">Total Score: 0</div>
+    <div style="margin-top:10px;"><button onclick="restartQuiz()">↺ Restart</button></div>
+    <div id="course-scores"></div>
 
     <script>
         let theorems = [];
         let currentIndex = 0;
         let totalScore = 0;
+        // answers[i] = points awarded for question i, or undefined if unanswered/skipped
+        let answers = [];
+        // Per-course tally: { [course]: { score, max, count, answered } }
+        const courseScores = {};
+        // Tracks which level rows are expanded in the score breakdown.
+        const expandedLevels = {};
+
+        function toggleLevel(level) {
+            expandedLevels[level] = !expandedLevels[level];
+            renderCourseScores(false);
+        }
+
+
+        function updateHash() {
+            const newHash = '#q=' + (currentIndex + 1);
+            if (location.hash !== newHash) {
+                history.replaceState(null, '', newHash);
+            }
+        }
+
+        function readHash() {
+            const m = /#q=(\d+)/.exec(location.hash || '');
+            if (m) {
+                const n = parseInt(m[1], 10) - 1;
+                if (n >= 0 && n < theorems.length) return n;
+            }
+            return 0;
+        }
+
+        function goTo(index) {
+            if (index < 0 || index > theorems.length) return;
+            currentIndex = index;
+            updateHash();
+            renderTheorem();
+        }
+
+        function goPrev() {
+            if (currentIndex > 0) goTo(currentIndex - 1);
+        }
+
+        function goNext() {
+            if (currentIndex < theorems.length) goTo(currentIndex + 1);
+        }
+
+        function restartQuiz() {
+            if (!confirm('Restart quiz? All answers will be cleared.')) return;
+            answers = [];
+            totalScore = 0;
+            Object.keys(courseScores).forEach(c => {
+                courseScores[c].score = 0;
+                courseScores[c].answered = 0;
+            });
+            document.getElementById('score-board').innerText =
+                'Total Score: 0 / ' + (theorems.length * 10);
+            renderCourseScores(false);
+            goTo(0);
+        }
+
 
         // The source (Theorems.MD / theorems.json) uses pandoc-style math
         // delimiters: every (...) wraps inline math and every [...] wraps
@@ -109,22 +194,98 @@
             }
         }
 
+        function initCourseScores() {
+            theorems.forEach(t => {
+                const c = t.course || 'Uncategorized';
+                if (!courseScores[c]) courseScores[c] = { score: 0, max: 0, count: 0, answered: 0 };
+                courseScores[c].max += 10;
+                courseScores[c].count += 1;
+            });
+        }
+
+        function renderCourseScores(final = false) {
+            const el = document.getElementById('course-scores');
+            // Group by level (first part before comma).
+            const levels = {};
+            Object.keys(courseScores).forEach(course => {
+                const level = course.split(',')[0].trim();
+                if (!levels[level]) levels[level] = [];
+                levels[level].push(course);
+            });
+            const levelOrder = ['High School', 'Undergraduate', 'Graduate'];
+            const sortedLevels = Object.keys(levels).sort((a, b) => {
+                const ia = levelOrder.indexOf(a), ib = levelOrder.indexOf(b);
+                return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+            });
+
+            let html = `<h3>${final ? 'Final ' : ''}Score by Course Level</h3>`;
+            sortedLevels.forEach(level => {
+                let lScore = 0, lMax = 0, lAns = 0, lCount = 0;
+                levels[level].forEach(c => {
+                    lScore += courseScores[c].score;
+                    lMax += courseScores[c].max;
+                    lAns += courseScores[c].answered;
+                    lCount += courseScores[c].count;
+                });
+                const pct = lMax ? (lScore / lMax) * 100 : 0;
+                const open = !!expandedLevels[level];
+                const safeLevel = level.replace(/'/g, "\\'");
+                html += `
+                <div class="level-row" onclick="toggleLevel('${safeLevel}')">
+                    <div class="level-header">
+                        <span class="level-caret${open ? ' open' : ''}">▶</span>
+                        <span class="level-name">${level}</span>
+                        <div class="level-bar"><div class="level-bar-fill" style="width:${pct.toFixed(1)}%"></div></div>
+                        <span class="level-stats">${lScore} / ${lMax} (${pct.toFixed(1)}%)</span>
+                    </div>
+                    <div class="level-detail${open ? ' open' : ''}" onclick="event.stopPropagation()">`;
+                // Sort courses best-to-worst by percentage of max.
+                const sortedCourses = levels[level].slice().sort((a, b) => {
+                    const pa = courseScores[a].max ? courseScores[a].score / courseScores[a].max : 0;
+                    const pb = courseScores[b].max ? courseScores[b].score / courseScores[b].max : 0;
+                    return pb - pa;
+                });
+                sortedCourses.forEach(c => {
+                    const cs = courseScores[c];
+                    const subject = c.includes(',') ? c.substring(c.indexOf(',') + 1).trim() : c;
+                    const cpct = cs.max ? (cs.score / cs.max) * 100 : 0;
+                    html += `
+                        <div class="course-row">
+                            <span class="course-name">${subject}</span>
+                            <div class="course-bar"><div class="course-bar-fill" style="width:${cpct.toFixed(1)}%"></div></div>
+                            <span class="course-stats">${cs.score}/${cs.max} (${cpct.toFixed(0)}%) · ${cs.answered}/${cs.count}</span>
+                        </div>`;
+                });
+                html += `</div></div>`;
+            });
+            el.innerHTML = html;
+
+        }
+
         function renderTheorem() {
             const container = document.getElementById('quiz-content');
             if (currentIndex >= theorems.length) {
                 container.innerHTML = `<h2>Quiz Complete!</h2><p>Your final score is ${totalScore} out of ${theorems.length * 10}.</p>`;
+                renderCourseScores(true);
                 return;
             }
 
             const t = theorems[currentIndex];
+            const prev = answers[currentIndex];
+            const sel = (p) => prev === p ? ' selected' : '';
             container.innerHTML = `
                 <div class="title">${t.id}. ${t.title}</div>
+                <div class="course-tag">Course: ${t.course || 'Uncategorized'} · Question ${currentIndex + 1} of ${theorems.length}${prev !== undefined ? ' · answered (' + prev + ' pts)' : ''}</div>
                 <div class="statement"><strong>Statement:</strong> ${convertMathDelimiters(t.statement)}</div>
                 <div class="options">
-                    <button onclick="handleAnswer(10)">A) Yes, I know theorem and proof. (10 points)</button>
-                    <button onclick="handleAnswer(7)">B) No, but I can prove it. (7 points)</button>
-                    <button onclick="handleAnswer(2)">C) I know theorem, but can't prove it. (2 points)</button>
-                    <button onclick="handleAnswer(0)">D) No, I don't know theorem, and can't prove it. (0 points)</button>
+                    <button class="opt${sel(10)}" onclick="handleAnswer(10)">A) Yes, I know theorem and proof. (10 points)</button>
+                    <button class="opt${sel(7)}" onclick="handleAnswer(7)">B) No, but I can prove it. (7 points)</button>
+                    <button class="opt${sel(2)}" onclick="handleAnswer(2)">C) I know theorem, but can't prove it. (2 points)</button>
+                    <button class="opt${sel(0)}" onclick="handleAnswer(0)">D) No, I don't know theorem, and can't prove it. (0 points)</button>
+                </div>
+                <div class="nav">
+                    <button onclick="goPrev()" ${currentIndex === 0 ? 'disabled' : ''}>← Back</button>
+                    <button onclick="goNext()" ${currentIndex >= theorems.length - 1 ? 'disabled' : ''}>Forward →</button>
                 </div>
             `;
 
@@ -134,13 +295,56 @@
         }
 
         function handleAnswer(points) {
-            totalScore += points;
-            currentIndex++;
-            document.getElementById('score-board').innerText = 'Total Score: ' + totalScore;
-            renderTheorem();
+            const t = theorems[currentIndex];
+            const c = (t && t.course) || 'Uncategorized';
+            const prev = answers[currentIndex];
+            if (prev !== undefined) {
+                // Changing an existing answer: adjust totals by the delta.
+                if (courseScores[c]) {
+                    courseScores[c].score += (points - prev);
+                }
+                totalScore += (points - prev);
+            } else {
+                if (courseScores[c]) {
+                    courseScores[c].score += points;
+                    courseScores[c].answered += 1;
+                }
+                totalScore += points;
+            }
+            answers[currentIndex] = points;
+            document.getElementById('score-board').innerText =
+                'Total Score: ' + totalScore + ' / ' + (theorems.length * 10);
+            renderCourseScores(false);
+            if (currentIndex < theorems.length - 1) {
+                goTo(currentIndex + 1);
+            } else {
+                goTo(currentIndex + 1); // shows complete screen
+            }
         }
 
-        loadTheorems();
+        document.addEventListener('keydown', (e) => {
+            if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+            if (e.key === 'ArrowLeft') { e.preventDefault(); goPrev(); }
+            else if (e.key === 'ArrowRight') { e.preventDefault(); goNext(); }
+        });
+
+        window.addEventListener('hashchange', () => {
+            const n = readHash();
+            if (n !== currentIndex) {
+                currentIndex = n;
+                renderTheorem();
+            }
+        });
+
+        async function start() {
+            await loadTheorems();
+            initCourseScores();
+            currentIndex = readHash();
+            updateHash();
+            renderTheorem();
+            renderCourseScores(false);
+        }
+        start();
     </script>
 </body>
 </html>
