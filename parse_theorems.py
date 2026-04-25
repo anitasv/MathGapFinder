@@ -28,7 +28,19 @@ def parse_theorems(file_path):
         # Extract Proof
         proof_match = re.findall(r'\*\*(?:Rough proof structure|Proof hint).*?:\*\*(.*?)(?=\n\n|\n\*\*|\n---|(\n---|$))', block, re.DOTALL)
         proof = "\n".join([p[0].strip() for p in proof_match]) if proof_match else ""
-        
+
+        # Extract Course
+        course_match = re.search(r'\*\*Course:\*\*\s*(.*?)(?=\n\n|\n\*\*|\n---|$)', block, re.DOTALL)
+        course = course_match.group(1).strip() if course_match else ""
+
+        # Extract Difficulty
+        difficulty_match = re.search(r'\*\*Difficulty:\*\*\s*(.*?)(?=\n\n|\n\*\*|\n---|$)', block, re.DOTALL)
+        difficulty_str = difficulty_match.group(1).strip() if difficulty_match else ""
+        try:
+            difficulty = float(difficulty_str)
+        except ValueError:
+            difficulty = difficulty_str
+
         # Clean LaTeX-style brackets
         for text in [statement, proof]:
             text = text.replace('[\n', '').replace('\n]', '').replace('((', '').replace('))', '')
@@ -37,6 +49,8 @@ def parse_theorems(file_path):
             "id": id_val,
             "title": title,
             "statement": statement,
+            "course": course,
+            "difficulty": difficulty,
             "proof_structure": proof
         })
     
