@@ -4,7 +4,7 @@
 
 **Course:** Undergraduate, Number Theory
 
-**Difficulty:** 3.5
+**Difficulty:** 2.5
 
 **Proof hint:** Use that (\gcd(a,b)=\gcd(b,r)) with (r=a-bq) and the remainders strictly decrease until the last nonzero remainder.
 
@@ -36,7 +36,7 @@ For real numbers this becomes:
 
 **Course:** Undergraduate, Linear Algebra
 
-**Difficulty:** 4.0
+**Difficulty:** 3.0
 
 **Proof hint:** Square both sides (or use Cauchy–Schwarz in inner product spaces) to show [|x+y|^2\le (|x|+|y|)^2] and take square roots.
 
@@ -72,7 +72,7 @@ For real numbers this becomes:
 
 **Course:** Undergraduate, Linear Algebra
 
-**Difficulty:** 4.5
+**Difficulty:** 4.0
 
 **Proof hint:** Consider the nonnegative quadratic [|x-ty|^2\ge 0] in (t) and require its discriminant to be nonpositive.
 
@@ -84,7 +84,7 @@ For real numbers this becomes:
 
 **Course:** High School, Precalculus
 
-**Difficulty:** 3.0
+**Difficulty:** 3.5
 
 **Proof hint:** Prove the two-variable case via [(a-b)^2\ge 0] and extend to (n) variables by induction or repeated averaging.
 
@@ -120,7 +120,7 @@ For real numbers this becomes:
 
 **Course:** Undergraduate, Number Theory
 
-**Difficulty:** 4.0
+**Difficulty:** 3.5
 
 **Proof hint:** Use Bézout coefficients to build numbers that are (1) mod one modulus and (0) mod the others, then combine them linearly to solve the system.
 
@@ -132,7 +132,7 @@ For real numbers this becomes:
 
 **Course:** Undergraduate, Number Theory
 
-**Difficulty:** 4.0
+**Difficulty:** 3.5
 
 **Proof hint:** Multiply all nonzero residue classes mod (p): [1,2,\dots,p-1.] Then compare with their multiples by (a), which form the same set in a different order.
 
@@ -144,7 +144,7 @@ For real numbers this becomes:
 
 **Course:** Undergraduate, Number Theory
 
-**Difficulty:** 4.5
+**Difficulty:** 4.0
 
 **Proof hint:** Look at the invertible residue classes modulo (n). Multiplication by (a) permutes them, just like in Fermat’s Little Theorem.
 
@@ -156,7 +156,7 @@ For real numbers this becomes:
 
 **Course:** Undergraduate, Abstract Algebra
 
-**Difficulty:** 4.5
+**Difficulty:** 3.5
 
 **Proof hint:** Partition (G) into left cosets of (H) and show every coset has exactly (|H|) elements.
 
@@ -180,7 +180,7 @@ For real numbers this becomes:
 
 **Course:** Undergraduate, Linear Algebra
 
-**Difficulty:** 4.0
+**Difficulty:** 3.5
 
 **Proof hint:** Take a basis of (\ker T), extend it to a basis of (V), then apply (T) to the added basis vectors.
 
@@ -192,7 +192,7 @@ For real numbers this becomes:
 
 **Course:** Undergraduate, Calculus I
 
-**Difficulty:** 3.0
+**Difficulty:** 4.0
 
 **Proof hint:** Continuous image of a compact set is compact; compact subsets of (\mathbb R) contain their supremum and infimum.
 
@@ -228,7 +228,7 @@ For real numbers this becomes:
 
 **Course:** Undergraduate, Abstract Algebra
 
-**Difficulty:** 4.5
+**Difficulty:** 4.0
 
 **Proof hint:** Map each coset (g\ker\varphi) to (\varphi(g)) and check well-definedness and bijectivity.
 
@@ -240,7 +240,7 @@ For real numbers this becomes:
 
 **Course:** Undergraduate, Linear Algebra
 
-**Difficulty:** 4.0
+**Difficulty:** 3.5
 
 **Proof hint:** Build vectors one at a time by subtracting projections onto previously constructed orthonormal vectors, then normalize.
 
@@ -288,7 +288,7 @@ For real numbers this becomes:
 
 **Course:** Undergraduate, Linear Algebra
 
-**Difficulty:** 5.0
+**Difficulty:** 4.0
 
 **Proof hint:** Take an eigenvector, choose a coordinate of maximal magnitude, and inspect the corresponding row of (Av=\lambda v).
 
@@ -312,7 +312,7 @@ For real numbers this becomes:
 
 **Course:** Undergraduate, Functional Analysis
 
-**Difficulty:** 4.5
+**Difficulty:** 5.0
 
 **Proof hint:** Use Pythagoras on finite partial sums of the orthogonal expansion, then pass to the limit using completeness.
 
@@ -324,7 +324,7 @@ For real numbers this becomes:
 
 **Course:** Undergraduate, Real Analysis
 
-**Difficulty:** 4.0
+**Difficulty:** 4.5
 
 **Proof hint:** Use Bolzano–Weierstrass/sequential compactness for one direction and open-cover arguments for the other.
 
@@ -336,7 +336,7 @@ For real numbers this becomes:
 
 **Course:** Graduate, Functional Analysis
 
-**Difficulty:** 5.0
+**Difficulty:** 4.5
 
 **Proof hint:** Iterate (x_{n+1}=T(x_n)) so distances shrink geometrically, making a Cauchy sequence that converges to the fixed point.
 
@@ -360,7 +360,7 @@ For real numbers this becomes:
 
 **Course:** Undergraduate, Abstract Algebra
 
-**Difficulty:** 5.5
+**Difficulty:** 6.0
 
 **Proof hint:** Refine two normal series to a common refinement, then compare successive quotient factors.
 
@@ -384,7 +384,7 @@ For real numbers this becomes:
 
 **Course:** Undergraduate, Linear Algebra
 
-**Difficulty:** 6.5
+**Difficulty:** 5.5
 
 **Proof hint:** Use Schur triangularization and then show a normal upper-triangular matrix must already be diagonal.
 
@@ -396,7 +396,7 @@ For real numbers this becomes:
 
 **Course:** Graduate, Linear Algebra
 
-**Difficulty:** 6.5
+**Difficulty:** 5.0
 
 **Proof hint:** Use existence of one eigenvector, extend it to an orthonormal basis, obtain a block upper-triangular form, then induct on dimension.
 
@@ -408,7 +408,7 @@ For real numbers this becomes:
 
 **Course:** Undergraduate, Linear Algebra
 
-**Difficulty:** 6.0
+**Difficulty:** 5.0
 
 **Proof hint:** Diagonalize (A^*A) using the Spectral Theorem, and take square roots of its eigenvalues as singular values.
 
@@ -420,7 +420,7 @@ For real numbers this becomes:
 
 **Course:** Undergraduate, Complex Analysis
 
-**Difficulty:** 5.5
+**Difficulty:** 5.0
 
 **Proof hint:** Split [\frac{f(z)}{z-a} = \frac{f(z)-f(a)}{z-a}+\frac{f(a)}{z-a},} then apply Cauchy’s theorem to the first term.
 
@@ -444,7 +444,7 @@ For real numbers this becomes:
 
 **Course:** Undergraduate, Complex Analysis
 
-**Difficulty:** 5.0
+**Difficulty:** 4.5
 
 **Proof hint:** Consider [g(z)=\frac{f(z)}{z}] (with removable singularity at (0)), then apply the Maximum Modulus Principle.
 
@@ -468,7 +468,7 @@ For real numbers this becomes:
 
 **Course:** Undergraduate, Complex Analysis
 
-**Difficulty:** 6.0
+**Difficulty:** 5.5
 
 **Proof hint:** Remove small circles around each pole, apply the Cauchy Integral Theorem to the remaining region, and use Laurent coefficients on the small circles.
 
@@ -480,7 +480,7 @@ For real numbers this becomes:
 
 **Course:** Undergraduate, Complex Analysis
 
-**Difficulty:** 6.0
+**Difficulty:** 5.5
 
 **Proof hint:** Near a zero/pole, write (f(z)=(z-a)^m g(z)), so (f'/f) has a simple pole with residue (m) (or (-m)).
 
@@ -492,7 +492,7 @@ For real numbers this becomes:
 
 **Course:** Undergraduate, Complex Analysis
 
-**Difficulty:** 7.0
+**Difficulty:** 5.5
 
 **Proof hint:** Interpolate via (f+t g) for (t\in[0,1]); boundary nonvanishing keeps the winding number / zero count unchanged.
 
@@ -516,7 +516,7 @@ For real numbers this becomes:
 
 **Course:** Undergraduate, Abstract Algebra
 
-**Difficulty:** 5.5
+**Difficulty:** 5.0
 
 **Proof hint:** Assume a prime divides every coefficient of the product. Reduce coefficients modulo that prime and derive a contradiction from degree behavior.
 
@@ -532,7 +532,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Undergraduate, Abstract Algebra
 
-**Difficulty:** 6.0
+**Difficulty:** 4.5
 
 **Proof hint:** Assume a factorization into primitive integer polynomials and compare divisibility of constant terms and higher coefficients modulo (p).
 
@@ -544,7 +544,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Graduate, Real Analysis
 
-**Difficulty:** 6.5
+**Difficulty:** 6.0
 
 **Proof hint:** Approximate (f) from below by simple functions; eventually those approximations are bounded by some (f_n).
 
@@ -556,7 +556,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Graduate, Real Analysis
 
-**Difficulty:** 6.0
+**Difficulty:** 5.5
 
 **Proof hint:** Define [g_n=\inf_{k\ge n} f_k.] Then (g_n\uparrow \liminf f_n), so apply Monotone Convergence.
 
@@ -568,7 +568,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Graduate, Functional Analysis
 
-**Difficulty:** 7.0
+**Difficulty:** 5.5
 
 **Proof hint:** Look at (\ker \phi), take a vector orthogonal to it, and decompose every vector into kernel part plus one orthogonal direction.
 
@@ -580,7 +580,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Graduate, Real Analysis
 
-**Difficulty:** 6.5
+**Difficulty:** 6.0
 
 **Proof hint:** Use Fatou’s Lemma on (g \pm f_n), or apply Fatou to (2g-|f_n-f|).
 
@@ -592,7 +592,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Undergraduate, Linear Algebra
 
-**Difficulty:** 6.0
+**Difficulty:** 4.5
 
 **Proof hint:** Use orthogonal complements and dimension arguments: vectors orthogonal to all columns are exactly (\ker(A^*)).
 
@@ -605,10 +605,6 @@ then (f(x)) is irreducible over (\mathbb Q).
 **Course:** Undergraduate, Real Analysis
 
 **Difficulty:** 6.5
-**Course:** Undergraduate, Linear Algebra
-
-**Difficulty:** 6.5
-
 
 **Proof hint:** Choose a countable dense set, extract a diagonal subsequence converging there, then use equicontinuity to upgrade pointwise convergence to uniform convergence.
 
@@ -616,53 +612,49 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 51. **Cayley–Hamilton Theorem**
 
-**Course:** Graduate, Real Analysis
-
-**Difficulty:** 6.5
-
 **Statement:** Every square matrix satisfies its own characteristic polynomial: [p_A(A)=0.]
+
+**Course:** Undergraduate, Linear Algebra
+
+**Difficulty:** 5.5
 
 **Proof hint:** Use the adjugate identity [(\lambda I-A)\operatorname{adj}(\lambda I-A)=p_A(\lambda)I] and interpret it as a polynomial identity before substituting (\lambda=A).
 
 ---
 
 52. **Fubini’s Theorem**
-**Course:** Undergraduate, Probability
-
-**Difficulty:** 6.0
-
 
 **Statement:** If (f) is integrable on a product space (X\times Y), then [\int_{X\times Y} f(x,y)d(x,y) = \int_X\left(\int_Y f(x,y)dy\right)dx] (and similarly with the order reversed).
+
+**Course:** Graduate, Real Analysis
+
+**Difficulty:** 6.5
 
 **Proof hint:** First prove it for indicator functions of rectangles, then simple functions, then extend by approximation to general integrable functions.
 
 ---
 
-**Course:** Graduate, Functional Analysis
-
-**Difficulty:** 7.5
-
 53. **Law of Large Numbers**
 
 **Statement:** For i.i.d. random variables (X_1,X_2,\dots) with mean (\mu), [\frac{X_1+\cdots+X_n}{n}\to \mu] (in probability or almost surely).
 
+**Course:** Undergraduate, Probability
+
+**Difficulty:** 6.5
+
 **Proof hint:** Control variance of averages (weak form), or combine truncation + Borel–Cantelli for almost sure convergence.
 
 ---
-**Course:** Graduate, Functional Analysis
-
-**Difficulty:** 7.0
-
 
 54. **Uniform Boundedness Principle**
 
 **Statement:** Let ({T_\alpha}) be bounded linear operators from a Banach space (X) to a normed space (Y). If for every (x\in X), [\sup_\alpha |T_\alpha x|<\infty,] then [\sup_\alpha |T_\alpha|<\infty.]
 
-**Proof hint:** Consider sets where operators are uniformly bounded on a point. Use Baire Category Theorem to upgrade pointwise boundedness to norm boundedness.
-
 **Course:** Graduate, Functional Analysis
 
 **Difficulty:** 7.0
+
+**Proof hint:** Consider sets where operators are uniformly bounded on a point. Use Baire Category Theorem to upgrade pointwise boundedness to norm boundedness.
 
 ---
 
@@ -670,11 +662,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** If (T:X\to Y) is a linear operator between Banach spaces and its graph {(x,Tx):x\in X} is closed in (X\times Y), then (T) is bounded.
 
+**Course:** Graduate, Functional Analysis
+
+**Difficulty:** 6.5
+
 **Proof hint:** View the graph itself as a Banach space, then use projection maps together with the Open Mapping Theorem.
-**Course:** Graduate, Algebra
-
-**Difficulty:** 7.0
-
 
 ---
 
@@ -682,9 +674,9 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** If (T:X\to Y) is a surjective bounded linear operator between Banach spaces, then (T) maps open sets to open sets.
 
-**Course:** Graduate, Commutative Algebra
+**Course:** Graduate, Functional Analysis
 
-**Difficulty:** 7.5
+**Difficulty:** 7.0
 
 **Proof hint:** Show the image of the unit ball is dense enough to contain a small ball around (0), then use scaling and translation.
 
@@ -693,10 +685,10 @@ then (f(x)) is irreducible over (\mathbb Q).
 57. **Hilbert Basis Theorem**
 
 **Statement:** If (R) is a Noetherian ring, then the polynomial ring [R[x]] is also Noetherian.
-**Course:** Undergraduate, Probability
 
-**Difficulty:** 6.5
+**Course:** Graduate, Commutative Algebra
 
+**Difficulty:** 5.5
 
 **Proof hint:** For an ideal in (R[x]), look at leading coefficients of polynomials of each degree. Use finite generation in (R), then induct on degree.
 
@@ -704,11 +696,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 58. **Krull Intersection Theorem**
 
-**Course:** Undergraduate, Linear Algebra
-
-**Difficulty:** 6.5
-
 **Statement:** If (R) is Noetherian, (I\subseteq J(R)), and (M) is a finitely generated (R)-module, then [\bigcap_{n\ge1} I^n M = 0.]
+
+**Course:** Graduate, Commutative Algebra
+
+**Difficulty:** 7.0
 
 **Proof hint:** Let [N=\bigcap I^nM.] Show (N=IN), then apply Nakayama’s Lemma.
 
@@ -718,6 +710,10 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** For i.i.d. random variables with mean (\mu) and variance (\sigma^2), [\frac{(X_1+\cdots+X_n)-n\mu}{\sigma\sqrt n} \Rightarrow N(0,1).]
 
+**Course:** Undergraduate, Probability
+
+**Difficulty:** 7.0
+
 **Proof hint:** Compute characteristic functions of normalized sums, use Taylor expansion near (0), then pass to the limit.
 
 ---
@@ -725,6 +721,10 @@ then (f(x)) is irreducible over (\mathbb Q).
 60. **Perron–Frobenius Theorem**
 
 **Statement:** A positive square matrix has a largest positive real eigenvalue with a positive eigenvector.
+
+**Course:** Graduate, Linear Algebra
+
+**Difficulty:** 6.5
 
 **Proof hint:** Map the positive simplex to itself using the matrix, then use compactness / fixed-point ideas; stronger versions handle irreducible nonnegative matrices.
 
@@ -736,7 +736,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Undergraduate, Linear Algebra
 
-**Difficulty:** 6.5
+**Difficulty:** 7.0
 
 **Proof hint:** Decompose the space into generalized eigenspaces and build Jordan chains for each eigenvalue using the nilpotent action of ((A-\lambda I)).
 
@@ -748,7 +748,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Undergraduate, Multivariable Calculus
 
-**Difficulty:** 6.5
+**Difficulty:** 6.0
 
 **Proof hint:** Use the invertible linearization at (a) and apply a contraction-mapping or Newton iteration argument to obtain a local inverse.
 
@@ -760,7 +760,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Undergraduate, Multivariable Calculus
 
-**Difficulty:** 6.5
+**Difficulty:** 5.5
 
 **Proof hint:** Apply the Inverse Function Theorem to the map [(x,y)\mapsto (x,F(x,y))] to solve for [y=g(x)] locally.
 
@@ -772,7 +772,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Graduate, Functional Analysis
 
-**Difficulty:** 7.5
+**Difficulty:** 7.0
 
 **Proof hint:** Extend one dimension at a time while preserving the norm bound and invoke Zorn’s Lemma for a maximal extension.
 
@@ -784,7 +784,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Graduate, Real Analysis
 
-**Difficulty:** 7.5
+**Difficulty:** 7.0
 
 **Proof hint:** Use the algebra operations to approximate maxima/minima and then build uniform approximations from point-separating functions.
 
@@ -796,7 +796,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Graduate, Algebra
 
-**Difficulty:** 7.5
+**Difficulty:** 7.0
 
 **Proof hint:** Represent the module by generators/relations and diagonalize the relation matrix via Smith normal form.
 
@@ -808,7 +808,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Graduate, Algebra
 
-**Difficulty:** 7.5
+**Difficulty:** 7.0
 
 **Proof hint:** Assume a minimal counterexample and use conjugacy class counting with proper subfields to reach a contradiction.
 
@@ -820,7 +820,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Graduate, Functional Analysis
 
-**Difficulty:** 7.0
+**Difficulty:** 6.5
 
 **Proof hint:** Apply the compact self-adjoint spectral theorem to obtain an orthonormal eigenbasis.
 
@@ -856,7 +856,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Graduate, Algebra
 
-**Difficulty:** 7.5
+**Difficulty:** 7.0
 
 **Proof hint:** Choose coset representatives and explicitly construct generators (Schreier generators), or use covering spaces of graphs.
 
@@ -894,7 +894,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Undergraduate, Probability
 
-**Difficulty:** 6.0
+**Difficulty:** 5.0
 
 **Proof hint:** Use subadditivity for the first part, and for the second apply complements together with independence.
 
@@ -918,7 +918,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Undergraduate, Topology
 
-**Difficulty:** 6.5
+**Difficulty:** 8.0
 
 **Proof hint:** Define the winding number for points off the curve, show it is locally constant with value (0) outside and nonzero inside, and exclude extra components.
 
@@ -954,7 +954,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Graduate, Algebraic Topology
 
-**Difficulty:** 7.0
+**Difficulty:** 7.5
 
 **Proof hint:** Break loops into pieces lying in (U) or (V), then translate concatenation into generators and relations.
 
@@ -978,7 +978,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Graduate, Differential Topology
 
-**Difficulty:** 7.0
+**Difficulty:** 7.5
 
 **Proof hint:** Near critical points, the map flattens directions; cover the domain by small cubes and estimate that their images have very small total volume.
 
@@ -990,7 +990,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Graduate, Differential Geometry
 
-**Difficulty:** 7.5
+**Difficulty:** 8.0
 
 **Proof hint:** Integrate differential forms over simplices to build a cochain map, then prove it is an isomorphism using local exactness and Mayer–Vietoris patching.
 
@@ -1038,7 +1038,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Graduate, Functional Analysis
 
-**Difficulty:** 7.0
+**Difficulty:** 6.5
 
 **Proof hint:** Maximize the Rayleigh quotient to obtain one eigenvector, restrict to its orthogonal complement, then iterate using compactness.
 
@@ -1050,7 +1050,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Graduate, Functional Analysis
 
-**Difficulty:** 7.5
+**Difficulty:** 8.0
 
 **Proof hint:** Map elements to continuous functions via the Gelfand transform (evaluation at characters), then use Stone–Weierstrass to show it is a surjective isometry.
 
@@ -1062,7 +1062,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Graduate, Functional Analysis
 
-**Difficulty:** 7.5
+**Difficulty:** 8.0
 
 **Proof hint:** Use the spectral theorem to exponentiate a self-adjoint operator, and recover the generator from the strong derivative or resolvent.
 
@@ -1074,7 +1074,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Graduate, Logic
 
-**Difficulty:** 7.5
+**Difficulty:** 8.0
 
 **Proof hint:** Encode syntax as numbers (Gödel numbering), then diagonalize to construct a sentence that asserts its own unprovability.
 
@@ -1086,7 +1086,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Graduate, Logic
 
-**Difficulty:** 7.5
+**Difficulty:** 8.5
 
 **Proof hint:** Formalize the First Incompleteness Theorem inside the theory itself; if the theory proved its own consistency, it would prove its Gödel sentence, contradiction.
 
@@ -1110,7 +1110,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Graduate, Abstract Algebra
 
-**Difficulty:** 7.0
+**Difficulty:** 7.5
 
 **Proof hint:** Decompose the regular module into simple modules so their endomorphism rings produce matrix blocks and assemble the product.
 
@@ -1122,7 +1122,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Graduate, Differential Geometry
 
-**Difficulty:** 8.0
+**Difficulty:** 8.5
 
 **Proof hint:** Study the Laplacian [\Delta = d\delta + \delta d] as a self-adjoint elliptic operator and use Hilbert space orthogonal decomposition to split forms into exact, coexact, and harmonic parts.
 
@@ -1134,7 +1134,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Undergraduate, Complex Analysis
 
-**Difficulty:** 6.5
+**Difficulty:** 7.5
 
 **Proof hint:** Construct a family of injective holomorphic maps into the disk, maximize the derivative at a base point, and use normal families (Montel theorem) to extract a limit.
 
@@ -1146,7 +1146,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Graduate, Topology
 
-**Difficulty:** 7.5
+**Difficulty:** 8.0
 
 **Proof hint:** Show a continuous injective map cannot collapse local degree, using homology or degree theory to deduce openness and homeomorphism onto its image.
 
@@ -1182,7 +1182,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Graduate, Algebraic Topology
 
-**Difficulty:** 7.5
+**Difficulty:** 7.0
 
 **Proof hint:** Attach cells to (f) to force homology isomorphisms, then use lifting properties to conclude (f) is a homotopy equivalence.
 
@@ -1206,6 +1206,6 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Course:** Undergraduate, Multivariable Calculus
 
-**Difficulty:** 5.5
+**Difficulty:** 6.5
 
 **Proof hint:** Prove the formula in (\mathbb{R}^n) by iterated one-dimensional FTC and extend via partitions of unity and coordinate charts.
