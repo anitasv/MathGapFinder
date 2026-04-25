@@ -15,7 +15,7 @@ concrete next step.
 
 The whole app is a single static HTML file (`src/mathprof.html`) that
 loads two JSON data files (`data/theorems.json`,
-`data/references.json`) — no server or build toolchain required.
+`data/references.json`).
 
 ## Project layout
 
