@@ -1,252 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>100 Theorem Diagnostic Survey</title>
-<style>
-body { font-family: Arial, sans-serif; margin: 20px; }
-#box { padding: 16px; border: 1px solid #ccc; margin-top: 20px; }
-button { margin: 6px; padding: 10px; display:block; width: 100%; text-align:left; }
-#summary { white-space: pre-wrap; margin-top: 20px; background:#f4f4f4; padding:12px; }
-.small { color:#444; font-size: 0.95em; margin-top: 8px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Theorems</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .theorem { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 5px; }
+        .title { font-weight: bold; font-size: 1.2em; color: #2c3e50; }
+        .statement { font-style: italic; margin: 10px 0; }
+        .example { background: #f9f9f9; padding: 10px; border-left: 3px solid #3498db; margin: 10px 0; white-space: pre-wrap; }
+        .proof { margin-top: 10px; color: #555; }
+    </style>
 </head>
 <body>
+    <h1>Math Theorems</h1>
+    <div id="theorems">Loading theorems...</div>
 
-<h2>100 Theorem Survey</h2>
-
-<div id="box">
-  <div id="q"></div>
-  <div class="small" id="hint"></div>
-
-  <button onclick="answer(10)">A: Know + can prove (10)</button>
-  <button onclick="answer(7)">B: Haven’t seen but can prove (7)</button>
-  <button onclick="answer(2)">C: Know statement (2)</button>
-  <button onclick="answer(0)">D: Don’t know (0)</button>
-</div>
-
-<div id="summary"></div>
-
-<script>
-const data = [
-{
-name:"Euclidean Algorithm",
-stmt:"For integers a,b, repeated division computes gcd(a,b).",
-hint:"Use a=bq+r and show gcd(a,b)=gcd(b,r)."
-},
-{
-name:"Fundamental Theorem of Arithmetic",
-stmt:"Every integer >1 factors uniquely into primes.",
-hint:"Existence by induction; uniqueness via Euclid lemma."
-},
-{
-name:"Binomial Theorem",
-stmt:"(x+y)^n = sum binom(n,k)x^(n-k)y^k.",
-hint:"Expand product and count choices combinatorially."
-},
-{
-name:"Triangle Inequality",
-stmt:"|a+b| ≤ |a| + |b|.",
-hint:"Square both sides or use inner product form."
-},
-{
-name:"Cauchy–Schwarz Inequality",
-stmt:"|<x,y>| ≤ ||x|| ||y||.",
-hint:"Consider ||x-ty||^2 ≥ 0 and optimize in t."
-},
-{
-name:"AM-GM Inequality",
-stmt:"Arithmetic mean ≥ geometric mean for nonnegative numbers.",
-hint:"Use induction or (a-b)^2 ≥ 0 base case."
-},
-{
-name:"Infinitude of Primes",
-stmt:"There are infinitely many primes.",
-hint:"Assume finite list, form N=product+1."
-},
-{
-name:"Chinese Remainder Theorem",
-stmt:"System of congruences mod coprime moduli has unique solution mod product.",
-hint:"Construct idempotents using Bézout identity."
-},
-{
-name:"Fermat’s Little Theorem",
-stmt:"If p prime and p∤a, then a^(p-1) ≡ 1 mod p.",
-hint:"Permutation of residues under multiplication."
-},
-{
-name:"Euler’s Theorem",
-stmt:"If gcd(a,n)=1, then a^φ(n) ≡ 1 mod n.",
-hint:"Generalize FLT using reduced residue system."
-},
-{
-name:"Lagrange’s Theorem",
-stmt:"Order of subgroup divides order of finite group.",
-hint:"Partition group into cosets."
-},
-{
-name:"Intermediate Value Theorem",
-stmt:"Continuous f takes all intermediate values.",
-hint:"Use completeness of reals and sup argument."
-},
-{
-name:"Mean Value Theorem",
-stmt:"f'(c) = (f(b)-f(a))/(b-a).",
-hint:"Apply Rolle to f minus secant line."
-},
-{
-name:"Rank–Nullity Theorem",
-stmt:"dim ker T + dim im T = dim V.",
-hint:"Extend basis of kernel to full basis."
-},
-{
-name:"Fundamental Theorem of Calculus",
-stmt:"Derivative of integral is function; integral of derivative gives difference.",
-hint:"Use difference quotients and MVT."
-},
-{
-name:"Bolzano–Weierstrass Theorem",
-stmt:"Every bounded sequence has a convergent subsequence.",
-hint:"Nested interval / compactness argument."
-},
-{
-name:"Cauchy Integral Theorem",
-stmt:"Holomorphic function has zero integral over closed curve.",
-hint:"Triangulation or Goursat argument."
-},
-{
-name:"Cauchy Integral Formula",
-stmt:"f(a)=1/(2πi)∮ f(z)/(z-a) dz.",
-hint:"Subtract removable singularity term."
-},
-{
-name:"Maximum Modulus Principle",
-stmt:"Nonconstant holomorphic functions cannot attain interior maxima.",
-hint:"Apply mean-value property."
-},
-{
-name:"Residue Theorem",
-stmt:"Contour integrals equal sum of residues.",
-hint:"Remove poles and apply Cauchy theorem."
-},
-{
-name:"Heine–Borel Theorem",
-stmt:"Closed and bounded subsets of R^n are compact.",
-hint:"Bolzano–Weierstrass equivalence."
-},
-{
-name:"Banach Fixed Point Theorem",
-stmt:"Contraction maps on complete metric spaces have unique fixed points.",
-hint:"Iterate and show geometric convergence."
-},
-{
-name:"Cayley–Hamilton Theorem",
-stmt:"Matrix satisfies its characteristic polynomial.",
-hint:"Use adjugate identity."
-},
-{
-name:"Spectral Theorem (finite)",
-stmt:"Normal matrices are unitarily diagonalizable.",
-hint:"Schur decomposition + normality."
-},
-{
-name:"Jordan Canonical Form",
-stmt:"Every matrix is similar to Jordan blocks.",
-hint:"Generalized eigenspace decomposition."
-},
-{
-name:"Hahn–Banach Theorem",
-stmt:"Linear functionals extend without increasing norm.",
-hint:"Zorn’s lemma + extension step."
-},
-{
-name:"Radon–Nikodym Theorem",
-stmt:"Absolutely continuous measure has density.",
-hint:"Work in L1 and construct derivative."
-},
-{
-name:"Dominated Convergence Theorem",
-stmt:"Limit and integral interchange under domination.",
-hint:"Apply Fatou twice."
-},
-{
-name:"Central Limit Theorem",
-stmt:"Normalized sums converge to Gaussian.",
-hint:"Characteristic functions expansion."
-},
-{
-name:"Gershgorin Circle Theorem",
-stmt:"Eigenvalues lie in Gershgorin disks.",
-hint:"Look at dominant coordinate of eigenvector."
-},
-{
-name:"Riemann Mapping Theorem",
-stmt:"Simply connected proper domains are conformally disk.",
-hint:"Normal families + extremal mapping."
-},
-{
-name:"Stokes’ Theorem",
-stmt:"Integral of dω equals boundary integral.",
-hint:"Reduce to FTC via partitions."
-}
-];
-
-let i = 0;
-let score = {};
-
-function show(){
-  if(i >= data.length){
-    finish();
-    return;
-  }
-
-  let t = data[i];
-  document.getElementById("q").innerHTML =
-    "<b>Theorem:</b> " + t.name + "<br><br>" +
-    "<b>Statement:</b> " + t.stmt;
-
-  document.getElementById("hint").innerHTML =
-    "<b>Proof hint:</b> " + t.hint;
-}
-
-function answer(val){
-  let key = data[i].name;
-  score[key] = val;
-  i++;
-  show();
-}
-
-function finish(){
-  document.getElementById("box").style.display = "none";
-
-  let out = "=== SUMMARY ===\n\n";
-
-  let weak = [];
-  let medium = [];
-  let strong = [];
-
-  for(let k in score){
-    if(score[k] >= 10) strong.push(k);
-    else if(score[k] >= 7) medium.push(k);
-    else weak.push(k);
-  }
-
-  out += "Strong:\n" + strong.join(", ") + "\n\n";
-  out += "Partial:\n" + medium.join(", ") + "\n\n";
-  out += "Weak:\n" + weak.join(", ") + "\n\n";
-
-  out += "=== STUDY SUGGESTIONS ===\n";
-  out += "- Measure theory: Folland / Stein-Shakarchi + MIT 18.125\n";
-  out += "- Functional analysis: Conway + MIT 18.102\n";
-  out += "- Complex analysis: Ahlfors\n";
-  out += "- Topology: Munkres\n";
-  out += "- Algebra: Dummit & Foote\n";
-
-  document.getElementById("summary").innerText = out;
-}
-
-show();
-</script>
-
+    <script>
+        fetch('theorems.json')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('theorems');
+                container.innerHTML = '';
+                data.forEach(t => {
+                    const div = document.createElement('div');
+                    div.className = 'theorem';
+                    div.innerHTML = `
+                        <div class="title">${t.id}. ${t.title}</div>
+                        <div class="statement"><strong>Statement:</strong> ${t.statement}</div>
+                        ${t.example ? `<div class="example"><strong>Example:</strong><br>${t.example}</div>` : ''}
+                        <div class="proof"><strong>Proof structure:</strong> ${t.proof_structure}</div>
+                    `;
+                    container.appendChild(div);
+                });
+            })
+            .catch(err => {
+                document.getElementById('theorems').innerText = 'Error loading theorems: ' + err.message;
+            });
+    </script>
 </body>
 </html>
