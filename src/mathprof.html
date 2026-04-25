@@ -83,7 +83,15 @@
     <div id="score-board">Total Score: 0</div>
     <div style="margin-top:10px;"><button onclick="restartQuiz()">↺ Restart</button></div>
     <div id="course-scores"></div>
-
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0MVF8NVPT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-Y0MVF8NVPT');
+    </script>    
     <script>
         // Data file URLs. release.py rewrites these to hashed filenames.
         window.THEOREMS_URL = '../data/theorems.json';
