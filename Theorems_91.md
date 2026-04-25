@@ -2,7 +2,11 @@
 
 **Statement:** A consistent family of finite-dimensional probability distributions defines a probability measure on the infinite product space.
 
-**Proof hint:** Define probabilities on cylinder sets, verify finite additivity/consistency, then extend using Carathéodory’s extension theorem.
+**Course:** Graduate, Probability Theory
+
+**Difficulty:** 7.5
+
+**Proof hint:** Define probabilities on cylinder sets, verify finite additivity and consistency, then extend via Carathéodory’s extension theorem.
 
 ---
 
@@ -12,7 +16,11 @@
 
 **Statement:** Every semisimple Artinian ring is isomorphic to a finite product of matrix rings over division rings.
 
-**Proof hint:** Decompose the regular module into simple modules; endomorphism rings of these pieces produce matrix blocks.
+**Course:** Graduate, Abstract Algebra
+
+**Difficulty:** 7.0
+
+**Proof hint:** Decompose the regular module into simple modules so their endomorphism rings produce matrix blocks and assemble the product.
 
 ---
 
@@ -22,7 +30,11 @@
 
 **Statement:** On a compact Riemannian manifold, every differential form decomposes uniquely as [\omega = d\alpha + \delta\beta + h,] where (h) is harmonic.
 
-**Proof hint:** Study the Laplacian [\Delta = d\delta + \delta d] as a self-adjoint elliptic operator, then use orthogonal decomposition of Hilbert spaces.
+**Course:** Graduate, Differential Geometry
+
+**Difficulty:** 8.0
+
+**Proof hint:** Study the Laplacian [\Delta = d\delta + \delta d] as a self-adjoint elliptic operator and use Hilbert space orthogonal decomposition to split forms into exact, coexact, and harmonic parts.
 
 ---
 
@@ -32,7 +44,11 @@
 
 **Statement:** Every simply connected proper open subset of (\mathbb C) is conformally equivalent to the unit disk.
 
-**Proof hint:** Construct a family of injective holomorphic maps into the disk, maximize derivative at a base point, then use normal families (Montel theorem) to extract a limit.
+**Course:** Undergraduate, Complex Analysis
+
+**Difficulty:** 6.5
+
+**Proof hint:** Construct a family of injective holomorphic maps into the disk, maximize the derivative at a base point, and use normal families (Montel theorem) to extract a limit.
 
 ---
 
@@ -42,7 +58,11 @@
 
 **Statement:** If (U \subset \mathbb{R}^n) is open and (f:U \to \mathbb{R}^n) is continuous and injective, then (f(U)) is open and (f) is a homeomorphism onto its image.
 
-**Proof hint:** Reduce to showing a non-degenerate continuous injective map cannot “collapse dimension”; use homology / degree theory or invariance of domain via Brouwer fixed-point ideas.
+**Course:** Graduate, Topology
+
+**Difficulty:** 7.5
+
+**Proof hint:** Show a continuous injective map cannot collapse local degree, using homology or degree theory to deduce openness and homeomorphism onto its image.
 
 ---
 
@@ -52,7 +72,11 @@
 
 **Statement:** If (\nu) is absolutely continuous with respect to (\mu) ((\nu \ll \mu)), then there exists a measurable function (f) such that [\nu(A)=\int_A f d\mu] for all measurable sets (A).
 
-**Proof hint:** Work in (L^1(\mu)); construct (f) as a maximizer using approximation by simple functions or via Hilbert space methods.
+**Course:** Graduate, Measure Theory
+
+**Difficulty:** 7.0
+
+**Proof hint:** Work in (L^1(\mu)) and construct (f) using approximation by simple functions to represent (\nu) as an integral.
 
 ---
 
@@ -62,7 +86,11 @@
 
 **Statement:** For a divisor (D) on a compact Riemann surface, [\ell(D) - \ell(K-D) = \deg(D) + 1 - g,] where (\ell(D)) is the dimension of meromorphic functions with poles bounded by (D), (K) is the canonical divisor, and (g) is the genus.
 
-**Proof hint:** Compare spaces of meromorphic functions and differentials; use residue pairing and count dimensions via cohomological arguments.
+**Course:** Graduate, Algebraic Geometry
+
+**Difficulty:** 8.5
+
+**Proof hint:** Compare spaces of meromorphic functions and differentials via residue pairing and compute dimensions with cohomological arguments.
 
 ---
 
@@ -72,7 +100,11 @@
 
 **Statement:** A map (f: X \to Y) between connected CW-complexes is a homotopy equivalence if it induces an isomorphism on all homotopy groups (\pi_n).
 
-**Proof hint:** Attach cells to (f) to make it an isomorphism on homology; show that (f) must be a homotopy equivalence using lifting properties.
+**Course:** Graduate, Algebraic Topology
+
+**Difficulty:** 7.5
+
+**Proof hint:** Attach cells to (f) to force homology isomorphisms, then use lifting properties to conclude (f) is a homotopy equivalence.
 
 ---
 
@@ -82,7 +114,11 @@
 
 **Statement:** Every bounded normal operator (T) on a complex Hilbert space admits a spectral resolution [T=\int_{\sigma(T)} z dE(z),] where (E) is a projection-valued measure.
 
-**Proof hint:** Build continuous functional calculus for normal operators, then extend from polynomials/continuous functions to measurable sets, producing spectral projections.
+**Course:** Graduate, Functional Analysis
+
+**Difficulty:** 8.0
+
+**Proof hint:** Build the continuous functional calculus for normal operators and extend it to measurable sets to produce spectral projections.
 
 ---
 
@@ -92,4 +128,8 @@
 
 **Statement:** For a smooth oriented manifold (M) with boundary, [\int_M d\omega = \int_{\partial M} \omega,] where (\omega) is a differential form.
 
-**Proof hint:** First prove in (\mathbb{R}^n) using repeated 1D Fundamental Theorem of Calculus, then extend via partitions of unity and coordinate charts.
+**Course:** Undergraduate, Multivariable Calculus
+
+**Difficulty:** 5.5
+
+**Proof hint:** Prove the formula in (\mathbb{R}^n) by iterated one-dimensional FTC and extend via partitions of unity and coordinate charts.
