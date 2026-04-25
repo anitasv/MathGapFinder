@@ -48,7 +48,7 @@ def parse_theorems(file_path):
     return theorems
 
 if __name__ == "__main__":
-    results = parse_theorems('/Users/anita/.cline/worktrees/2576a/mathprof/Theorems.MD')
+    results = parse_theorems('./Theorems.MD')
     # Filter duplicates just in case, or keep them as is based on requirement
     # Based on input, 8 is duplicated.
     unique_theorems = []

@@ -1,0 +1,243 @@
+[
+  {
+    "n": 1,
+    "name": "Euclidean Algorithm",
+    "statement": "The gcd of two integers can be computed by repeated division with remainder.",
+    "hint": "Use gcd(a,b)=gcd(b,r) where a=bq+r."
+  },
+  {
+    "n": 2,
+    "name": "Binomial Theorem",
+    "statement": "(x+y)^n = sum_{k=0}^n binom(n,k)x^{n-k}y^k.",
+    "hint": "Count choices of selecting k y's from n factors."
+  },
+  {
+    "n": 3,
+    "name": "Triangle Inequality",
+    "statement": "|a+b| ≤ |a| + |b|.",
+    "hint": "Use geometry or square both sides."
+  },
+  {
+    "n": 4,
+    "name": "Infinitude of Primes",
+    "statement": "There are infinitely many prime numbers.",
+    "hint": "Assume finite list and construct product + 1."
+  },
+  {
+    "n": 5,
+    "name": "Bézout Identity",
+    "statement": "There exist integers x,y such that ax+by=gcd(a,b).",
+    "hint": "Back-substitute Euclidean algorithm steps."
+  },
+  {
+    "n": 6,
+    "name": "Cauchy–Schwarz Inequality",
+    "statement": "|<x,y>| ≤ ||x|| ||y||.",
+    "hint": "Consider ||x-ty||^2 ≥ 0."
+  },
+  {
+    "n": 7,
+    "name": "AM-GM Inequality",
+    "statement": "Arithmetic mean ≥ geometric mean for nonnegative numbers.",
+    "hint": "Use induction or symmetry and squares."
+  },
+  {
+    "n": 8,
+    "name": "Fundamental Theorem of Arithmetic",
+    "statement": "Every integer >1 has a unique prime factorization.",
+    "hint": "Use Euclid's lemma for uniqueness."
+  },
+  {
+    "n": 9,
+    "name": "Chinese Remainder Theorem",
+    "statement": "System of congruences mod coprime integers has unique solution mod product.",
+    "hint": "Construct idempotents via Bézout identity."
+  },
+  {
+    "n": 10,
+    "name": "Fermat’s Little Theorem",
+    "statement": "If p is prime and p∤a then a^(p−1)≡1 mod p.",
+    "hint": "Permutation of nonzero residues."
+  },
+  {
+    "n": 11,
+    "name": "Euler’s Theorem",
+    "statement": "If gcd(a,n)=1, then a^{φ(n)} ≡ 1 (mod n).",
+    "hint": "Generalize FLT using reduced residue system modulo n."
+  },
+  {
+    "n": 12,
+    "name": "Lagrange’s Theorem (Group Theory)",
+    "statement": "For finite group G and subgroup H, |H| divides |G| and |G| = [G:H]|H|.",
+    "hint": "Partition G into disjoint cosets of H."
+  },
+  {
+    "n": 13,
+    "name": "Intermediate Value Theorem",
+    "statement": "A continuous function on [a,b] takes every value between f(a) and f(b).",
+    "hint": "Use completeness of real numbers and supremum argument."
+  },
+  {
+    "n": 14,
+    "name": "Mean Value Theorem",
+    "statement": "There exists c in (a,b) such that f'(c) = (f(b)-f(a))/(b-a).",
+    "hint": "Apply Rolle’s theorem to f minus secant line."
+  },
+  {
+    "n": 15,
+    "name": "Rank–Nullity Theorem",
+    "statement": "dim(ker T) + dim(im T) = dim V for linear map T:V→W.",
+    "hint": "Extend basis of kernel to full basis of V."
+  },
+  {
+    "n": 16,
+    "name": "Fundamental Theorem of Calculus",
+    "statement": "Derivative of integral is function; integral of derivative gives net change.",
+    "hint": "Use limit of difference quotient and MVT."
+  },
+  {
+    "n": 17,
+    "name": "Bolzano–Weierstrass Theorem",
+    "statement": "Every bounded sequence in R^n has a convergent subsequence.",
+    "hint": "Use nested intervals or compactness argument."
+  },
+  {
+    "n": 18,
+    "name": "Cauchy Integral Theorem",
+    "statement": "Integral of holomorphic function over closed curve is zero.",
+    "hint": "Use triangulation or Goursat’s argument."
+  },
+  {
+    "n": 19,
+    "name": "Cauchy Integral Formula",
+    "statement": "f(a) = (1/2πi) ∮ f(z)/(z-a) dz.",
+    "hint": "Subtract removable singularity and apply Cauchy theorem."
+  },
+  {
+    "n": 20,
+    "name": "Maximum Modulus Principle",
+    "statement": "A nonconstant holomorphic function has no interior maximum of modulus.",
+    "hint": "Use mean value property or Cauchy formula."
+  },
+  {
+    "n": 21,
+    "name": "Residue Theorem",
+    "statement": "Contour integrals of meromorphic functions equal 2πi times sum of residues inside the contour.",
+    "hint": "Remove small disks around poles and apply Cauchy’s theorem."
+  },
+  {
+    "n": 22,
+    "name": "Heine–Borel Theorem",
+    "statement": "A subset of R^n is compact iff it is closed and bounded.",
+    "hint": "Use Bolzano–Weierstrass for sequential compactness."
+  },
+  {
+    "n": 23,
+    "name": "Banach Fixed Point Theorem",
+    "statement": "A contraction on a complete metric space has a unique fixed point.",
+    "hint": "Iterate and show geometric convergence of distances."
+  },
+  {
+    "n": 24,
+    "name": "Cayley–Hamilton Theorem",
+    "statement": "Every square matrix satisfies its characteristic polynomial.",
+    "hint": "Use adjugate identity (λI−A)adj(λI−A)=p(λ)I."
+  },
+  {
+    "n": 25,
+    "name": "Spectral Theorem (Finite-Dimensional)",
+    "statement": "Normal matrices are unitarily diagonalizable.",
+    "hint": "Use Schur decomposition and normality condition."
+  },
+  {
+    "n": 26,
+    "name": "Jordan Canonical Form",
+    "statement": "Every matrix is similar to a Jordan block decomposition.",
+    "hint": "Use generalized eigenspaces and nilpotent structure."
+  },
+  {
+    "n": 27,
+    "name": "Hahn–Banach Theorem",
+    "statement": "A bounded linear functional can be extended without increasing norm.",
+    "hint": "Extend step-by-step or use Zorn’s lemma."
+  },
+  {
+    "n": 28,
+    "name": "Radon–Nikodym Theorem",
+    "statement": "Absolutely continuous measures admit a density function.",
+    "hint": "Construct derivative in L1 using approximation."
+  },
+  {
+    "n": 29,
+    "name": "Dominated Convergence Theorem",
+    "statement": "Pointwise convergence under domination allows exchange of limit and integral.",
+    "hint": "Apply Fatou’s lemma to g ± f_n."
+  },
+  {
+    "n": 30,
+    "name": "Central Limit Theorem",
+    "statement": "Normalized sums of i.i.d. variables converge to Gaussian distribution.",
+    "hint": "Use characteristic functions and Taylor expansion near 0."
+  },
+  {
+    "n": 31,
+    "name": "Gershgorin Circle Theorem",
+    "statement": "Every eigenvalue of a complex matrix lies in at least one Gershgorin disk.",
+    "hint": "Look at eigenvector component of maximal magnitude."
+  },
+  {
+    "n": 32,
+    "name": "Riemann Mapping Theorem",
+    "statement": "Every simply connected proper open subset of C is conformally equivalent to the unit disk.",
+    "hint": "Use normal families and extremal holomorphic maps."
+  },
+  {
+    "n": 33,
+    "name": "Stokes’ Theorem",
+    "statement": "Integral of exterior derivative over manifold equals integral over boundary.",
+    "hint": "Reduce locally to FTC via coordinate charts."
+  },
+  {
+    "n": 34,
+    "name": "Fubini’s Theorem",
+    "statement": "Double integrals can be computed as iterated integrals under integrability assumptions.",
+    "hint": "Start with simple functions and extend by approximation."
+  },
+  {
+    "n": 35,
+    "name": "Monotone Convergence Theorem",
+    "statement": "Increasing sequence of nonnegative measurable functions converges under integral.",
+    "hint": "Approximate limit from below by simple functions."
+  },
+  {
+    "n": 36,
+    "name": "Fatou’s Lemma",
+    "statement": "Integral of liminf is ≤ liminf of integrals for nonnegative functions.",
+    "hint": "Define inf-tail sequence and use monotone convergence."
+  },
+  {
+    "n": 37,
+    "name": "Riesz Representation Theorem (Hilbert Space)",
+    "statement": "Every bounded linear functional is an inner product with a unique vector.",
+    "hint": "Use orthogonal decomposition into kernel and complement."
+  },
+  {
+    "n": 38,
+    "name": "Banach–Alaoglu Theorem",
+    "statement": "The unit ball in the dual of a normed space is weak-* compact.",
+    "hint": "Embed into product of compact disks and use Tychonoff."
+  },
+  {
+    "n": 39,
+    "name": "Uniform Boundedness Principle",
+    "statement": "Pointwise bounded family of bounded operators is uniformly bounded in norm.",
+    "hint": "Use Baire category theorem."
+  },
+  {
+    "n": 40,
+    "name": "Open Mapping Theorem",
+    "statement": "Surjective bounded linear operators between Banach spaces map open sets to open sets.",
+    "hint": "Show image of unit ball contains a neighborhood of 0."
+  },
+
+]
