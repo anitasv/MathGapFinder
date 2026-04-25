@@ -166,4 +166,4 @@ There are some known bugs around math rendering, fix in javascript or
 Theorems.MD not raise tickets.
 
 For everything else, please send a pull request, or open an issue on
-[GitHub](https://github.com/anitasv/MathGapFinder).
+[GitHub](https://github.com/anitasv/MathGapFinder/issues).
