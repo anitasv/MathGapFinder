@@ -5,8 +5,9 @@
 - Copies theorems.json and references.json into dist/ with names of the form
   theorems_<hash>.json and references_<hash>.json, where <hash> is a short
   URL-safe hash of the file's contents.
+- Copies mathprof.js into dist/ as mathprof_<hash>.js.
 - Copies mathprof.html into dist/index.html, updating its references to the
-  JSON files so they point at the hashed filenames.
+  JSON and JS files so they point at the hashed filenames.
 """
 
 from __future__ import annotations
@@ -24,6 +25,7 @@ SRC_DIR = ROOT / "src"
 
 # (source path relative key, path the html references)
 JSON_FILES = ["theorems.json", "references.json"]
+JS_FILES = ["mathprof.js"]
 HTML_FILE = "mathprof.html"
 HASH_LEN = 12  # characters of base64url-encoded sha256
 
@@ -53,6 +55,20 @@ def main() -> int:
         # html references json as "../data/<fname>"
         name_map[f"../data/{fname}"] = new_name
         print(f"  data/{fname} -> {new_name}")
+
+    for fname in JS_FILES:
+        src = SRC_DIR / fname
+        if not src.exists():
+            print(f"error: missing {src}", file=sys.stderr)
+            return 1
+        data = src.read_bytes()
+        h = short_hash(data)
+        stem, ext = src.stem, src.suffix
+        new_name = f"{stem}_{h}{ext}"
+        (DIST / new_name).write_bytes(data)
+        # html references js as bare filename (sibling)
+        name_map[fname] = new_name
+        print(f"  src/{fname} -> {new_name}")
 
     html = (SRC_DIR / HTML_FILE).read_text(encoding="utf-8")
     for original, new_name in name_map.items():
