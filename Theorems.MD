@@ -2,13 +2,11 @@
 
 **Statement:** For integers (a,b) not both zero, repeated division with remainder computes (\gcd(a,b)).
 
-**Proof hint:**
-* Show
-  [\gcd(a,b)=\gcd(b,r)]
-  because common divisors are preserved by (r=a-bq).
-* Each remainder strictly decreases and stays nonnegative.
-* Therefore process terminates.
-* Final nonzero remainder is the greatest common divisor.
+**Course:** Undergraduate, Number Theory
+
+**Difficulty:** 3.5
+
+**Proof hint:** Use that (\gcd(a,b)=\gcd(b,r)) with (r=a-bq) and the remainders strictly decrease until the last nonzero remainder.
 
 ---
 
@@ -18,11 +16,11 @@
 
 [\sum_{k=0}^{n}\binom{n}{k}x^{n-k}y^k.]
 
-**Proof hint:**
-* Expand ((x+y)(x+y)\cdots(x+y)) with (n) factors.
-* To get a term (x^{n-k}y^k), choose (k) of the (n) factors to contribute (y), the rest contribute (x).
-* Number of such choices is [\binom{n}{k}.]
-(Alternative proof: induction using Pascal identity.)
+**Course:** High School, Algebra II
+
+**Difficulty:** 2.5
+
+**Proof hint:** Expand ((x+y)^n) and count the ways to choose (k) of the (n) factors to supply (y) (or use induction with Pascal’s identity).
 
 ---
 
@@ -36,13 +34,11 @@ For real numbers this becomes:
 
 [|a+b|\le |a|+|b|.]
 
-**Proof hint (real numbers):**
-* Square both sides: [|a+b|^2=(a+b)^2=a^2+2ab+b^2.]
-* Since [2ab\le 2|a||b|,] we get [|a+b|^2\le (|a|+|b|)^2.]
-* Take square roots.
+**Course:** Undergraduate, Linear Algebra
 
-**Proof hint (inner product spaces):**
-Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
+**Difficulty:** 4.0
+
+**Proof hint:** Square both sides (or use Cauchy–Schwarz in inner product spaces) to show [|x+y|^2\le (|x|+|y|)^2] and take square roots.
 
 ---
 
@@ -50,7 +46,11 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** There are infinitely many prime numbers.
 
-**Proof hint:** Assume finitely many primes (p_1,\dots,p_n). Consider [N=p_1p_2\cdots p_n+1.] Then analyze prime divisors of (N).
+**Course:** High School, Number Theory
+
+**Difficulty:** 2.0
+
+**Proof hint:** Assume finitely many primes (p_1,\dots,p_n) and consider [N=p_1p_2\cdots p_n+1], whose prime divisors are not among the list.
 
 ---
 
@@ -58,7 +58,11 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** For integers (a,b), there exist integers (x,y) such that [ax+by=\gcd(a,b).]
 
-**Proof hint:** Run the Euclidean Algorithm, then back-substitute each remainder equation upward until the gcd is written in terms of (a) and (b).
+**Course:** Undergraduate, Number Theory
+
+**Difficulty:** 3.5
+
+**Proof hint:** Run the Euclidean Algorithm and back-substitute the remainder equations to express the gcd as a linear combination of (a) and (b).
 
 ---
 
@@ -66,7 +70,11 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** In an inner product space, [|\langle x,y\rangle|\le |x||y|.]
 
-**Proof hint:** Consider the nonnegative quadratic [|x-ty|^2\ge 0] and use its discriminant.
+**Course:** Undergraduate, Linear Algebra
+
+**Difficulty:** 4.5
+
+**Proof hint:** Consider the nonnegative quadratic [|x-ty|^2\ge 0] in (t) and require its discriminant to be nonpositive.
 
 ---
 
@@ -74,7 +82,11 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** For nonnegative real numbers (a_1,\dots,a_n), [\frac{a_1+\cdots+a_n}{n}\ge (a_1a_2\cdots a_n)^{1/n}.]
 
-**Proof hint:** First prove the two-variable case using [(a-b)^2\ge 0.] Then extend to (n) variables by induction or repeated averaging.
+**Course:** High School, Precalculus
+
+**Difficulty:** 3.0
+
+**Proof hint:** Prove the two-variable case via [(a-b)^2\ge 0] and extend to (n) variables by induction or repeated averaging.
 
 ---
 
@@ -82,13 +94,23 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** Every integer (n>1) can be written as a product of primes, and this factorization is unique up to order.
 
-**Proof hint:** Use induction for existence. For uniqueness, if two prime factorizations exist, use Euclid’s lemma: a prime dividing a product must divide one factor.
+**Course:** High School, Number Theory
+
+**Difficulty:** 3.0
+
+**Proof hint:** Use induction for existence and Euclid’s lemma to show two prime factorizations must match up to order.
+
+---
 
 9. **Prime Number Theorem for Arithmetic Progressions**
 
 **Statement:** For any coprime integers (a) and (d), the number of primes (p \le x) with (p \equiv a \pmod d) is asymptotically (\frac{1}{\varphi(d)} \frac{x}{\log x}).
 
-**Proof hint:** Use Dirichlet characters and (L)-series; show (L(1,\chi)\neq 0) for nonprincipal characters, then relate to the distribution of primes via logarithmic divergence.
+**Course:** Graduate, Analytic Number Theory
+
+**Difficulty:** 9.0
+
+**Proof hint:** Use Dirichlet characters and (L)-series, prove (L(1,\chi)\neq 0) for nonprincipal characters, then translate logarithmic sums into the asymptotic prime count.
 
 ---
 
@@ -96,13 +118,21 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** If (n_1,\dots,n_k) are pairwise coprime, then a system [x\equiv a_i \pmod{n_i}\quad (i=1,\dots,k)] has a unique solution modulo (N=n_1\cdots n_k).
 
-**Proof hint:** For each (i), build a number that is (1) mod (n_i) and (0) mod all other (n_j), using Bézout coefficients. Then combine them linearly.
+**Course:** Undergraduate, Number Theory
+
+**Difficulty:** 4.0
+
+**Proof hint:** Use Bézout coefficients to build numbers that are (1) mod one modulus and (0) mod the others, then combine them linearly to solve the system.
 
 ---
 
 11. **Fermat’s Little Theorem**
 
 **Statement:** If (p) is prime and (p\nmid a), then [a^{p-1}\equiv 1 \pmod p.]
+
+**Course:** Undergraduate, Number Theory
+
+**Difficulty:** 4.0
 
 **Proof hint:** Multiply all nonzero residue classes mod (p): [1,2,\dots,p-1.] Then compare with their multiples by (a), which form the same set in a different order.
 
@@ -112,6 +142,10 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** If (\gcd(a,n)=1), then [a^{\varphi(n)}\equiv 1 \pmod n,] where (\varphi(n)) is the number of integers in ({1,\dots,n}) coprime to (n).
 
+**Course:** Undergraduate, Number Theory
+
+**Difficulty:** 4.5
+
 **Proof hint:** Look at the invertible residue classes modulo (n). Multiplication by (a) permutes them, just like in Fermat’s Little Theorem.
 
 ---
@@ -120,13 +154,21 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** If (G) is a finite group and (H\le G) is a subgroup, then [|H| \mid |G|,\qquad |G|=[G:H]\cdot |H|.]
 
-**Proof hint:** Partition (G) into left cosets of (H). Show every coset has exactly (|H|) elements.
+**Course:** Undergraduate, Abstract Algebra
+
+**Difficulty:** 4.5
+
+**Proof hint:** Partition (G) into left cosets of (H) and show every coset has exactly (|H|) elements.
 
 ---
 
 14. **Intermediate Value Theorem**
 
 **Statement:** If (f:[a,b]\to\mathbb R) is continuous and (y) lies between (f(a)) and (f(b)), then there exists (c\in[a,b]) such that [f(c)=y.]
+
+**Course:** Undergraduate, Calculus I
+
+**Difficulty:** 3.5
 
 **Proof hint:** Consider all (x) where (f(x)<y), take the supremum of that set, then use continuity at the boundary point.
 
@@ -136,6 +178,10 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** For a linear map (T:V\to W) between finite-dimensional vector spaces, [\dim(\ker T)+\dim(\operatorname{im}T)=\dim V.]
 
+**Course:** Undergraduate, Linear Algebra
+
+**Difficulty:** 4.0
+
 **Proof hint:** Take a basis of (\ker T), extend it to a basis of (V), then apply (T) to the added basis vectors.
 
 ---
@@ -143,6 +189,10 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 16. **Extreme Value Theorem**
 
 **Statement:** If (f:[a,b]\to\mathbb R) is continuous, then (f) attains a maximum and a minimum on ([a,b]).
+
+**Course:** Undergraduate, Calculus I
+
+**Difficulty:** 3.0
 
 **Proof hint:** Continuous image of a compact set is compact; compact subsets of (\mathbb R) contain their supremum and infimum.
 
@@ -152,13 +202,21 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** If (f) is continuous on ([a,b]), differentiable on ((a,b)), and [f(a)=f(b),] then there exists (c\in(a,b)) such that [f'(c)=0.]
 
-**Proof hint:** By Extreme Value Theorem, (f) has max/min. If not constant, one extremum occurs inside ((a,b)); derivative at an interior extremum is zero.
+**Course:** Undergraduate, Calculus I
+
+**Difficulty:** 3.0
+
+**Proof hint:** By Extreme Value Theorem, (f) has max/min, and if not constant, one extremum occurs inside ((a,b)) where the derivative is zero.
 
 ---
 
 18. **Mean Value Theorem**
 
 **Statement:** If (f) is continuous on ([a,b]) and differentiable on ((a,b)), then there exists (c\in(a,b)) such that [f'(c)=\frac{f(b)-f(a)}{b-a}.]
+
+**Course:** Undergraduate, Calculus I
+
+**Difficulty:** 3.5
 
 **Proof hint:** Subtract the secant line from (f) so the new function has equal endpoint values, then apply Rolle’s Theorem.
 
@@ -168,13 +226,21 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** For a homomorphism (\varphi:G\to H), [G/\ker\varphi \cong \operatorname{im}\varphi.]
 
-**Proof hint:** Map each coset (g\ker\varphi) to (\varphi(g)). Then check well-definedness and bijectivity.
+**Course:** Undergraduate, Abstract Algebra
+
+**Difficulty:** 4.5
+
+**Proof hint:** Map each coset (g\ker\varphi) to (\varphi(g)) and check well-definedness and bijectivity.
 
 ---
 
 20. **Gram–Schmidt Process**
 
 **Statement:** Any linearly independent set ((v_1,\dots,v_n)) in an inner product space can be converted into an orthonormal set ((e_1,\dots,e_n)) spanning the same subspace.
+
+**Course:** Undergraduate, Linear Algebra
+
+**Difficulty:** 4.0
 
 **Proof hint:** Build vectors one at a time by subtracting projections onto previously constructed orthonormal vectors, then normalize.
 
@@ -184,7 +250,11 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** If (f) is continuous and [F(x)=\int_a^x f(t)dt,] then [F'(x)=f(x).] Also, if (G'(x)=f(x)), then [\int_a^b f(x)dx=G(b)-G(a).]
 
-**Proof hint:** Use a difference quotient for (F), then continuity of (f). For the second part, apply the Mean Value Theorem to (G).
+**Course:** Undergraduate, Calculus II
+
+**Difficulty:** 4.0
+
+**Proof hint:** Use a difference quotient for (F) and continuity of (f), then apply the Mean Value Theorem to (G).
 
 ---
 
@@ -192,7 +262,11 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** If (f) is sufficiently differentiable near (a), then [f(x)=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}(x-a)^2+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^n+R_n(x),] where (R_n(x)) is a remainder term.
 
-**Proof hint:** Subtract the Taylor polynomial from (f), then repeatedly apply Rolle’s Theorem / Mean Value Theorem to control the remainder.
+**Course:** Undergraduate, Calculus II
+
+**Difficulty:** 5.0
+
+**Proof hint:** Subtract the Taylor polynomial from (f) and repeatedly apply Rolle’s/Mean Value Theorem to control the remainder.
 
 ---
 
@@ -200,13 +274,21 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** Every bounded sequence in (\mathbb R^n) has a convergent subsequence.
 
-**Proof hint:** Repeatedly bisect a containing interval/box and choose a nested sub-box containing infinitely many terms; then pick one term from each stage.
+**Course:** Undergraduate, Real Analysis
+
+**Difficulty:** 4.5
+
+**Proof hint:** Repeatedly bisect a containing box to form a nested sequence with infinitely many terms, then pick one term from each stage.
 
 ---
 
 24. **Gershgorin Circle Theorem**
 
 **Statement:** Every eigenvalue of a complex matrix (A=(a_{ij})) lies in at least one disk [|z-a_{ii}|\le \sum_{j\ne i}|a_{ij}|.]
+
+**Course:** Undergraduate, Linear Algebra
+
+**Difficulty:** 5.0
 
 **Proof hint:** Take an eigenvector, choose a coordinate of maximal magnitude, and inspect the corresponding row of (Av=\lambda v).
 
@@ -216,13 +298,21 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** If a prime (p) divides the order of a finite group (G), then (G) contains an element of order (p).
 
-**Proof hint:** Let a cyclic group of order (p) act on suitable (p)-tuples / subsets of (G), then count fixed points modulo (p).
+**Course:** Undergraduate, Abstract Algebra
+
+**Difficulty:** 5.0
+
+**Proof hint:** Let a cyclic group of order (p) act on suitable (p)-tuples or subsets of (G), then count fixed points modulo (p).
 
 ---
 
 26. **Parseval’s Identity**
 
 **Statement:** If ({e_n}) is an orthonormal basis of a Hilbert space, then for any vector (x), [|x|^2=\sum_n |\langle x,e_n\rangle|^2.]
+
+**Course:** Undergraduate, Functional Analysis
+
+**Difficulty:** 4.5
 
 **Proof hint:** Use Pythagoras on finite partial sums of the orthogonal expansion, then pass to the limit using completeness.
 
@@ -232,7 +322,11 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** A subset of (\mathbb R^n) is compact iff it is closed and bounded.
 
-**Proof hint:** Use Bolzano–Weierstrass / sequential compactness for one direction, and use open-cover arguments plus completeness for the other.
+**Course:** Undergraduate, Real Analysis
+
+**Difficulty:** 4.0
+
+**Proof hint:** Use Bolzano–Weierstrass/sequential compactness for one direction and open-cover arguments for the other.
 
 ---
 
@@ -240,7 +334,11 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** If ((X,d)) is a complete metric space and (T:X\to X) satisfies [d(Tx,Ty)\le c d(x,y), \quad 0<c<1,] then (T) has a unique fixed point.
 
-**Proof hint:** Iterate (x_{n+1}=T(x_n)); distances shrink geometrically, so the sequence is Cauchy and converges to the fixed point.
+**Course:** Graduate, Functional Analysis
+
+**Difficulty:** 5.0
+
+**Proof hint:** Iterate (x_{n+1}=T(x_n)) so distances shrink geometrically, making a Cauchy sequence that converges to the fixed point.
 
 ---
 
@@ -248,13 +346,21 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** Every bounded entire function is constant.
 
-**Proof hint:** Use Cauchy’s integral formula (or Cauchy estimates) to show all derivatives are zero.
+**Course:** Undergraduate, Complex Analysis
+
+**Difficulty:** 4.0
+
+**Proof hint:** Use Cauchy’s integral formula or estimates to show all derivatives are zero.
 
 ---
 
 30. **Jordan–Hölder Theorem**
 
 **Statement:** Any two composition series of a finite group have the same length, and the same simple factor groups up to order and isomorphism.
+
+**Course:** Undergraduate, Abstract Algebra
+
+**Difficulty:** 5.5
 
 **Proof hint:** Refine two normal series to a common refinement, then compare successive quotient factors.
 
@@ -264,7 +370,11 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** Every symmetric polynomial in (x_1,\dots,x_n) can be written as a polynomial in the elementary symmetric polynomials.
 
-**Proof hint:** Order monomials, eliminate the leading symmetric monomial using suitable products of elementary symmetric polynomials, then iterate.
+**Course:** Undergraduate, Abstract Algebra
+
+**Difficulty:** 6.0
+
+**Proof hint:** Order monomials and eliminate the leading symmetric monomial using suitable products of elementary symmetric polynomials, then iterate.
 
 ---
 
@@ -272,13 +382,21 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** A complex matrix (A) is normal iff there exists a unitary matrix (U) such that [U^*AU=D] with (D) diagonal.
 
-**Proof hint:** First use Schur triangularization. Then show a normal upper-triangular matrix must already be diagonal.
+**Course:** Undergraduate, Linear Algebra
+
+**Difficulty:** 6.5
+
+**Proof hint:** Use Schur triangularization and then show a normal upper-triangular matrix must already be diagonal.
 
 ---
 
 33. **Schur Triangularization Theorem**
 
 **Statement:** Every complex square matrix (A) is unitarily similar to an upper triangular matrix: [U^*AU=T] for some unitary (U) and upper triangular (T).
+
+**Course:** Graduate, Linear Algebra
+
+**Difficulty:** 6.5
 
 **Proof hint:** Use existence of one eigenvector, extend it to an orthonormal basis, obtain a block upper-triangular form, then induct on dimension.
 
@@ -288,13 +406,21 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** For any matrix (A\in \mathbb C^{m\times n}), there exist unitary matrices (U,V) such that [A=U\Sigma V^*] where (\Sigma) is diagonal with nonnegative real entries.
 
-**Proof hint:** Diagonalize (A^*A) using the Spectral Theorem; square roots of its eigenvalues become singular values.
+**Course:** Undergraduate, Linear Algebra
+
+**Difficulty:** 6.0
+
+**Proof hint:** Diagonalize (A^*A) using the Spectral Theorem, and take square roots of its eigenvalues as singular values.
 
 ---
 
 35. **Cauchy Integral Formula**
 
 **Statement:** If (f) is holomorphic on and inside a simple closed curve (\gamma), and (a) lies inside, then [f(a)=\frac{1}{2\pi i}\oint_\gamma \frac{f(z)}{z-a}dz.]
+
+**Course:** Undergraduate, Complex Analysis
+
+**Difficulty:** 5.5
 
 **Proof hint:** Split [\frac{f(z)}{z-a} = \frac{f(z)-f(a)}{z-a}+\frac{f(a)}{z-a},} then apply Cauchy’s theorem to the first term.
 
@@ -304,13 +430,21 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** A nonconstant holomorphic function cannot attain a local maximum of (|f(z)|) at an interior point of its domain.
 
-**Proof hint:** Use Cauchy Integral Formula / mean-value property: if (|f|) is maximal at the center, then boundary values force (f) to be constant nearby.
+**Course:** Undergraduate, Complex Analysis
+
+**Difficulty:** 5.0
+
+**Proof hint:** Use the Cauchy Integral Formula or mean-value property: if (|f|) is maximal at the center, then boundary values force (f) to be constant nearby.
 
 ---
 
 37. **Schwarz Lemma**
 
 **Statement:** If (f:\mathbb D\to\mathbb D) is holomorphic and (f(0)=0), then [|f(z)|\le |z|,\qquad |f'(0)|\le 1,] with equality cases giving rotations.
+
+**Course:** Undergraduate, Complex Analysis
+
+**Difficulty:** 5.0
 
 **Proof hint:** Consider [g(z)=\frac{f(z)}{z}] (with removable singularity at (0)), then apply the Maximum Modulus Principle.
 
@@ -320,7 +454,11 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** A nonconstant holomorphic function maps open sets to open sets.
 
-**Proof hint:** Near (z_0), write [f(z)-f(z_0)=(z-z_0)^k g(z)] with (g(z_0)\neq 0). Then small circles around (z_0) map around (f(z_0)), forcing nearby values to be attained.
+**Course:** Undergraduate, Complex Analysis
+
+**Difficulty:** 5.5
+
+**Proof hint:** Near (z_0), write [f(z)-f(z_0)=(z-z_0)^k g(z)] with (g(z_0)\neq 0), so small circles around (z_0) map around (f(z_0)) and force nearby values to be attained.
 
 ---
 
@@ -328,13 +466,21 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** If (f) is meromorphic inside a closed contour (\gamma), then [\oint_\gamma f(z)dz = 2\pi i \sum \operatorname{Res}(f;a_k),] where the sum is over enclosed poles.
 
-**Proof hint:** Remove small circles around each pole, apply Cauchy Integral Theorem to the remaining region, and use Laurent coefficients on the small circles.
+**Course:** Undergraduate, Complex Analysis
+
+**Difficulty:** 6.0
+
+**Proof hint:** Remove small circles around each pole, apply the Cauchy Integral Theorem to the remaining region, and use Laurent coefficients on the small circles.
 
 ---
 
 40. **Argument Principle**
 
 **Statement:** If (f) is meromorphic and has no zeros or poles on a closed contour (\gamma), then [\frac{1}{2\pi i}\oint_\gamma \frac{f'(z)}{f(z)}dz = N-P,] where (N) and (P) are the numbers of zeros and poles inside (\gamma), counted with multiplicity.
+
+**Course:** Undergraduate, Complex Analysis
+
+**Difficulty:** 6.0
 
 **Proof hint:** Near a zero/pole, write (f(z)=(z-a)^m g(z)), so (f'/f) has a simple pole with residue (m) (or (-m)).
 
@@ -344,6 +490,10 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** If (f) and (g) are holomorphic inside/on a closed contour (\gamma), and [|g(z)|<|f(z)| \quad \text{on } \gamma,] then (f) and (f+g) have the same number of zeros inside (\gamma), counting multiplicity.
 
+**Course:** Undergraduate, Complex Analysis
+
+**Difficulty:** 7.0
+
 **Proof hint:** Interpolate via (f+t g) for (t\in[0,1]); boundary nonvanishing keeps the winding number / zero count unchanged.
 
 ---
@@ -352,6 +502,10 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 
 **Statement:** Every finite abelian group is isomorphic to a direct product of cyclic groups of prime-power order.
 
+**Course:** Undergraduate, Abstract Algebra
+
+**Difficulty:** 6.0
+
 **Proof hint:** Split the group into its (p)-primary parts, then repeatedly choose elements of maximal order and induct.
 
 ---
@@ -359,6 +513,10 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 43. **Gauss’s Lemma (Polynomial Version)**
 
 **Statement:** The product of two primitive polynomials in (\mathbb Z[x]) is primitive.
+
+**Course:** Undergraduate, Abstract Algebra
+
+**Difficulty:** 5.5
 
 **Proof hint:** Assume a prime divides every coefficient of the product. Reduce coefficients modulo that prime and derive a contradiction from degree behavior.
 
@@ -372,6 +530,10 @@ Use Cauchy–Schwarz on [|x+y|^2=|x|^2+2\Re\langle x,y\rangle+|y|^2.]
 * (p^2\nmid a_0)
 then (f(x)) is irreducible over (\mathbb Q).
 
+**Course:** Undergraduate, Abstract Algebra
+
+**Difficulty:** 6.0
+
 **Proof hint:** Assume a factorization into primitive integer polynomials and compare divisibility of constant terms and higher coefficients modulo (p).
 
 ---
@@ -379,6 +541,10 @@ then (f(x)) is irreducible over (\mathbb Q).
 45. **Monotone Convergence Theorem**
 
 **Statement:** If (0 \le f_n \uparrow f) pointwise (measurable functions), then [\int f_n \to \int f.]
+
+**Course:** Graduate, Real Analysis
+
+**Difficulty:** 6.5
 
 **Proof hint:** Approximate (f) from below by simple functions; eventually those approximations are bounded by some (f_n).
 
@@ -388,6 +554,10 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** For nonnegative measurable functions (f_n), [\int \liminf_{n\to\infty} f_n \le \liminf_{n\to\infty} \int f_n.]
 
+**Course:** Graduate, Real Analysis
+
+**Difficulty:** 6.0
+
 **Proof hint:** Define [g_n=\inf_{k\ge n} f_k.] Then (g_n\uparrow \liminf f_n), so apply Monotone Convergence.
 
 ---
@@ -395,6 +565,10 @@ then (f(x)) is irreducible over (\mathbb Q).
 47. **Riesz Representation Theorem (Hilbert Space Version)**
 
 **Statement:** Every bounded linear functional (\phi) on a Hilbert space (H) can be written uniquely as [\phi(x)=\langle x,y\rangle] for some unique (y\in H).
+
+**Course:** Graduate, Functional Analysis
+
+**Difficulty:** 7.0
 
 **Proof hint:** Look at (\ker \phi), take a vector orthogonal to it, and decompose every vector into kernel part plus one orthogonal direction.
 
@@ -404,6 +578,10 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** If (f_n \to f) almost everywhere and [|f_n| \le g] for some integrable (g), then [\int f_n \to \int f.]
 
+**Course:** Graduate, Real Analysis
+
+**Difficulty:** 6.5
+
 **Proof hint:** Use Fatou’s Lemma on (g \pm f_n), or apply Fatou to (2g-|f_n-f|).
 
 ---
@@ -411,6 +589,10 @@ then (f(x)) is irreducible over (\mathbb Q).
 49. **Fredholm Alternative (finite-dimensional form)**
 
 **Statement:** For a matrix (A), [Ax=b] is solvable iff (b\perp \ker(A^*)).
+
+**Course:** Undergraduate, Linear Algebra
+
+**Difficulty:** 6.0
 
 **Proof hint:** Use orthogonal complements and dimension arguments: vectors orthogonal to all columns are exactly (\ker(A^*)).
 
@@ -420,11 +602,23 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** A uniformly bounded equicontinuous family of functions on a compact set has a uniformly convergent subsequence.
 
+**Course:** Undergraduate, Real Analysis
+
+**Difficulty:** 6.5
+**Course:** Undergraduate, Linear Algebra
+
+**Difficulty:** 6.5
+
+
 **Proof hint:** Choose a countable dense set, extract a diagonal subsequence converging there, then use equicontinuity to upgrade pointwise convergence to uniform convergence.
 
 ---
 
 51. **Cayley–Hamilton Theorem**
+
+**Course:** Graduate, Real Analysis
+
+**Difficulty:** 6.5
 
 **Statement:** Every square matrix satisfies its own characteristic polynomial: [p_A(A)=0.]
 
@@ -433,12 +627,20 @@ then (f(x)) is irreducible over (\mathbb Q).
 ---
 
 52. **Fubini’s Theorem**
+**Course:** Undergraduate, Probability
+
+**Difficulty:** 6.0
+
 
 **Statement:** If (f) is integrable on a product space (X\times Y), then [\int_{X\times Y} f(x,y)d(x,y) = \int_X\left(\int_Y f(x,y)dy\right)dx] (and similarly with the order reversed).
 
 **Proof hint:** First prove it for indicator functions of rectangles, then simple functions, then extend by approximation to general integrable functions.
 
 ---
+
+**Course:** Graduate, Functional Analysis
+
+**Difficulty:** 7.5
 
 53. **Law of Large Numbers**
 
@@ -447,12 +649,20 @@ then (f(x)) is irreducible over (\mathbb Q).
 **Proof hint:** Control variance of averages (weak form), or combine truncation + Borel–Cantelli for almost sure convergence.
 
 ---
+**Course:** Graduate, Functional Analysis
+
+**Difficulty:** 7.0
+
 
 54. **Uniform Boundedness Principle**
 
 **Statement:** Let ({T_\alpha}) be bounded linear operators from a Banach space (X) to a normed space (Y). If for every (x\in X), [\sup_\alpha |T_\alpha x|<\infty,] then [\sup_\alpha |T_\alpha|<\infty.]
 
 **Proof hint:** Consider sets where operators are uniformly bounded on a point. Use Baire Category Theorem to upgrade pointwise boundedness to norm boundedness.
+
+**Course:** Graduate, Functional Analysis
+
+**Difficulty:** 7.0
 
 ---
 
@@ -461,12 +671,20 @@ then (f(x)) is irreducible over (\mathbb Q).
 **Statement:** If (T:X\to Y) is a linear operator between Banach spaces and its graph {(x,Tx):x\in X} is closed in (X\times Y), then (T) is bounded.
 
 **Proof hint:** View the graph itself as a Banach space, then use projection maps together with the Open Mapping Theorem.
+**Course:** Graduate, Algebra
+
+**Difficulty:** 7.0
+
 
 ---
 
 56. **Open Mapping Theorem (Banach Spaces)**
 
 **Statement:** If (T:X\to Y) is a surjective bounded linear operator between Banach spaces, then (T) maps open sets to open sets.
+
+**Course:** Graduate, Commutative Algebra
+
+**Difficulty:** 7.5
 
 **Proof hint:** Show the image of the unit ball is dense enough to contain a small ball around (0), then use scaling and translation.
 
@@ -475,12 +693,20 @@ then (f(x)) is irreducible over (\mathbb Q).
 57. **Hilbert Basis Theorem**
 
 **Statement:** If (R) is a Noetherian ring, then the polynomial ring [R[x]] is also Noetherian.
+**Course:** Undergraduate, Probability
+
+**Difficulty:** 6.5
+
 
 **Proof hint:** For an ideal in (R[x]), look at leading coefficients of polynomials of each degree. Use finite generation in (R), then induct on degree.
 
 ---
 
 58. **Krull Intersection Theorem**
+
+**Course:** Undergraduate, Linear Algebra
+
+**Difficulty:** 6.5
 
 **Statement:** If (R) is Noetherian, (I\subseteq J(R)), and (M) is a finitely generated (R)-module, then [\bigcap_{n\ge1} I^n M = 0.]
 
@@ -508,7 +734,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** Every complex square matrix is similar to a block diagonal matrix made of Jordan blocks.
 
-**Proof hint:** Decompose the space into generalized eigenspaces, then for each eigenvalue analyze chains of vectors under ((A-\lambda I)).
+**Course:** Undergraduate, Linear Algebra
+
+**Difficulty:** 6.5
+
+**Proof hint:** Decompose the space into generalized eigenspaces and build Jordan chains for each eigenvalue using the nilpotent action of ((A-\lambda I)).
 
 ---
 
@@ -516,7 +746,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** If (f:\mathbb R^n\to\mathbb R^n) is continuously differentiable and the derivative (Df(a)) is invertible, then (f) is locally invertible near (a), with differentiable inverse.
 
-**Proof hint:** Near (a), (f) is well-approximated by its invertible linearization; use a contraction-map argument or Newton iteration locally.
+**Course:** Undergraduate, Multivariable Calculus
+
+**Difficulty:** 6.5
+
+**Proof hint:** Use the invertible linearization at (a) and apply a contraction-mapping or Newton iteration argument to obtain a local inverse.
 
 ---
 
@@ -524,7 +758,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** If (F(x,y)=0) and the derivative with respect to (y) is invertible at a point, then locally one can solve uniquely for [y=g(x).]
 
-**Proof hint:** Apply the Inverse Function Theorem to the map [(x,y)\mapsto (x,F(x,y)).]
+**Course:** Undergraduate, Multivariable Calculus
+
+**Difficulty:** 6.5
+
+**Proof hint:** Apply the Inverse Function Theorem to the map [(x,y)\mapsto (x,F(x,y))] to solve for [y=g(x)] locally.
 
 ---
 
@@ -532,7 +770,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** A bounded linear functional defined on a subspace can be extended to the whole vector space without increasing its norm.
 
-**Proof hint:** Extend one dimension at a time while preserving bounds, then use Zorn’s Lemma to obtain a maximal extension.
+**Course:** Graduate, Functional Analysis
+
+**Difficulty:** 7.5
+
+**Proof hint:** Extend one dimension at a time while preserving the norm bound and invoke Zorn’s Lemma for a maximal extension.
 
 ---
 
@@ -540,7 +782,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** If a subalgebra (A\subset C(K)) on a compact space (K) contains constants and separates points, then (A) is dense in (C(K)).
 
-**Proof hint:** Use the algebra operations to approximate maxima/minima and then build global approximations from point-separating local ones.
+**Course:** Graduate, Real Analysis
+
+**Difficulty:** 7.5
+
+**Proof hint:** Use the algebra operations to approximate maxima/minima and then build uniform approximations from point-separating functions.
 
 ---
 
@@ -548,7 +794,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** Every finitely generated module over a principal ideal domain is a direct sum of a free part and cyclic torsion modules.
 
-**Proof hint:** Represent the module by generators/relations, then diagonalize the relation matrix using row/column operations (Smith normal form).
+**Course:** Graduate, Algebra
+
+**Difficulty:** 7.5
+
+**Proof hint:** Represent the module by generators/relations and diagonalize the relation matrix via Smith normal form.
 
 ---
 
@@ -556,7 +806,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** Every finite division ring is commutative.
 
-**Proof hint:** Assume a smallest counterexample. Study conjugacy classes and proper subfields, then derive a counting contradiction.
+**Course:** Graduate, Algebra
+
+**Difficulty:** 7.5
+
+**Proof hint:** Assume a minimal counterexample and use conjugacy class counting with proper subfields to reach a contradiction.
 
 ---
 
@@ -564,7 +818,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** A compact self-adjoint operator on a Hilbert space has an orthonormal basis of eigenvectors.
 
-**Proof hint:** Use the compact self-adjoint spectral theorem, then expand vectors in the orthonormal eigenbasis.
+**Course:** Graduate, Functional Analysis
+
+**Difficulty:** 7.0
+
+**Proof hint:** Apply the compact self-adjoint spectral theorem to obtain an orthonormal eigenbasis.
 
 ---
 
@@ -572,7 +830,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** A set of first-order sentences has a model iff every finite subset has a model.
 
-**Proof hint:** If the whole set were inconsistent, some finite proof would use only finitely many axioms. Use completeness of first-order logic.
+**Course:** Graduate, Logic
+
+**Difficulty:** 6.5
+
+**Proof hint:** Use completeness: any inconsistency yields a finite proof, so finite satisfiability implies a model.
 
 ---
 
@@ -580,13 +842,21 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** A continuous map from a nonempty compact convex subset of a Banach space to itself has a fixed point.
 
-**Proof hint:** Approximate the compact set by finite-dimensional pieces, apply Brouwer Fixed Point Theorem there, then pass to a limit.
+**Course:** Graduate, Functional Analysis
+
+**Difficulty:** 7.5
+
+**Proof hint:** Approximate by finite-dimensional compact convex sets, apply Brouwer’s theorem, then pass to a limit.
 
 ---
 
 71. **Nielsen–Schreier Theorem**
 
 **Statement:** Every subgroup of a free group is itself free.
+
+**Course:** Graduate, Algebra
+
+**Difficulty:** 7.5
 
 **Proof hint:** Choose coset representatives and explicitly construct generators (Schreier generators), or use covering spaces of graphs.
 
@@ -596,7 +866,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** Every finitely generated algebra over a field is integral over a polynomial ring in finitely many algebraically independent variables.
 
-**Proof hint:** Change generators cleverly so one satisfies a monic polynomial relation, then induct on the number of generators.
+**Course:** Graduate, Commutative Algebra
+
+**Difficulty:** 7.5
+
+**Proof hint:** Change generators so one satisfies a monic polynomial relation, then induct on the number of generators.
 
 ---
 
@@ -604,7 +878,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** Over an algebraically closed field (k), maximal ideals of [k[x_1,\dots,x_n]] are exactly ideals of the form [(x_1-a_1,\dots,x_n-a_n).]
 
-**Proof hint:** For a maximal ideal (M), study the field (k[x_1,\dots,x_n]/M); show it must be an algebraic extension of (k), hence equals (k).
+**Course:** Graduate, Algebraic Geometry
+
+**Difficulty:** 8.0
+
+**Proof hint:** For a maximal ideal (M), study the field (k[x_1,\dots,x_n]/M) and show it is an algebraic extension of (k), hence equals (k).
 
 ---
 
@@ -614,7 +892,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 1. If [\sum_{n=1}^\infty P(A_n)<\infty,] then with probability (1), only finitely many (A_n) occur.
 2. If the (A_n) are independent and [\sum_{n=1}^\infty P(A_n)=\infty,] then with probability (1), infinitely many occur.
 
-**Proof hint:** Use subadditivity for the first part; for the second, use complements and independence.
+**Course:** Undergraduate, Probability
+
+**Difficulty:** 6.0
+
+**Proof hint:** Use subadditivity for the first part, and for the second apply complements together with independence.
 
 ---
 
@@ -622,7 +904,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** Every continuous map [f:B^n \to B^n] from the closed unit ball to itself has a fixed point.
 
-**Proof hint:** Assume no fixed point. Then each point can be pushed radially to the boundary, producing a continuous retraction (B^n \to S^{n-1}), which is impossible.
+**Course:** Graduate, Topology
+
+**Difficulty:** 7.0
+
+**Proof hint:** Assume no fixed point, then push each point radially to the boundary to build a continuous retraction (B^n \to S^{n-1}), which is impossible.
 
 ---
 
@@ -630,7 +916,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** Every simple closed curve in the plane divides the plane into exactly two connected regions: an inside and an outside.
 
-**Proof hint:** Define winding number for points off the curve, show it is locally constant, equals (0) outside, nonzero inside, and exclude extra components.
+**Course:** Undergraduate, Topology
+
+**Difficulty:** 6.5
+
+**Proof hint:** Define the winding number for points off the curve, show it is locally constant with value (0) outside and nonzero inside, and exclude extra components.
 
 ---
 
@@ -638,7 +928,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** Any product of compact topological spaces is compact.
 
-**Proof hint:** Use the finite intersection property / ultrafilters / nets coordinatewise, then assemble a point in the full product using Choice.
+**Course:** Graduate, Topology
+
+**Difficulty:** 7.5
+
+**Proof hint:** Use the finite intersection property or ultrafilters coordinatewise, then assemble a point in the full product using Choice.
 
 ---
 
@@ -646,7 +940,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** For a compact oriented surface (M), [\int_M K dA = 2\pi \chi(M),] where (K) is Gaussian curvature and (\chi(M)) is the Euler characteristic.
 
-**Proof hint:** Triangulate the surface, relate angle defect in triangles to curvature, then sum globally.
+**Course:** Graduate, Differential Geometry
+
+**Difficulty:** 7.5
+
+**Proof hint:** Triangulate the surface, relate the angle defect in each triangle to curvature, and then sum globally.
 
 ---
 
@@ -654,7 +952,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** If a topological space (X = U \cup V) with (U, V, U \cap V) path-connected, then [\pi_1(X) \cong \pi_1(U) *_{\pi_1(U\cap V)} \pi_1(V).]
 
-**Proof hint:** Break loops into pieces lying in (U) or (V), translate concatenation of loops into group generators and relations.
+**Course:** Graduate, Algebraic Topology
+
+**Difficulty:** 7.0
+
+**Proof hint:** Break loops into pieces lying in (U) or (V), then translate concatenation into generators and relations.
 
 ---
 
@@ -662,7 +964,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** In a Noetherian ring, every ideal can be written as an intersection of finitely many primary ideals.
 
-**Proof hint:** Use Noetherian induction / maximal counterexample arguments, splitting ideals using zero divisors and associated primes.
+**Course:** Graduate, Commutative Algebra
+
+**Difficulty:** 7.5
+
+**Proof hint:** Use Noetherian induction with a maximal counterexample, splitting ideals using zero divisors and associated primes.
 
 ---
 
@@ -670,7 +976,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** For a sufficiently smooth map (f:\mathbb R^n \to \mathbb R^m), the set of critical values has measure zero.
 
-**Proof hint:** Near critical points, the map flattens directions; cover domain by small cubes and estimate that images of those cubes have very small total volume.
+**Course:** Graduate, Differential Topology
+
+**Difficulty:** 7.0
+
+**Proof hint:** Near critical points, the map flattens directions; cover the domain by small cubes and estimate that their images have very small total volume.
 
 ---
 
@@ -678,13 +988,21 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** For a smooth manifold (M), de Rham cohomology is naturally isomorphic to singular cohomology with real coefficients: [H^k_{dR}(M)\cong H^k(M;\mathbb R).]
 
-**Proof hint:** Integrate differential forms over simplices to build a cochain map, then prove it is an isomorphism using local exactness + Mayer–Vietoris patching.
+**Course:** Graduate, Differential Geometry
+
+**Difficulty:** 7.5
+
+**Proof hint:** Integrate differential forms over simplices to build a cochain map, then prove it is an isomorphism using local exactness and Mayer–Vietoris patching.
 
 ---
 
 83. **Mercer’s Theorem**
 
 **Statement:** A continuous symmetric positive kernel (K(x,y)) on a compact domain has an eigenfunction expansion [K(x,y)=\sum_{n=1}^\infty \lambda_n \phi_n(x)\phi_n(y).]
+
+**Course:** Graduate, Functional Analysis
+
+**Difficulty:** 7.0
 
 **Proof hint:** Convert the kernel into a compact self-adjoint integral operator, apply the spectral theorem, then use continuity to upgrade convergence.
 
@@ -694,6 +1012,10 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** If a first-order theory has an infinite model, then it has models of other cardinalities (in particular, a countable model in the downward form).
 
+**Course:** Graduate, Logic
+
+**Difficulty:** 6.5
+
 **Proof hint:** Add Skolem functions and take the closure of a countable set under those functions (Skolem hull), producing a countable elementary submodel.
 
 ---
@@ -702,13 +1024,21 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** If (\pi(x)) is the number of primes (\le x), then [\pi(x)\sim \frac{x}{\log x}.]
 
-**Proof hint:** Study the Riemann zeta function (\zeta(s)), relate its logarithmic derivative to primes, prove suitable zero-free behavior near (\Re(s)=1), then use Tauberian/contour arguments.
+**Course:** Graduate, Analytic Number Theory
+
+**Difficulty:** 8.5
+
+**Proof hint:** Study the Riemann zeta function (\zeta(s)), relate its logarithmic derivative to primes, prove suitable zero-free behavior near (\Re(s)=1), then use Tauberian or contour arguments.
 
 ---
 
 86. **Spectral Theorem (Compact Self-Adjoint Operators)**
 
 **Statement:** A compact self-adjoint operator on a Hilbert space has an orthonormal basis of eigenvectors, with real eigenvalues accumulating only at (0).
+
+**Course:** Graduate, Functional Analysis
+
+**Difficulty:** 7.0
 
 **Proof hint:** Maximize the Rayleigh quotient to obtain one eigenvector, restrict to its orthogonal complement, then iterate using compactness.
 
@@ -718,7 +1048,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** Every commutative (C^*)-algebra with identity is isometrically isomorphic to the algebra of continuous functions on its space of maximal ideals.
 
-**Proof hint:** Map elements to continuous functions via Gelfand transform (evaluation at characters), then use Stone–Weierstrass to show it is a surjective isometry.
+**Course:** Graduate, Functional Analysis
+
+**Difficulty:** 7.5
+
+**Proof hint:** Map elements to continuous functions via the Gelfand transform (evaluation at characters), then use Stone–Weierstrass to show it is a surjective isometry.
 
 ---
 
@@ -726,13 +1060,21 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** Every strongly continuous unitary group ((U_t)_{t\in\mathbb R}) on a Hilbert space has the form [U_t=e^{itA}] for a unique self-adjoint operator (A).
 
-**Proof hint:** Use the spectral theorem to exponentiate a self-adjoint operator; conversely recover the generator from the strong derivative / resolvent.
+**Course:** Graduate, Functional Analysis
+
+**Difficulty:** 7.5
+
+**Proof hint:** Use the spectral theorem to exponentiate a self-adjoint operator, and recover the generator from the strong derivative or resolvent.
 
 ---
 
 89. **Gödel’s First Incompleteness Theorem**
 
 **Statement:** Any consistent effectively axiomatized theory strong enough to encode arithmetic contains a true arithmetic statement that it cannot prove.
+
+**Course:** Graduate, Logic
+
+**Difficulty:** 7.5
 
 **Proof hint:** Encode syntax as numbers (Gödel numbering), then diagonalize to construct a sentence that asserts its own unprovability.
 
@@ -742,6 +1084,10 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** Any consistent, effectively axiomatized theory strong enough for arithmetic cannot prove its own consistency.
 
+**Course:** Graduate, Logic
+
+**Difficulty:** 7.5
+
 **Proof hint:** Formalize the First Incompleteness Theorem inside the theory itself; if the theory proved its own consistency, it would prove its Gödel sentence, contradiction.
 
 ---
@@ -750,7 +1096,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** A consistent family of finite-dimensional probability distributions defines a probability measure on the infinite product space.
 
-**Proof hint:** Define probabilities on cylinder sets, verify finite additivity/consistency, then extend using Carathéodory’s extension theorem.
+**Course:** Graduate, Probability Theory
+
+**Difficulty:** 7.5
+
+**Proof hint:** Define probabilities on cylinder sets, verify finite additivity and consistency, then extend via Carathéodory’s extension theorem.
 
 ---
 
@@ -758,7 +1108,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** Every semisimple Artinian ring is isomorphic to a finite product of matrix rings over division rings.
 
-**Proof hint:** Decompose the regular module into simple modules; endomorphism rings of these pieces produce matrix blocks.
+**Course:** Graduate, Abstract Algebra
+
+**Difficulty:** 7.0
+
+**Proof hint:** Decompose the regular module into simple modules so their endomorphism rings produce matrix blocks and assemble the product.
 
 ---
 
@@ -766,7 +1120,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** On a compact Riemannian manifold, every differential form decomposes uniquely as [\omega = d\alpha + \delta\beta + h,] where (h) is harmonic.
 
-**Proof hint:** Study the Laplacian [\Delta = d\delta + \delta d] as a self-adjoint elliptic operator, then use orthogonal decomposition of Hilbert spaces.
+**Course:** Graduate, Differential Geometry
+
+**Difficulty:** 8.0
+
+**Proof hint:** Study the Laplacian [\Delta = d\delta + \delta d] as a self-adjoint elliptic operator and use Hilbert space orthogonal decomposition to split forms into exact, coexact, and harmonic parts.
 
 ---
 
@@ -774,7 +1132,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** Every simply connected proper open subset of (\mathbb C) is conformally equivalent to the unit disk.
 
-**Proof hint:** Construct a family of injective holomorphic maps into the disk, maximize derivative at a base point, then use normal families (Montel theorem) to extract a limit.
+**Course:** Undergraduate, Complex Analysis
+
+**Difficulty:** 6.5
+
+**Proof hint:** Construct a family of injective holomorphic maps into the disk, maximize the derivative at a base point, and use normal families (Montel theorem) to extract a limit.
 
 ---
 
@@ -782,7 +1144,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** If (U \subset \mathbb{R}^n) is open and (f:U \to \mathbb{R}^n) is continuous and injective, then (f(U)) is open and (f) is a homeomorphism onto its image.
 
-**Proof hint:** Reduce to showing a non-degenerate continuous injective map cannot “collapse dimension”; use homology / degree theory or invariance of domain via Brouwer fixed-point ideas.
+**Course:** Graduate, Topology
+
+**Difficulty:** 7.5
+
+**Proof hint:** Show a continuous injective map cannot collapse local degree, using homology or degree theory to deduce openness and homeomorphism onto its image.
 
 ---
 
@@ -790,7 +1156,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** If (\nu) is absolutely continuous with respect to (\mu) ((\nu \ll \mu)), then there exists a measurable function (f) such that [\nu(A)=\int_A f d\mu] for all measurable sets (A).
 
-**Proof hint:** Work in (L^1(\mu)); construct (f) as a maximizer using approximation by simple functions or via Hilbert space methods.
+**Course:** Graduate, Measure Theory
+
+**Difficulty:** 7.0
+
+**Proof hint:** Work in (L^1(\mu)) and construct (f) using approximation by simple functions to represent (\nu) as an integral.
 
 ---
 
@@ -798,7 +1168,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** For a divisor (D) on a compact Riemann surface, [\ell(D) - \ell(K-D) = \deg(D) + 1 - g,] where (\ell(D)) is the dimension of meromorphic functions with poles bounded by (D), (K) is the canonical divisor, and (g) is the genus.
 
-**Proof hint:** Compare spaces of meromorphic functions and differentials; use residue pairing and count dimensions via cohomological arguments.
+**Course:** Graduate, Algebraic Geometry
+
+**Difficulty:** 8.5
+
+**Proof hint:** Compare spaces of meromorphic functions and differentials via residue pairing and compute dimensions with cohomological arguments.
 
 ---
 
@@ -806,7 +1180,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** A map (f: X \to Y) between connected CW-complexes is a homotopy equivalence if it induces an isomorphism on all homotopy groups (\pi_n).
 
-**Proof hint:** Attach cells to (f) to make it an isomorphism on homology; show that (f) must be a homotopy equivalence using lifting properties.
+**Course:** Graduate, Algebraic Topology
+
+**Difficulty:** 7.5
+
+**Proof hint:** Attach cells to (f) to force homology isomorphisms, then use lifting properties to conclude (f) is a homotopy equivalence.
 
 ---
 
@@ -814,7 +1192,11 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** Every bounded normal operator (T) on a complex Hilbert space admits a spectral resolution [T=\int_{\sigma(T)} z dE(z),] where (E) is a projection-valued measure.
 
-**Proof hint:** Build continuous functional calculus for normal operators, then extend from polynomials/continuous functions to measurable sets, producing spectral projections.
+**Course:** Graduate, Functional Analysis
+
+**Difficulty:** 8.0
+
+**Proof hint:** Build the continuous functional calculus for normal operators and extend it to measurable sets to produce spectral projections.
 
 ---
 
@@ -822,4 +1204,8 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 **Statement:** For a smooth oriented manifold (M) with boundary, [\int_M d\omega = \int_{\partial M} \omega,] where (\omega) is a differential form.
 
-**Proof hint:** First prove in (\mathbb{R}^n) using repeated 1D Fundamental Theorem of Calculus, then extend via partitions of unity and coordinate charts.
+**Course:** Undergraduate, Multivariable Calculus
+
+**Difficulty:** 5.5
+
+**Proof hint:** Prove the formula in (\mathbb{R}^n) by iterated one-dimensional FTC and extend via partitions of unity and coordinate charts.
