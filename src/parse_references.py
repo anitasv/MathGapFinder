@@ -8,8 +8,9 @@ import json
 import re
 from pathlib import Path
 
-SRC = Path("References.md")
-DST = Path("references.json")
+ROOT = Path(__file__).resolve().parent.parent
+SRC = ROOT / "docs" / "References.md"
+DST = ROOT / "data" / "references.json"
 
 LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 

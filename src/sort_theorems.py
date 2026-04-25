@@ -4,6 +4,9 @@ then by difficulty (ascending), and renumber."""
 
 import re
 import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
 
 COURSE_ORDER = [
     (re.compile(r'high\s*school', re.I), 0),
@@ -60,4 +63,4 @@ def sort_file(path: str) -> None:
 
 
 if __name__ == '__main__':
-    sort_file(sys.argv[1] if len(sys.argv) > 1 else 'Theorems.MD')
+    sort_file(sys.argv[1] if len(sys.argv) > 1 else str(ROOT / 'docs' / 'Theorems.MD'))

@@ -1,8 +1,12 @@
 import os
 import re
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+DOCS = ROOT / 'docs'
 
 def split_theorems():
-    with open('Theorems.MD', 'r', encoding='utf-8') as f:
+    with open(DOCS / 'Theorems.MD', 'r', encoding='utf-8') as f:
         content = f.read()
 
     # Split by theorem number format "X. **"
@@ -26,7 +30,7 @@ def split_theorems():
         start_num = i + 1
         end_num = min(i + 10, len(theorems))
         
-        filename = f'Theorems_{start_num}.md'
+        filename = str(DOCS / f'Theorems_{start_num}.md')
         
         with open(filename, 'w', encoding='utf-8') as f:
             for idx, theorem in enumerate(group):

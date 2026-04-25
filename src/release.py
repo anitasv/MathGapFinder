@@ -17,9 +17,12 @@ import shutil
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 DIST = ROOT / "dist"
+DATA_DIR = ROOT / "data"
+SRC_DIR = ROOT / "src"
 
+# (source path relative key, path the html references)
 JSON_FILES = ["theorems.json", "references.json"]
 HTML_FILE = "mathprof.html"
 HASH_LEN = 12  # characters of base64url-encoded sha256
@@ -38,7 +41,7 @@ def main() -> int:
 
     name_map: dict[str, str] = {}
     for fname in JSON_FILES:
-        src = ROOT / fname
+        src = DATA_DIR / fname
         if not src.exists():
             print(f"error: missing {src}", file=sys.stderr)
             return 1
@@ -47,10 +50,11 @@ def main() -> int:
         stem, ext = src.stem, src.suffix  # e.g. "theorems", ".json"
         new_name = f"{stem}_{h}{ext}"
         (DIST / new_name).write_bytes(data)
-        name_map[fname] = new_name
-        print(f"  {fname} -> {new_name}")
+        # html references json as "../data/<fname>"
+        name_map[f"../data/{fname}"] = new_name
+        print(f"  data/{fname} -> {new_name}")
 
-    html = (ROOT / HTML_FILE).read_text(encoding="utf-8")
+    html = (SRC_DIR / HTML_FILE).read_text(encoding="utf-8")
     for original, new_name in name_map.items():
         html = html.replace(original, new_name)
     (DIST / "index.html").write_text(html, encoding="utf-8")

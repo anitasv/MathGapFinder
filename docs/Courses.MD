@@ -1,6 +1,6 @@
 # Courses
 
-Unique courses found in `theorems.json`: **29**
+Unique courses found in `data/theorems.json`: **29**
 
 ## Graduate
 

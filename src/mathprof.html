@@ -300,7 +300,7 @@
 
         async function loadTheorems() {
             try {
-                const response = await fetch('theorems.json');
+                const response = await fetch('../data/theorems.json');
                 theorems = await response.json();
                 renderTheorem();
             } catch (err) {
@@ -310,10 +310,10 @@
 
         async function loadReferences() {
             try {
-                const response = await fetch('references.json');
+                const response = await fetch('../data/references.json');
                 references = await response.json();
             } catch (err) {
-                console.warn('Could not load references.json:', err);
+                console.warn('Could not load ../data/references.json:', err);
                 references = {};
             }
         }

@@ -1,5 +1,8 @@
 import re
 import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
 
 FIELD_RE = re.compile(r'\*\*(Statement|Course|Difficulty|Rough proof structure[^*:]*|Proof hint[^*:]*|Proof[^*:]*)\:\*\*', re.IGNORECASE)
 
@@ -58,7 +61,7 @@ def parse_theorems(file_path):
     return theorems
 
 if __name__ == "__main__":
-    results = parse_theorems('./Theorems.MD')
+    results = parse_theorems(str(ROOT / 'docs' / 'Theorems.MD'))
     unique_theorems = []
     seen_ids = set()
     for t in results:
@@ -66,5 +69,5 @@ if __name__ == "__main__":
             unique_theorems.append(t)
             seen_ids.add(t['id'])
 
-    with open('theorems.json', 'w', encoding='utf-8') as f:
+    with open(ROOT / 'data' / 'theorems.json', 'w', encoding='utf-8') as f:
         json.dump(unique_theorems, f, indent=2)
