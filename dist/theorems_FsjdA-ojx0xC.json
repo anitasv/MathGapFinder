@@ -1,0 +1,802 @@
+[
+  {
+    "id": 1,
+    "title": "Infinitude of Primes",
+    "statement": "There are infinitely many prime numbers.",
+    "course": "High School, Number Theory",
+    "difficulty": 2.0,
+    "proof_structure": "Assume finitely many primes (p_1,\\dots,p_n) and consider [N=p_1p_2\\cdots p_n+1], whose prime divisors are not among the list."
+  },
+  {
+    "id": 2,
+    "title": "Binomial Theorem",
+    "statement": "For any integer (n\\ge 0),\n\n[\\sum_{k=0}^{n}\\binom{n}{k}x^{n-k}y^k.]",
+    "course": "High School, Algebra II",
+    "difficulty": 2.5,
+    "proof_structure": "Expand ((x+y)^n) and count the ways to choose (k) of the (n) factors to supply (y) (or use induction with Pascal\u2019s identity)."
+  },
+  {
+    "id": 3,
+    "title": "Fundamental Theorem of Arithmetic",
+    "statement": "Every integer (n>1) can be written as a product of primes, and this factorization is unique up to order.",
+    "course": "High School, Number Theory",
+    "difficulty": 3.0,
+    "proof_structure": "Use induction for existence and Euclid\u2019s lemma to show two prime factorizations must match up to order."
+  },
+  {
+    "id": 4,
+    "title": "AM-GM Inequality",
+    "statement": "For nonnegative real numbers (a_1,\\dots,a_n), [\\frac{a_1+\\cdots+a_n}{n}\\ge (a_1a_2\\cdots a_n)^{1/n}.]",
+    "course": "High School, Precalculus",
+    "difficulty": 3.5,
+    "proof_structure": "Prove the two-variable case via [(a-b)^2\\ge 0] and extend to (n) variables by induction or repeated averaging."
+  },
+  {
+    "id": 5,
+    "title": "Euclidean Algorithm",
+    "statement": "For integers (a,b) not both zero, repeated division with remainder computes (\\gcd(a,b)).",
+    "course": "Undergraduate, Number Theory",
+    "difficulty": 2.5,
+    "proof_structure": "Use that (\\gcd(a,b)=\\gcd(b,r)) with (r=a-bq) and the remainders strictly decrease until the last nonzero remainder."
+  },
+  {
+    "id": 6,
+    "title": "Triangle Inequality",
+    "statement": "In any normed space,\n\n[|x+y|\\le |x|+|y|.]\n\nFor real numbers this becomes:\n\n[|a+b|\\le |a|+|b|.]",
+    "course": "Undergraduate, Linear Algebra",
+    "difficulty": 3.0,
+    "proof_structure": "Square both sides (or use Cauchy\u2013Schwarz in inner product spaces) to show [|x+y|^2\\le (|x|+|y|)^2] and take square roots."
+  },
+  {
+    "id": 7,
+    "title": "Rolle\u2019s Theorem",
+    "statement": "If (f) is continuous on ([a,b]), differentiable on ((a,b)), and [f(a)=f(b),] then there exists (c\\in(a,b)) such that [f'(c)=0.]",
+    "course": "Undergraduate, Calculus I",
+    "difficulty": 3.0,
+    "proof_structure": "By Extreme Value Theorem, (f) has max/min, and if not constant, one extremum occurs inside ((a,b)) where the derivative is zero."
+  },
+  {
+    "id": 8,
+    "title": "B\u00e9zout\u2019s Identity",
+    "statement": "For integers (a,b), there exist integers (x,y) such that [ax+by=\\gcd(a,b).]",
+    "course": "Undergraduate, Number Theory",
+    "difficulty": 3.5,
+    "proof_structure": "Run the Euclidean Algorithm and back-substitute the remainder equations to express the gcd as a linear combination of (a) and (b)."
+  },
+  {
+    "id": 9,
+    "title": "Chinese Remainder Theorem",
+    "statement": "If (n_1,\\dots,n_k) are pairwise coprime, then a system [x\\equiv a_i \\pmod{n_i}\\quad (i=1,\\dots,k)] has a unique solution modulo (N=n_1\\cdots n_k).",
+    "course": "Undergraduate, Number Theory",
+    "difficulty": 3.5,
+    "proof_structure": "Use B\u00e9zout coefficients to build numbers that are (1) mod one modulus and (0) mod the others, then combine them linearly to solve the system."
+  },
+  {
+    "id": 10,
+    "title": "Fermat\u2019s Little Theorem",
+    "statement": "If (p) is prime and (p\\nmid a), then [a^{p-1}\\equiv 1 \\pmod p.]",
+    "course": "Undergraduate, Number Theory",
+    "difficulty": 3.5,
+    "proof_structure": "Multiply all nonzero residue classes mod (p): [1,2,\\dots,p-1.] Then compare with their multiples by (a), which form the same set in a different order."
+  },
+  {
+    "id": 11,
+    "title": "Lagrange\u2019s Theorem (Group Theory)",
+    "statement": "If (G) is a finite group and (H\\le G) is a subgroup, then [|H| \\mid |G|,\\qquad |G|=[G:H]\\cdot |H|.]",
+    "course": "Undergraduate, Abstract Algebra",
+    "difficulty": 3.5,
+    "proof_structure": "Partition (G) into left cosets of (H) and show every coset has exactly (|H|) elements."
+  },
+  {
+    "id": 12,
+    "title": "Intermediate Value Theorem",
+    "statement": "If (f:[a,b]\\to\\mathbb R) is continuous and (y) lies between (f(a)) and (f(b)), then there exists (c\\in[a,b]) such that [f(c)=y.]",
+    "course": "Undergraduate, Calculus I",
+    "difficulty": 3.5,
+    "proof_structure": "Consider all (x) where (f(x)<y), take the supremum of that set, then use continuity at the boundary point."
+  },
+  {
+    "id": 13,
+    "title": "Rank\u2013Nullity Theorem",
+    "statement": "For a linear map (T:V\\to W) between finite-dimensional vector spaces, [\\dim(\\ker T)+\\dim(\\operatorname{im}T)=\\dim V.]",
+    "course": "Undergraduate, Linear Algebra",
+    "difficulty": 3.5,
+    "proof_structure": "Take a basis of (\\ker T), extend it to a basis of (V), then apply (T) to the added basis vectors."
+  },
+  {
+    "id": 14,
+    "title": "Mean Value Theorem",
+    "statement": "If (f) is continuous on ([a,b]) and differentiable on ((a,b)), then there exists (c\\in(a,b)) such that [f'(c)=\\frac{f(b)-f(a)}{b-a}.]",
+    "course": "Undergraduate, Calculus I",
+    "difficulty": 3.5,
+    "proof_structure": "Subtract the secant line from (f) so the new function has equal endpoint values, then apply Rolle\u2019s Theorem."
+  },
+  {
+    "id": 15,
+    "title": "Gram\u2013Schmidt Process",
+    "statement": "Any linearly independent set ((v_1,\\dots,v_n)) in an inner product space can be converted into an orthonormal set ((e_1,\\dots,e_n)) spanning the same subspace.",
+    "course": "Undergraduate, Linear Algebra",
+    "difficulty": 3.5,
+    "proof_structure": "Build vectors one at a time by subtracting projections onto previously constructed orthonormal vectors, then normalize."
+  },
+  {
+    "id": 16,
+    "title": "Cauchy\u2013Schwarz Inequality",
+    "statement": "In an inner product space, [|\\langle x,y\\rangle|\\le |x||y|.]",
+    "course": "Undergraduate, Linear Algebra",
+    "difficulty": 4.0,
+    "proof_structure": "Consider the nonnegative quadratic [|x-ty|^2\\ge 0] in (t) and require its discriminant to be nonpositive."
+  },
+  {
+    "id": 17,
+    "title": "Euler\u2019s Theorem",
+    "statement": "If (\\gcd(a,n)=1), then [a^{\\varphi(n)}\\equiv 1 \\pmod n,] where (\\varphi(n)) is the number of integers in ({1,\\dots,n}) coprime to (n).",
+    "course": "Undergraduate, Number Theory",
+    "difficulty": 4.0,
+    "proof_structure": "Look at the invertible residue classes modulo (n). Multiplication by (a) permutes them, just like in Fermat\u2019s Little Theorem."
+  },
+  {
+    "id": 18,
+    "title": "Extreme Value Theorem",
+    "statement": "If (f:[a,b]\\to\\mathbb R) is continuous, then (f) attains a maximum and a minimum on ([a,b]).",
+    "course": "Undergraduate, Calculus I",
+    "difficulty": 4.0,
+    "proof_structure": "Continuous image of a compact set is compact; compact subsets of (\\mathbb R) contain their supremum and infimum."
+  },
+  {
+    "id": 19,
+    "title": "First Isomorphism Theorem",
+    "statement": "For a homomorphism (\\varphi:G\\to H), [G/\\ker\\varphi \\cong \\operatorname{im}\\varphi.]",
+    "course": "Undergraduate, Abstract Algebra",
+    "difficulty": 4.0,
+    "proof_structure": "Map each coset (g\\ker\\varphi) to (\\varphi(g)) and check well-definedness and bijectivity."
+  },
+  {
+    "id": 20,
+    "title": "Fundamental Theorem of Calculus",
+    "statement": "If (f) is continuous and [F(x)=\\int_a^x f(t)dt,] then [F'(x)=f(x).] Also, if (G'(x)=f(x)), then [\\int_a^b f(x)dx=G(b)-G(a).]",
+    "course": "Undergraduate, Calculus II",
+    "difficulty": 4.0,
+    "proof_structure": "Use a difference quotient for (F) and continuity of (f), then apply the Mean Value Theorem to (G)."
+  },
+  {
+    "id": 21,
+    "title": "Gershgorin Circle Theorem",
+    "statement": "Every eigenvalue of a complex matrix (A=(a_{ij})) lies in at least one disk [|z-a_{ii}|\\le \\sum_{j\\ne i}|a_{ij}|.]",
+    "course": "Undergraduate, Linear Algebra",
+    "difficulty": 4.0,
+    "proof_structure": "Take an eigenvector, choose a coordinate of maximal magnitude, and inspect the corresponding row of (Av=\\lambda v)."
+  },
+  {
+    "id": 22,
+    "title": "Liouville\u2019s Theorem",
+    "statement": "Every bounded entire function is constant.",
+    "course": "Undergraduate, Complex Analysis",
+    "difficulty": 4.0,
+    "proof_structure": "Use Cauchy\u2019s integral formula or estimates to show all derivatives are zero."
+  },
+  {
+    "id": 23,
+    "title": "Bolzano\u2013Weierstrass Theorem",
+    "statement": "Every bounded sequence in (\\mathbb R^n) has a convergent subsequence.",
+    "course": "Undergraduate, Real Analysis",
+    "difficulty": 4.5,
+    "proof_structure": "Repeatedly bisect a containing box to form a nested sequence with infinitely many terms, then pick one term from each stage."
+  },
+  {
+    "id": 24,
+    "title": "Heine\u2013Borel Theorem",
+    "statement": "A subset of (\\mathbb R^n) is compact iff it is closed and bounded.",
+    "course": "Undergraduate, Real Analysis",
+    "difficulty": 4.5,
+    "proof_structure": "Use Bolzano\u2013Weierstrass/sequential compactness for one direction and open-cover arguments for the other."
+  },
+  {
+    "id": 25,
+    "title": "Schwarz Lemma",
+    "statement": "If (f:\\mathbb D\\to\\mathbb D) is holomorphic and (f(0)=0), then [|f(z)|\\le |z|,\\qquad |f'(0)|\\le 1,] with equality cases giving rotations.",
+    "course": "Undergraduate, Complex Analysis",
+    "difficulty": 4.5,
+    "proof_structure": "Consider [g(z)=\\frac{f(z)}{z}] (with removable singularity at (0)), then apply the Maximum Modulus Principle."
+  },
+  {
+    "id": 26,
+    "title": "Eisenstein Criterion",
+    "statement": "If a polynomial [f(x)=a_nx^n+\\cdots+a_0 \\in \\mathbb Z[x]] has a prime (p) such that:\n* (p\\nmid a_n)\n* (p\\mid a_0,\\dots,a_{n-1})\n* (p^2\\nmid a_0)\nthen (f(x)) is irreducible over (\\mathbb Q).",
+    "course": "Undergraduate, Abstract Algebra",
+    "difficulty": 4.5,
+    "proof_structure": "Assume a factorization into primitive integer polynomials and compare divisibility of constant terms and higher coefficients modulo (p)."
+  },
+  {
+    "id": 27,
+    "title": "Fredholm Alternative (finite-dimensional form)",
+    "statement": "For a matrix (A), [Ax=b] is solvable iff (b\\perp \\ker(A^*)).",
+    "course": "Undergraduate, Linear Algebra",
+    "difficulty": 4.5,
+    "proof_structure": "Use orthogonal complements and dimension arguments: vectors orthogonal to all columns are exactly (\\ker(A^*))."
+  },
+  {
+    "id": 28,
+    "title": "Taylor\u2019s Theorem",
+    "statement": "If (f) is (n) times differentiable at (a), then [f(x)=f(a)+f'(a)(x-a)+\\frac{f''(a)}{2!}(x-a)^2+\\cdots+\\frac{f^{(n)}(a)}{n!}(x-a)^n+h_n(x)(x-a)^n,] where (h_n(x)\\to 0) as (x\\to a).",
+    "course": "Undergraduate, Calculus II",
+    "difficulty": 5.0,
+    "proof_structure": "Subtract the Taylor polynomial from (f) and repeatedly apply Rolle\u2019s/Mean Value Theorem to control the remainder."
+  },
+  {
+    "id": 29,
+    "title": "Cauchy\u2019s Theorem (Group Theory)",
+    "statement": "If a prime (p) divides the order of a finite group (G), then (G) contains an element of order (p).",
+    "course": "Undergraduate, Abstract Algebra",
+    "difficulty": 5.0,
+    "proof_structure": "Let a cyclic group of order (p) act on suitable (p)-tuples or subsets of (G), then count fixed points modulo (p)."
+  },
+  {
+    "id": 30,
+    "title": "Parseval\u2019s Identity",
+    "statement": "If ({e_n}) is an orthonormal basis of a Hilbert space, then for any vector (x), [|x|^2=\\sum_n |\\langle x,e_n\\rangle|^2.]",
+    "course": "Undergraduate, Functional Analysis",
+    "difficulty": 5.0,
+    "proof_structure": "Use Pythagoras on finite partial sums of the orthogonal expansion, then pass to the limit using completeness."
+  },
+  {
+    "id": 31,
+    "title": "Singular Value Decomposition (SVD)",
+    "statement": "For any matrix (A\\in \\mathbb C^{m\\times n}), there exist unitary matrices (U,V) such that [A=U\\Sigma V^*] where (\\Sigma) is diagonal with nonnegative real entries.",
+    "course": "Undergraduate, Linear Algebra",
+    "difficulty": 5.0,
+    "proof_structure": "Diagonalize (A^*A) using the Spectral Theorem, and take square roots of its eigenvalues as singular values."
+  },
+  {
+    "id": 32,
+    "title": "Cauchy Integral Formula",
+    "statement": "If (f) is holomorphic on and inside a simple closed curve (\\gamma), and (a) lies inside, then [f(a)=\\frac{1}{2\\pi i}\\oint_\\gamma \\frac{f(z)}{z-a}dz.]",
+    "course": "Undergraduate, Complex Analysis",
+    "difficulty": 5.0,
+    "proof_structure": "Split [\\frac{f(z)}{z-a} = \\frac{f(z)-f(a)}{z-a}+\\frac{f(a)}{z-a},} then apply Cauchy\u2019s theorem to the first term."
+  },
+  {
+    "id": 33,
+    "title": "Maximum Modulus Principle",
+    "statement": "A nonconstant holomorphic function cannot attain a local maximum of (|f(z)|) at an interior point of its domain.",
+    "course": "Undergraduate, Complex Analysis",
+    "difficulty": 5.0,
+    "proof_structure": "Use the Cauchy Integral Formula or mean-value property: if (|f|) is maximal at the center, then boundary values force (f) to be constant nearby."
+  },
+  {
+    "id": 34,
+    "title": "Gauss\u2019s Lemma (Polynomial Version)",
+    "statement": "The product of two primitive polynomials in (\\mathbb Z[x]) is primitive.",
+    "course": "Undergraduate, Abstract Algebra",
+    "difficulty": 5.0,
+    "proof_structure": "Assume a prime divides every coefficient of the product. Reduce coefficients modulo that prime and derive a contradiction from degree behavior."
+  },
+  {
+    "id": 35,
+    "title": "Borel\u2013Cantelli Lemmas",
+    "statement": "For events (A_1,A_2,\\dots):\n1. If [\\sum_{n=1}^\\infty P(A_n)<\\infty,] then with probability (1), only finitely many (A_n) occur.\n2. If the (A_n) are independent and [\\sum_{n=1}^\\infty P(A_n)=\\infty,] then with probability (1), infinitely many occur.",
+    "course": "Undergraduate, Probability",
+    "difficulty": 5.0,
+    "proof_structure": "Use subadditivity for the first part, and for the second apply complements together with independence."
+  },
+  {
+    "id": 36,
+    "title": "Spectral Theorem (Finite-Dimensional)",
+    "statement": "A complex matrix (A) is normal iff there exists a unitary matrix (U) such that [U^*AU=D] with (D) diagonal.",
+    "course": "Undergraduate, Linear Algebra",
+    "difficulty": 5.5,
+    "proof_structure": "Use Schur triangularization and then show a normal upper-triangular matrix must already be diagonal."
+  },
+  {
+    "id": 37,
+    "title": "Open Mapping Theorem (Complex Analysis)",
+    "statement": "A nonconstant holomorphic function maps open sets to open sets.",
+    "course": "Undergraduate, Complex Analysis",
+    "difficulty": 5.5,
+    "proof_structure": "Near (z_0), write [f(z)-f(z_0)=(z-z_0)^k g(z)] with (g(z_0)\\neq 0), so small circles around (z_0) map around (f(z_0)) and force nearby values to be attained."
+  },
+  {
+    "id": 38,
+    "title": "Residue Theorem",
+    "statement": "If (f) is meromorphic inside a closed contour (\\gamma), then [\\oint_\\gamma f(z)dz = 2\\pi i \\sum \\operatorname{Res}(f;a_k),] where the sum is over enclosed poles.",
+    "course": "Undergraduate, Complex Analysis",
+    "difficulty": 5.5,
+    "proof_structure": "Remove small circles around each pole, apply the Cauchy Integral Theorem to the remaining region, and use Laurent coefficients on the small circles."
+  },
+  {
+    "id": 39,
+    "title": "Argument Principle",
+    "statement": "If (f) is meromorphic and has no zeros or poles on a closed contour (\\gamma), then [\\frac{1}{2\\pi i}\\oint_\\gamma \\frac{f'(z)}{f(z)}dz = N-P,] where (N) and (P) are the numbers of zeros and poles inside (\\gamma), counted with multiplicity.",
+    "course": "Undergraduate, Complex Analysis",
+    "difficulty": 5.5,
+    "proof_structure": "Near a zero/pole, write (f(z)=(z-a)^m g(z)), so (f'/f) has a simple pole with residue (m) (or (-m))."
+  },
+  {
+    "id": 40,
+    "title": "Rouch\u00e9\u2019s Theorem",
+    "statement": "If (f) and (g) are holomorphic inside/on a closed contour (\\gamma), and [|g(z)|<|f(z)| \\quad \\text{on } \\gamma,] then (f) and (f+g) have the same number of zeros inside (\\gamma), counting multiplicity.",
+    "course": "Undergraduate, Complex Analysis",
+    "difficulty": 5.5,
+    "proof_structure": "Interpolate via (f+t g) for (t\\in[0,1]); boundary nonvanishing keeps the winding number / zero count unchanged."
+  },
+  {
+    "id": 41,
+    "title": "Cayley\u2013Hamilton Theorem",
+    "statement": "Every square matrix satisfies its own characteristic polynomial: [p_A(A)=0.]",
+    "course": "Undergraduate, Linear Algebra",
+    "difficulty": 5.5,
+    "proof_structure": "Use the adjugate identity [(\\lambda I-A)\\operatorname{adj}(\\lambda I-A)=p_A(\\lambda)I] and interpret it as a polynomial identity before substituting (\\lambda=A)."
+  },
+  {
+    "id": 42,
+    "title": "Implicit Function Theorem",
+    "statement": "If (F(x,y)=0) and the derivative with respect to (y) is invertible at a point, then locally one can solve uniquely for [y=g(x).]",
+    "course": "Undergraduate, Multivariable Calculus",
+    "difficulty": 5.5,
+    "proof_structure": "Apply the Inverse Function Theorem to the map [(x,y)\\mapsto (x,F(x,y))] to solve for [y=g(x)] locally."
+  },
+  {
+    "id": 43,
+    "title": "Jordan\u2013H\u00f6lder Theorem",
+    "statement": "Any two composition series of a finite group have the same length, and the same simple factor groups up to order and isomorphism.",
+    "course": "Undergraduate, Abstract Algebra",
+    "difficulty": 6.0,
+    "proof_structure": "Refine two normal series to a common refinement, then compare successive quotient factors."
+  },
+  {
+    "id": 44,
+    "title": "Fundamental Theorem of Symmetric Polynomials",
+    "statement": "Every symmetric polynomial in (x_1,\\dots,x_n) can be written as a polynomial in the elementary symmetric polynomials.",
+    "course": "Undergraduate, Abstract Algebra",
+    "difficulty": 6.0,
+    "proof_structure": "Order monomials and eliminate the leading symmetric monomial using suitable products of elementary symmetric polynomials, then iterate."
+  },
+  {
+    "id": 45,
+    "title": "Structure Theorem for Finite Abelian Groups",
+    "statement": "Every finite abelian group is isomorphic to a direct product of cyclic groups of prime-power order.",
+    "course": "Undergraduate, Abstract Algebra",
+    "difficulty": 6.0,
+    "proof_structure": "Split the group into its (p)-primary parts, then repeatedly choose elements of maximal order and induct."
+  },
+  {
+    "id": 46,
+    "title": "Inverse Function Theorem",
+    "statement": "If (f:\\mathbb R^n\\to\\mathbb R^n) is continuously differentiable and the derivative (Df(a)) is invertible, then (f) is locally invertible near (a), with differentiable inverse.",
+    "course": "Undergraduate, Multivariable Calculus",
+    "difficulty": 6.0,
+    "proof_structure": "Use the invertible linearization at (a) and apply a contraction-mapping or Newton iteration argument to obtain a local inverse."
+  },
+  {
+    "id": 47,
+    "title": "Arzel\u00e0\u2013Ascoli Theorem",
+    "statement": "A uniformly bounded equicontinuous family of functions on a compact set has a uniformly convergent subsequence.",
+    "course": "Undergraduate, Real Analysis",
+    "difficulty": 6.5,
+    "proof_structure": "Choose a countable dense set, extract a diagonal subsequence converging there, then use equicontinuity to upgrade pointwise convergence to uniform convergence."
+  },
+  {
+    "id": 48,
+    "title": "Law of Large Numbers",
+    "statement": "For i.i.d. random variables (X_1,X_2,\\dots) with mean (\\mu), [\\frac{X_1+\\cdots+X_n}{n}\\to \\mu] (in probability or almost surely).",
+    "course": "Undergraduate, Probability",
+    "difficulty": 6.5,
+    "proof_structure": "Control variance of averages (weak form), or combine truncation + Borel\u2013Cantelli for almost sure convergence."
+  },
+  {
+    "id": 49,
+    "title": "Stokes\u2019 Theorem",
+    "statement": "For a smooth oriented manifold (M) with boundary, [\\int_M d\\omega = \\int_{\\partial M} \\omega,] where (\\omega) is a differential form.",
+    "course": "Undergraduate, Multivariable Calculus",
+    "difficulty": 6.5,
+    "proof_structure": "Prove the formula in (\\mathbb{R}^n) by iterated one-dimensional FTC and extend via partitions of unity and coordinate charts."
+  },
+  {
+    "id": 50,
+    "title": "Central Limit Theorem",
+    "statement": "For i.i.d. random variables with mean (\\mu) and variance (\\sigma^2), [\\frac{(X_1+\\cdots+X_n)-n\\mu}{\\sigma\\sqrt n} \\Rightarrow N(0,1).]",
+    "course": "Undergraduate, Probability",
+    "difficulty": 7.0,
+    "proof_structure": "Compute characteristic functions of normalized sums, use Taylor expansion near (0), then pass to the limit."
+  },
+  {
+    "id": 51,
+    "title": "Jordan Canonical Form",
+    "statement": "Every complex square matrix is similar to a block diagonal matrix made of Jordan blocks.",
+    "course": "Undergraduate, Linear Algebra",
+    "difficulty": 7.0,
+    "proof_structure": "Decompose the space into generalized eigenspaces and build Jordan chains for each eigenvalue using the nilpotent action of ((A-\\lambda I))."
+  },
+  {
+    "id": 52,
+    "title": "Riemann Mapping Theorem",
+    "statement": "Every simply connected proper open subset of (\\mathbb C) is conformally equivalent to the unit disk.",
+    "course": "Undergraduate, Complex Analysis",
+    "difficulty": 7.5,
+    "proof_structure": "Construct a family of injective holomorphic maps into the disk, maximize the derivative at a base point, and use normal families (Montel theorem) to extract a limit."
+  },
+  {
+    "id": 53,
+    "title": "Jordan Curve Theorem",
+    "statement": "Every simple closed curve in the plane divides the plane into exactly two connected regions: an inside and an outside.",
+    "course": "Undergraduate, Topology",
+    "difficulty": 8.0,
+    "proof_structure": "Define the winding number for points off the curve, show it is locally constant with value (0) outside and nonzero inside, and exclude extra components."
+  },
+  {
+    "id": 54,
+    "title": "Banach Fixed Point Theorem",
+    "statement": "If ((X,d)) is a complete metric space and (T:X\\to X) satisfies [d(Tx,Ty)\\le c d(x,y), \\quad 0<c<1,] then (T) has a unique fixed point.",
+    "course": "Graduate, Functional Analysis",
+    "difficulty": 4.5,
+    "proof_structure": "Iterate (x_{n+1}=T(x_n)) so distances shrink geometrically, making a Cauchy sequence that converges to the fixed point."
+  },
+  {
+    "id": 55,
+    "title": "Schur Triangularization Theorem",
+    "statement": "Every complex square matrix (A) is unitarily similar to an upper triangular matrix: [U^*AU=T] for some unitary (U) and upper triangular (T).",
+    "course": "Graduate, Linear Algebra",
+    "difficulty": 5.0,
+    "proof_structure": "Use existence of one eigenvector, extend it to an orthonormal basis, obtain a block upper-triangular form, then induct on dimension."
+  },
+  {
+    "id": 56,
+    "title": "Fatou\u2019s Lemma",
+    "statement": "For nonnegative measurable functions (f_n), [\\int \\liminf_{n\\to\\infty} f_n \\le \\liminf_{n\\to\\infty} \\int f_n.]",
+    "course": "Graduate, Real Analysis",
+    "difficulty": 5.5,
+    "proof_structure": "Define [g_n=\\inf_{k\\ge n} f_k.] Then (g_n\\uparrow \\liminf f_n), so apply Monotone Convergence."
+  },
+  {
+    "id": 57,
+    "title": "Riesz Representation Theorem (Hilbert Space Version)",
+    "statement": "Every bounded linear functional (\\phi) on a Hilbert space (H) can be written uniquely as [\\phi(x)=\\langle x,y\\rangle] for some unique (y\\in H).",
+    "course": "Graduate, Functional Analysis",
+    "difficulty": 5.5,
+    "proof_structure": "Look at (\\ker \\phi), take a vector orthogonal to it, and decompose every vector into kernel part plus one orthogonal direction."
+  },
+  {
+    "id": 58,
+    "title": "Hilbert Basis Theorem",
+    "statement": "If (R) is a Noetherian ring, then the polynomial ring [R[x]] is also Noetherian.",
+    "course": "Graduate, Commutative Algebra",
+    "difficulty": 5.5,
+    "proof_structure": "For an ideal in (R[x]), look at leading coefficients of polynomials of each degree. Use finite generation in (R), then induct on degree."
+  },
+  {
+    "id": 59,
+    "title": "Monotone Convergence Theorem",
+    "statement": "If (0 \\le f_n \\uparrow f) pointwise (measurable functions), then [\\int f_n \\to \\int f.]",
+    "course": "Graduate, Real Analysis",
+    "difficulty": 6.0,
+    "proof_structure": "Approximate (f) from below by simple functions; eventually those approximations are bounded by some (f_n)."
+  },
+  {
+    "id": 60,
+    "title": "Dominated Convergence Theorem",
+    "statement": "If (f_n \\to f) almost everywhere and [|f_n| \\le g] for some integrable (g), then [\\int f_n \\to \\int f.]",
+    "course": "Graduate, Real Analysis",
+    "difficulty": 6.0,
+    "proof_structure": "Use Fatou\u2019s Lemma on (g \\pm f_n), or apply Fatou to (2g-|f_n-f|)."
+  },
+  {
+    "id": 61,
+    "title": "Fubini\u2019s Theorem",
+    "statement": "If (f) is integrable on a product space (X\\times Y), then [\\int_{X\\times Y} f(x,y)d(x,y) = \\int_X\\left(\\int_Y f(x,y)dy\\right)dx] (and similarly with the order reversed).",
+    "course": "Graduate, Real Analysis",
+    "difficulty": 6.5,
+    "proof_structure": "First prove it for indicator functions of rectangles, then simple functions, then extend by approximation to general integrable functions."
+  },
+  {
+    "id": 62,
+    "title": "Closed Graph Theorem",
+    "statement": "If (T:X\\to Y) is a linear operator between Banach spaces and its graph {(x,Tx):x\\in X} is closed in (X\\times Y), then (T) is bounded.",
+    "course": "Graduate, Functional Analysis",
+    "difficulty": 6.5,
+    "proof_structure": "View the graph itself as a Banach space, then use projection maps together with the Open Mapping Theorem."
+  },
+  {
+    "id": 63,
+    "title": "Perron\u2013Frobenius Theorem",
+    "statement": "A positive square matrix has a largest positive real eigenvalue with a positive eigenvector.",
+    "course": "Graduate, Linear Algebra",
+    "difficulty": 6.5,
+    "proof_structure": "Map the positive simplex to itself using the matrix, then use compactness / fixed-point ideas; stronger versions handle irreducible nonnegative matrices."
+  },
+  {
+    "id": 64,
+    "title": "Hilbert\u2013Schmidt Theorem",
+    "statement": "A compact self-adjoint operator on a Hilbert space has an orthonormal basis of eigenvectors.",
+    "course": "Graduate, Functional Analysis",
+    "difficulty": 6.5,
+    "proof_structure": "Apply the compact self-adjoint spectral theorem to obtain an orthonormal eigenbasis."
+  },
+  {
+    "id": 65,
+    "title": "Compactness Theorem (First-Order Logic)",
+    "statement": "A set of first-order sentences has a model iff every finite subset has a model.",
+    "course": "Graduate, Logic",
+    "difficulty": 6.5,
+    "proof_structure": "Use completeness: any inconsistency yields a finite proof, so finite satisfiability implies a model."
+  },
+  {
+    "id": 66,
+    "title": "L\u00f6wenheim\u2013Skolem Theorem",
+    "statement": "If a first-order theory has an infinite model, then it has models of other cardinalities (in particular, a countable model in the downward form).",
+    "course": "Graduate, Logic",
+    "difficulty": 6.5,
+    "proof_structure": "Add Skolem functions and take the closure of a countable set under those functions (Skolem hull), producing a countable elementary submodel."
+  },
+  {
+    "id": 67,
+    "title": "Spectral Theorem (Compact Self-Adjoint Operators)",
+    "statement": "A compact self-adjoint operator on a Hilbert space has an orthonormal basis of eigenvectors, with real eigenvalues accumulating only at (0).",
+    "course": "Graduate, Functional Analysis",
+    "difficulty": 6.5,
+    "proof_structure": "Maximize the Rayleigh quotient to obtain one eigenvector, restrict to its orthogonal complement, then iterate using compactness."
+  },
+  {
+    "id": 68,
+    "title": "Uniform Boundedness Principle",
+    "statement": "Let ({T_\\alpha}) be bounded linear operators from a Banach space (X) to a normed space (Y). If for every (x\\in X), [\\sup_\\alpha |T_\\alpha x|<\\infty,] then [\\sup_\\alpha |T_\\alpha|<\\infty.]",
+    "course": "Graduate, Functional Analysis",
+    "difficulty": 7.0,
+    "proof_structure": "Consider sets where operators are uniformly bounded on a point. Use Baire Category Theorem to upgrade pointwise boundedness to norm boundedness."
+  },
+  {
+    "id": 69,
+    "title": "Open Mapping Theorem (Banach Spaces)",
+    "statement": "If (T:X\\to Y) is a surjective bounded linear operator between Banach spaces, then (T) maps open sets to open sets.",
+    "course": "Graduate, Functional Analysis",
+    "difficulty": 7.0,
+    "proof_structure": "Show the image of the unit ball is dense enough to contain a small ball around (0), then use scaling and translation."
+  },
+  {
+    "id": 70,
+    "title": "Krull Intersection Theorem",
+    "statement": "If (R) is Noetherian, (I\\subseteq J(R)), and (M) is a finitely generated (R)-module, then [\\bigcap_{n\\ge1} I^n M = 0.]",
+    "course": "Graduate, Commutative Algebra",
+    "difficulty": 7.0,
+    "proof_structure": "Let [N=\\bigcap I^nM.] Show (N=IN), then apply Nakayama\u2019s Lemma."
+  },
+  {
+    "id": 71,
+    "title": "Hahn\u2013Banach Theorem",
+    "statement": "A bounded linear functional defined on a subspace can be extended to the whole vector space without increasing its norm.",
+    "course": "Graduate, Functional Analysis",
+    "difficulty": 7.0,
+    "proof_structure": "Extend one dimension at a time while preserving the norm bound and invoke Zorn\u2019s Lemma for a maximal extension."
+  },
+  {
+    "id": 72,
+    "title": "Stone\u2013Weierstrass Theorem",
+    "statement": "If a subalgebra (A\\subset C(K)) on a compact space (K) contains constants and separates points, then (A) is dense in (C(K)).",
+    "course": "Graduate, Real Analysis",
+    "difficulty": 7.0,
+    "proof_structure": "Use the algebra operations to approximate maxima/minima and then build uniform approximations from point-separating functions."
+  },
+  {
+    "id": 73,
+    "title": "Structure Theorem for PID Modules",
+    "statement": "Every finitely generated module over a principal ideal domain is a direct sum of a free part and cyclic torsion modules.",
+    "course": "Graduate, Algebra",
+    "difficulty": 7.0,
+    "proof_structure": "Represent the module by generators/relations and diagonalize the relation matrix via Smith normal form."
+  },
+  {
+    "id": 74,
+    "title": "Wedderburn\u2019s Little Theorem",
+    "statement": "Every finite division ring is commutative.",
+    "course": "Graduate, Algebra",
+    "difficulty": 7.0,
+    "proof_structure": "Assume a minimal counterexample and use conjugacy class counting with proper subfields to reach a contradiction."
+  },
+  {
+    "id": 75,
+    "title": "Nielsen\u2013Schreier Theorem",
+    "statement": "Every subgroup of a free group is itself free.",
+    "course": "Graduate, Algebra",
+    "difficulty": 7.0,
+    "proof_structure": "Choose coset representatives and explicitly construct generators (Schreier generators), or use covering spaces of graphs."
+  },
+  {
+    "id": 76,
+    "title": "Brouwer Fixed Point Theorem",
+    "statement": "Every continuous map [f:B^n \\to B^n] from the closed unit ball to itself has a fixed point.",
+    "course": "Graduate, Topology",
+    "difficulty": 7.0,
+    "proof_structure": "Assume no fixed point, then push each point radially to the boundary to build a continuous retraction (B^n \\to S^{n-1}), which is impossible."
+  },
+  {
+    "id": 77,
+    "title": "Mercer\u2019s Theorem",
+    "statement": "A continuous symmetric positive kernel (K(x,y)) on a compact domain has an eigenfunction expansion [K(x,y)=\\sum_{n=1}^\\infty \\lambda_n \\phi_n(x)\\phi_n(y).]",
+    "course": "Graduate, Functional Analysis",
+    "difficulty": 7.0,
+    "proof_structure": "Convert the kernel into a compact self-adjoint integral operator, apply the spectral theorem, then use continuity to upgrade convergence."
+  },
+  {
+    "id": 78,
+    "title": "Radon\u2013Nikodym Theorem",
+    "statement": "If (\\nu) is absolutely continuous with respect to (\\mu) ((\\nu \\ll \\mu)), then there exists a measurable function (f) such that [\\nu(A)=\\int_A f d\\mu] for all measurable sets (A).",
+    "course": "Graduate, Measure Theory",
+    "difficulty": 7.0,
+    "proof_structure": "Work in (L^1(\\mu)) and construct (f) using approximation by simple functions to represent (\\nu) as an integral."
+  },
+  {
+    "id": 79,
+    "title": "Whitehead Theorem",
+    "statement": "A map (f: X \\to Y) between connected CW-complexes is a homotopy equivalence if it induces an isomorphism on all homotopy groups (\\pi_n).",
+    "course": "Graduate, Algebraic Topology",
+    "difficulty": 7.0,
+    "proof_structure": "Attach cells to (f) to force homology isomorphisms, then use lifting properties to conclude (f) is a homotopy equivalence."
+  },
+  {
+    "id": 80,
+    "title": "Schauder Fixed Point Theorem",
+    "statement": "A continuous map from a nonempty compact convex subset of a Banach space to itself has a fixed point.",
+    "course": "Graduate, Functional Analysis",
+    "difficulty": 7.5,
+    "proof_structure": "Approximate by finite-dimensional compact convex sets, apply Brouwer\u2019s theorem, then pass to a limit."
+  },
+  {
+    "id": 81,
+    "title": "Noether Normalization Lemma",
+    "statement": "Every finitely generated algebra over a field is integral over a polynomial ring in finitely many algebraically independent variables.",
+    "course": "Graduate, Commutative Algebra",
+    "difficulty": 7.5,
+    "proof_structure": "Change generators so one satisfies a monic polynomial relation, then induct on the number of generators."
+  },
+  {
+    "id": 82,
+    "title": "Tychonoff Theorem",
+    "statement": "Any product of compact topological spaces is compact.",
+    "course": "Graduate, Topology",
+    "difficulty": 7.5,
+    "proof_structure": "Use the finite intersection property or ultrafilters coordinatewise, then assemble a point in the full product using Choice."
+  },
+  {
+    "id": 83,
+    "title": "Gauss\u2013Bonnet Theorem",
+    "statement": "For a compact oriented surface (M), [\\int_M K dA = 2\\pi \\chi(M),] where (K) is Gaussian curvature and (\\chi(M)) is the Euler characteristic.",
+    "course": "Graduate, Differential Geometry",
+    "difficulty": 7.5,
+    "proof_structure": "Triangulate the surface, relate the angle defect in each triangle to curvature, and then sum globally."
+  },
+  {
+    "id": 84,
+    "title": "Seifert\u2013van Kampen Theorem",
+    "statement": "If a topological space (X = U \\cup V) with (U, V, U \\cap V) path-connected, then [\\pi_1(X) \\cong \\pi_1(U) *_{\\pi_1(U\\cap V)} \\pi_1(V).]",
+    "course": "Graduate, Algebraic Topology",
+    "difficulty": 7.5,
+    "proof_structure": "Break loops into pieces lying in (U) or (V), then translate concatenation into generators and relations."
+  },
+  {
+    "id": 85,
+    "title": "Primary Decomposition Theorem",
+    "statement": "In a Noetherian ring, every ideal can be written as an intersection of finitely many primary ideals.",
+    "course": "Graduate, Commutative Algebra",
+    "difficulty": 7.5,
+    "proof_structure": "Use Noetherian induction with a maximal counterexample, splitting ideals using zero divisors and associated primes."
+  },
+  {
+    "id": 86,
+    "title": "Sard\u2019s Theorem",
+    "statement": "For a sufficiently smooth map (f:\\mathbb R^n \\to \\mathbb R^m), the set of critical values has measure zero.",
+    "course": "Graduate, Differential Topology",
+    "difficulty": 7.5,
+    "proof_structure": "Near critical points, the map flattens directions; cover the domain by small cubes and estimate that their images have very small total volume."
+  },
+  {
+    "id": 87,
+    "title": "Kolmogorov Extension Theorem",
+    "statement": "A consistent family of finite-dimensional probability distributions defines a probability measure on the infinite product space.",
+    "course": "Graduate, Probability Theory",
+    "difficulty": 7.5,
+    "proof_structure": "Define probabilities on cylinder sets, verify finite additivity and consistency, then extend via Carath\u00e9odory\u2019s extension theorem."
+  },
+  {
+    "id": 88,
+    "title": "Artin\u2013Wedderburn Theorem",
+    "statement": "Every semisimple Artinian ring is isomorphic to a finite product of matrix rings over division rings.",
+    "course": "Graduate, Abstract Algebra",
+    "difficulty": 7.5,
+    "proof_structure": "Decompose the regular module into simple modules so their endomorphism rings produce matrix blocks and assemble the product."
+  },
+  {
+    "id": 89,
+    "title": "Nullstellensatz (Hilbert\u2019s Nullstellensatz)",
+    "statement": "Over an algebraically closed field (k), maximal ideals of [k[x_1,\\dots,x_n]] are exactly ideals of the form [(x_1-a_1,\\dots,x_n-a_n).]",
+    "course": "Graduate, Algebraic Geometry",
+    "difficulty": 8.0,
+    "proof_structure": "For a maximal ideal (M), study the field (k[x_1,\\dots,x_n]/M) and show it is an algebraic extension of (k), hence equals (k)."
+  },
+  {
+    "id": 90,
+    "title": "de Rham Theorem",
+    "statement": "For a smooth manifold (M), de Rham cohomology is naturally isomorphic to singular cohomology with real coefficients: [H^k_{dR}(M)\\cong H^k(M;\\mathbb R).]",
+    "course": "Graduate, Differential Geometry",
+    "difficulty": 8.0,
+    "proof_structure": "Integrate differential forms over simplices to build a cochain map, then prove it is an isomorphism using local exactness and Mayer\u2013Vietoris patching."
+  },
+  {
+    "id": 91,
+    "title": "Gelfand\u2013Naimark Theorem",
+    "statement": "Every commutative (C^*)-algebra with identity is isometrically isomorphic to the algebra of continuous functions on its space of maximal ideals.",
+    "course": "Graduate, Functional Analysis",
+    "difficulty": 8.0,
+    "proof_structure": "Map elements to continuous functions via the Gelfand transform (evaluation at characters), then use Stone\u2013Weierstrass to show it is a surjective isometry."
+  },
+  {
+    "id": 92,
+    "title": "Stone\u2019s Theorem on One-Parameter Unitary Groups",
+    "statement": "Every strongly continuous unitary group ((U_t)_{t\\in\\mathbb R}) on a Hilbert space has the form [U_t=e^{itA}] for a unique self-adjoint operator (A).",
+    "course": "Graduate, Functional Analysis",
+    "difficulty": 8.0,
+    "proof_structure": "Use the spectral theorem to exponentiate a self-adjoint operator, and recover the generator from the strong derivative or resolvent."
+  },
+  {
+    "id": 93,
+    "title": "G\u00f6del\u2019s First Incompleteness Theorem",
+    "statement": "Any consistent effectively axiomatized theory strong enough to encode arithmetic contains a true arithmetic statement that it cannot prove.",
+    "course": "Graduate, Logic",
+    "difficulty": 8.0,
+    "proof_structure": "Encode syntax as numbers (G\u00f6del numbering), then diagonalize to construct a sentence that asserts its own unprovability."
+  },
+  {
+    "id": 94,
+    "title": "Brouwer Invariance of Domain",
+    "statement": "If (U \\subset \\mathbb{R}^n) is open and (f:U \\to \\mathbb{R}^n) is continuous and injective, then (f(U)) is open and (f) is a homeomorphism onto its image.",
+    "course": "Graduate, Topology",
+    "difficulty": 8.0,
+    "proof_structure": "Show a continuous injective map cannot collapse local degree, using homology or degree theory to deduce openness and homeomorphism onto its image."
+  },
+  {
+    "id": 95,
+    "title": "Spectral Theorem (General Normal Operators)",
+    "statement": "Every bounded normal operator (T) on a complex Hilbert space admits a spectral resolution [T=\\int_{\\sigma(T)} z dE(z),] where (E) is a projection-valued measure.",
+    "course": "Graduate, Functional Analysis",
+    "difficulty": 8.0,
+    "proof_structure": "Build the continuous functional calculus for normal operators and extend it to measurable sets to produce spectral projections."
+  },
+  {
+    "id": 96,
+    "title": "Prime Number Theorem",
+    "statement": "If (\\pi(x)) is the number of primes (\\le x), then [\\pi(x)\\sim \\frac{x}{\\log x}.]",
+    "course": "Graduate, Analytic Number Theory",
+    "difficulty": 8.5,
+    "proof_structure": "Study the Riemann zeta function (\\zeta(s)), relate its logarithmic derivative to primes, prove suitable zero-free behavior near (\\Re(s)=1), then use Tauberian or contour arguments."
+  },
+  {
+    "id": 97,
+    "title": "G\u00f6del\u2019s Second Incompleteness Theorem",
+    "statement": "Any consistent, effectively axiomatized theory strong enough for arithmetic cannot prove its own consistency.",
+    "course": "Graduate, Logic",
+    "difficulty": 8.5,
+    "proof_structure": "Formalize the First Incompleteness Theorem inside the theory itself; if the theory proved its own consistency, it would prove its G\u00f6del sentence, contradiction."
+  },
+  {
+    "id": 98,
+    "title": "Hodge Decomposition Theorem",
+    "statement": "On a compact Riemannian manifold, every differential form decomposes uniquely as [\\omega = d\\alpha + \\delta\\beta + h,] where (h) is harmonic.",
+    "course": "Graduate, Differential Geometry",
+    "difficulty": 8.5,
+    "proof_structure": "Study the Laplacian [\\Delta = d\\delta + \\delta d] as a self-adjoint elliptic operator and use Hilbert space orthogonal decomposition to split forms into exact, coexact, and harmonic parts."
+  },
+  {
+    "id": 99,
+    "title": "Riemann\u2013Roch Theorem",
+    "statement": "For a divisor (D) on a compact Riemann surface, [\\ell(D) - \\ell(K-D) = \\deg(D) + 1 - g,] where (\\ell(D)) is the dimension of meromorphic functions with poles bounded by (D), (K) is the canonical divisor, and (g) is the genus.",
+    "course": "Graduate, Algebraic Geometry",
+    "difficulty": 8.5,
+    "proof_structure": "Compare spaces of meromorphic functions and differentials via residue pairing and compute dimensions with cohomological arguments."
+  },
+  {
+    "id": 100,
+    "title": "Prime Number Theorem for Arithmetic Progressions",
+    "statement": "For any coprime integers (a) and (d), the number of primes (p \\le x) with (p \\equiv a \\pmod d) is asymptotically (\\frac{1}{\\varphi(d)} \\frac{x}{\\log x}).",
+    "course": "Graduate, Analytic Number Theory",
+    "difficulty": 9.0,
+    "proof_structure": "Use Dirichlet characters and (L)-series, prove (L(1,\\chi)\\neq 0) for nonprincipal characters, then translate logarithmic sums into the asymptotic prime count."
+  }
+]
