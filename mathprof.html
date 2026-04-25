@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math Theorems Quiz</title>
+    <title>Math Gap Finder</title>
     <style>
         body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
         #quiz-container { border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
@@ -50,6 +50,7 @@
         .proof-hint summary:hover { background: #2980b9; color: #fff; }
         .proof-hint[open] summary { background: #2980b9; color: #fff; }
         .proof-hint .hint-body { margin-top: 8px; padding: 10px; background: #fffbe6; border-left: 3px solid #f1c40f; border-radius: 4px; }
+        .tagline { font-size: 0.85em; color: #666; font-style: italic; margin: -8px 0 14px 2px; }
     </style>
     <script>
         window.MathJax = {
@@ -66,7 +67,8 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <h1>Math Theorems Quiz</h1>
+    <h1>Math Gap Finder</h1>
+    <div class="tagline">Discover your blind spots and chart your path through mathematics.</div>
     <div id="quiz-container">
         <div id="quiz-content">Loading theorems...</div>
     </div>
@@ -413,7 +415,6 @@
             const sel = (p) => prev === p ? ' selected' : '';
             container.innerHTML = `
                 <div class="title">${t.id}. ${t.title}</div>
-                <div class="course-tag">Course: <span class="course-link" onclick="toggleInlineRef('${(t.course || '').replace(/'/g, "\\'")}')" title="Click for study references">${t.course || 'Uncategorized'}</span> · Question ${currentIndex + 1} of ${theorems.length}${prev !== undefined ? ' · answered (' + prev + ' pts)' : ''}</div>
                 <div id="inline-refs"></div>
                 <div class="statement"><strong>Statement:</strong> ${convertMathDelimiters(t.statement)}</div>
                 ${t.proof_structure ? `<details class="proof-hint"><summary>💡 Show proof hint</summary><div class="hint-body">${convertMathDelimiters(t.proof_structure)}</div></details>` : ''}
