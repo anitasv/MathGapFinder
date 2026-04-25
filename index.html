@@ -95,21 +95,102 @@
         }
 
 
+        // Answer <-> 3-bit code mapping.
+        // 0 = unanswered, 1=A(10), 2=B(7), 3=C(2), 4=D(0)
+        const POINTS_TO_CODE = { 10: 1, 7: 2, 2: 3, 0: 4 };
+        const CODE_TO_POINTS = { 1: 10, 2: 7, 3: 2, 4: 0 };
+
+        function b64urlEncode(bytes) {
+            let s = '';
+            for (let i = 0; i < bytes.length; i++) s += String.fromCharCode(bytes[i]);
+            return btoa(s).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+        }
+        function b64urlDecode(str) {
+            str = str.replace(/-/g, '+').replace(/_/g, '/');
+            while (str.length % 4) str += '=';
+            const bin = atob(str);
+            const out = new Uint8Array(bin.length);
+            for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+            return out;
+        }
+
+        function encodeState() {
+            const n = theorems.length;
+            if (!n) return '';
+            const totalBits = n * 3;
+            const bytes = new Uint8Array(Math.ceil(totalBits / 8));
+            for (let i = 0; i < n; i++) {
+                const code = POINTS_TO_CODE[answers[i]] || 0;
+                // Write 3 bits MSB-first starting at bit i*3.
+                for (let b = 0; b < 3; b++) {
+                    const bit = (code >> (2 - b)) & 1;
+                    if (bit) {
+                        const pos = i * 3 + b;
+                        bytes[pos >> 3] |= (1 << (7 - (pos & 7)));
+                    }
+                }
+            }
+            // Trim trailing zero bytes for shorter URL.
+            let end = bytes.length;
+            while (end > 0 && bytes[end - 1] === 0) end--;
+            if (end === 0) return '';
+            return b64urlEncode(bytes.slice(0, end));
+        }
+
+        function decodeState(str, n) {
+            const out = new Array(n);
+            if (!str) return out;
+            let bytes;
+            try { bytes = b64urlDecode(str); } catch (e) { return out; }
+            for (let i = 0; i < n; i++) {
+                let code = 0;
+                for (let b = 0; b < 3; b++) {
+                    const pos = i * 3 + b;
+                    const byteIdx = pos >> 3;
+                    if (byteIdx >= bytes.length) break;
+                    const bit = (bytes[byteIdx] >> (7 - (pos & 7))) & 1;
+                    code = (code << 1) | bit;
+                }
+                if (CODE_TO_POINTS.hasOwnProperty(code)) out[i] = CODE_TO_POINTS[code];
+            }
+            return out;
+        }
+
         function updateHash() {
-            const newHash = '#q=' + (currentIndex + 1);
+            const s = encodeState();
+            const newHash = '#q=' + (currentIndex + 1) + (s ? '&s=' + s : '');
             if (location.hash !== newHash) {
                 history.replaceState(null, '', newHash);
             }
         }
 
         function readHash() {
-            const m = /#q=(\d+)/.exec(location.hash || '');
-            if (m) {
-                const n = parseInt(m[1], 10) - 1;
-                if (n >= 0 && n < theorems.length) return n;
+            const h = location.hash || '';
+            const mq = /[#&]q=(\d+)/.exec(h);
+            const ms = /[#&]s=([A-Za-z0-9_-]+)/.exec(h);
+            let index = 0;
+            if (mq) {
+                const n = parseInt(mq[1], 10) - 1;
+                if (n >= 0 && n < theorems.length) index = n;
             }
-            return 0;
+            return { index, state: ms ? ms[1] : '' };
         }
+
+        function applyDecodedAnswers(decoded) {
+            for (let i = 0; i < decoded.length; i++) {
+                const points = decoded[i];
+                if (points === undefined) continue;
+                const t = theorems[i];
+                const c = (t && t.course) || 'Uncategorized';
+                answers[i] = points;
+                if (courseScores[c]) {
+                    courseScores[c].score += points;
+                    courseScores[c].answered += 1;
+                }
+                totalScore += points;
+            }
+        }
+
 
         function goTo(index) {
             if (index < 0 || index > theorems.length) return;
@@ -470,9 +551,9 @@
         });
 
         window.addEventListener('hashchange', () => {
-            const n = readHash();
-            if (n !== currentIndex) {
-                currentIndex = n;
+            const { index } = readHash();
+            if (index !== currentIndex) {
+                currentIndex = index;
                 renderTheorem();
             }
         });
@@ -480,11 +561,19 @@
         async function start() {
             await Promise.all([loadTheorems(), loadReferences()]);
             initCourseScores();
-            currentIndex = readHash();
+            const { index, state } = readHash();
+            if (state) {
+                const decoded = decodeState(state, theorems.length);
+                applyDecodedAnswers(decoded);
+            }
+            currentIndex = index;
+            document.getElementById('score-board').innerText =
+                'Total Score: ' + totalScore + ' / ' + (theorems.length * 10);
             updateHash();
             renderTheorem();
             renderCourseScores(false);
         }
+
         start();
     </script>
 </body>
