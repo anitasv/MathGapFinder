@@ -84,8 +84,8 @@
         let totalScore = 0;
         // Scoring constants - change here to adjust point values for each option.
         const SCORE_A = 10;
-        const SCORE_B = 7;
-        const SCORE_C = 2;
+        const SCORE_B = 9;
+        const SCORE_C = 4;
         const SCORE_D = 0;
         const MAX_SCORE = SCORE_A;
         // A level is treated as "mastered" (skipped in blindspot suggestions)
@@ -524,9 +524,9 @@
                 ${t.proof_structure ? `<details class="proof-hint"><summary>💡 Show proof hint</summary><div class="hint-body">${convertMathDelimiters(t.proof_structure)}</div></details>` : ''}
                 <div class="options">
                     <button class="opt${sel(SCORE_A)}" onclick="handleAnswer(${SCORE_A})">A) Yes, I know theorem and proof. (${SCORE_A} points)</button>
-                    <button class="opt${sel(SCORE_B)}" onclick="handleAnswer(${SCORE_B})">B) No, but I can prove it. (${SCORE_B} points)</button>
-                    <button class="opt${sel(SCORE_C)}" onclick="handleAnswer(${SCORE_C})">C) I know theorem, but can't prove it. (${SCORE_C} points)</button>
-                    <button class="opt${sel(SCORE_D)}" onclick="handleAnswer(${SCORE_D})">D) No, I don't know theorem, and can't prove it. (${SCORE_D} points)</button>
+                    <button class="opt${sel(SCORE_B)}" onclick="handleAnswer(${SCORE_B})">B) No, but I can prove it looking at statement. (${SCORE_B} points)</button>
+                    <button class="opt${sel(SCORE_C)}" onclick="handleAnswer(${SCORE_C})">C) Yes, I understand the theorem and how to apply it but not prove it. (${SCORE_C} points)</button>
+                    <button class="opt${sel(SCORE_D)}" onclick="handleAnswer(${SCORE_D})">D) No, I don't understand. (${SCORE_D} points)</button>
 
                 </div>
                 <div class="nav">
