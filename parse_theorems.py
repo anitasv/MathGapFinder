@@ -5,8 +5,8 @@ def parse_theorems(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # Split by the separator "--"
-    blocks = re.split(r'\n--\n', content)
+    # Split by the separator "---"
+    blocks = re.split(r'\n---\n', content)
     theorems = []
 
     for block in blocks:
@@ -22,16 +22,12 @@ def parse_theorems(file_path):
         title = match.group(2)
         
         # Extract Statement
-        stmt_match = re.search(r'\*\*Statement:\*\*(.*?)(?=\n\n|\n\*\*|\nExample:|\n--|$)', block, re.DOTALL)
+        stmt_match = re.search(r'\*\*Statement:\*\*(.*?)(?=\n\n|\n\*\*|\n--|$)', block, re.DOTALL)
         statement = stmt_match.group(1).strip() if stmt_match else ""
         
-        # Extract Example
-        ex_match = re.search(r'Example:\n(.*?)(?=\n\n|\n\*\*|\n--|$)', block, re.DOTALL)
-        example = ex_match.group(1).strip() if ex_match else None
-        
         # Extract Proof
-        proof_match = re.search(r'\*\*(?:Rough proof structure|Proof hint):\*\*(.*?)(?=\n\n|\n\*\*|\n--|$)', block, re.DOTALL)
-        proof = proof_match.group(1).strip() if proof_match else ""
+        proof_match = re.findall(r'\*\*(?:Rough proof structure|Proof hint).*?:\*\*(.*?)(?=\n\n|\n\*\*|\n---|(\n---|$))', block, re.DOTALL)
+        proof = "\n".join([p[0].strip() for p in proof_match]) if proof_match else ""
         
         # Clean LaTeX-style brackets
         for text in [statement, proof]:
@@ -41,7 +37,6 @@ def parse_theorems(file_path):
             "id": id_val,
             "title": title,
             "statement": statement,
-            "example": example,
             "proof_structure": proof
         })
     
