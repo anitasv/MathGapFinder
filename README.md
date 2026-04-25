@@ -2,6 +2,8 @@
 
 > Discover your blind spots and chart your path through mathematics.
 
+🌐 **Try it live:** [mathgapfinder.com](https://mathgapfinder.com/)
+
 Math Gap Finder is a single-page quiz that walks you through important
 theorems from **High School** all the way through **Graduate Level**
 mathematics. For each theorem you say whether you know it, vaguely

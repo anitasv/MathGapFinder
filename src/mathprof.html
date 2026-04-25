@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math Gap Finder</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 0; }
         #quiz-container { border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
         .title { font-weight: bold; font-size: 1.5em; color: #2c3e50; margin-bottom: 10px; }
         .statement { font-style: italic; margin: 15px 0; background: #f4f4f4; padding: 10px; }
@@ -51,6 +51,11 @@
         .proof-hint[open] summary { background: #2980b9; color: #fff; }
         .proof-hint .hint-body { margin-top: 8px; padding: 10px; background: #fffbe6; border-left: 3px solid #f1c40f; border-radius: 4px; }
         .tagline { font-size: 0.85em; color: #666; font-style: italic; margin: -8px 0 14px 2px; }
+        .header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+        .header h1 { margin: 0.67em 0; }
+        .github-link { color: #2c3e50; text-decoration: none; flex-shrink: 0; }
+        .github-link:hover { color: #2980b9; }
+        .github-link svg { display: block; width: 32px; height: 32px; }
     </style>
     <script>
         window.MathJax = {
@@ -67,7 +72,12 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <h1 style="cursor:pointer;" onclick="goTo(0)">Math Gap Finder</h1>
+    <div class="header">
+        <h1 style="cursor:pointer;" onclick="goTo(0)">Math Gap Finder</h1>
+        <a href="https://github.com/anitasv/MathGapFinder" target="_blank" rel="noopener" class="github-link" title="View on GitHub" aria-label="View on GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.66 5.57.66 11.84c0 5.01 3.24 9.26 7.74 10.76.57.1.78-.25.78-.55 0-.27-.01-1-.02-1.97-3.15.68-3.81-1.52-3.81-1.52-.52-1.31-1.27-1.66-1.27-1.66-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.74 2.66 1.24 3.31.95.1-.74.4-1.24.72-1.52-2.51-.29-5.15-1.26-5.15-5.6 0-1.24.44-2.25 1.16-3.04-.12-.29-.5-1.44.11-3 0 0 .95-.3 3.11 1.16a10.8 10.8 0 0 1 5.66 0c2.16-1.46 3.11-1.16 3.11-1.16.61 1.56.23 2.71.11 3 .73.79 1.16 1.8 1.16 3.04 0 4.35-2.65 5.31-5.17 5.59.41.35.77 1.04.77 2.1 0 1.52-.01 2.74-.01 3.11 0 .3.21.66.79.55 4.49-1.5 7.73-5.75 7.73-10.76C23.34 5.57 18.27.5 12 .5z"/></svg>
+        </a>
+    </div>
     <div class="tagline">Discover your blind spots and chart your path through mathematics.</div>
     <div id="quiz-container">
         <div id="quiz-content">Loading theorems...</div>
