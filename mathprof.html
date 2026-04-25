@@ -40,33 +40,62 @@
         let currentIndex = 0;
         let totalScore = 0;
 
-        // The JSON uses pandoc-style math delimiters where ordinary parentheses
-        // and brackets wrap LaTeX. Convert them to standard \( \) and \[ \]
-        // delimiters, but only when the contents look like LaTeX (contain a
-        // backslash command, ^, _, or other math-y characters), so prose with
-        // parentheses isn't accidentally typeset.
+        // The source (Theorems.MD / theorems.json) uses pandoc-style math
+        // delimiters: every (...) wraps inline math and every [...] wraps
+        // display math. Convert them to MathJax delimiters \( \) and \[ \].
+        // We scan top-level balanced groups so nested parens like
+        // "(c\in(a,b))" are kept intact inside a single \( ... \) wrapper.
         function convertMathDelimiters(s) {
             if (!s) return s;
-            const looksLikeMath = (txt) => /[\\^_]|\\[a-zA-Z]+|\\frac|\\cdots|\\dots|\\ge|\\le|\\sum|\\prod|\\int|\\gcd/.test(txt);
-
-            // First, extract display-math segments [ ... ] so their inner
-            // parentheses aren't re-processed as inline math.
-            const placeholders = [];
-            s = s.replace(/\[([^\[\]]+)\]/g, (m, inner) => {
-                if (!looksLikeMath(inner)) return m;
-                const token = '\u0000DISPLAY' + placeholders.length + '\u0000';
-                placeholders.push('\\[' + inner + '\\]');
-                return token;
-            });
-
-            // Inline math: ( ... ) on the remaining (non-display) text.
-            s = s.replace(/\(([^()]+)\)/g, (m, inner) =>
-                looksLikeMath(inner) ? '\\(' + inner + '\\)' : m
-            );
-
-            // Restore display-math segments.
-            s = s.replace(/\u0000DISPLAY(\d+)\u0000/g, (_, i) => placeholders[+i]);
-            return s;
+            let out = '';
+            let i = 0;
+            while (i < s.length) {
+                const ch = s[i];
+                if (ch === '(' || ch === '[') {
+                    const open = ch;
+                    const close = ch === '(' ? ')' : ']';
+                    // Find matching close, tracking nesting of the same kind.
+                    let depth = 1;
+                    let j = i + 1;
+                    while (j < s.length && depth > 0) {
+                        if (s[j] === open) depth++;
+                        else if (s[j] === close) depth--;
+                        if (depth === 0) break;
+                        j++;
+                    }
+                    if (depth === 0) {
+                        const inner = s.slice(i + 1, j);
+                        // Only treat as math if the contents have a LaTeX
+                        // control sequence, a digit, or a math operator.
+                        // Plain prose like "(in probability or almost surely)"
+                        // should remain literal parentheses.
+                        // Math iff contents contain a LaTeX control
+                        // sequence (e.g. \frac, \mu, \in) or a digit.
+                        // Otherwise it's plain prose like "(f)", "[a,b]",
+                        // "(in probability or almost surely)".
+                        // Math if contents contain a LaTeX control sequence
+                        // (e.g. \frac, \mu, \in), a digit, curly braces, OR
+                        // every alphabetic "word" is a single letter
+                        // (e.g. "a,b", "f", "x y").
+                        const hasControlOrNumOrBraces = /\\[a-zA-Z]+|\d|[{}]/.test(inner);
+                        const words = inner.match(/[A-Za-z]+/g) || [];
+                        const allSingleLetters = words.length > 0 &&
+                            words.every(w => w.length === 1);
+                        const isMath = hasControlOrNumOrBraces || allSingleLetters;
+                        if (isMath) {
+                            out += (open === '(' ? '\\(' : '\\[') + inner +
+                                   (open === '(' ? '\\)' : '\\]');
+                        } else {
+                            out += open + inner + close;
+                        }
+                        i = j + 1;
+                        continue;
+                    }
+                }
+                out += ch;
+                i++;
+            }
+            return out;
         }
 
 
