@@ -10,7 +10,7 @@
   {
     "id": 2,
     "title": "Binomial Theorem",
-    "statement": "For any integer (n\\ge 0),",
+    "statement": "For any integer (n\\ge 0),\n\n[\\sum_{k=0}^{n}\\binom{n}{k}x^{n-k}y^k.]",
     "course": "High School, Algebra II",
     "difficulty": 2.5,
     "proof_structure": "Expand ((x+y)^n) and count the ways to choose (k) of the (n) factors to supply (y) (or use induction with Pascal\u2019s identity)."
@@ -42,7 +42,7 @@
   {
     "id": 6,
     "title": "Triangle Inequality",
-    "statement": "In any normed space,",
+    "statement": "In any normed space,\n\n[|x+y|\\le |x|+|y|.]\n\nFor real numbers this becomes:\n\n[|a+b|\\le |a|+|b|.]",
     "course": "Undergraduate, Linear Algebra",
     "difficulty": 3.0,
     "proof_structure": "Square both sides (or use Cauchy\u2013Schwarz in inner product spaces) to show [|x+y|^2\\le (|x|+|y|)^2] and take square roots."

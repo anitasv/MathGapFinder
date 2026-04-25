@@ -14,6 +14,19 @@
         button:hover { background: #3498db; color: #fff; }
         #score-board { margin-top: 20px; font-weight: bold; }
     </style>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)'], ['$', '$']],
+                displayMath: [['\\[', '\\]'], ['$$', '$$']]
+            },
+            svg: { fontCache: 'global' }
+        };
+
+
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
     <h1>Math Theorems Quiz</h1>
@@ -26,6 +39,36 @@
         let theorems = [];
         let currentIndex = 0;
         let totalScore = 0;
+
+        // The JSON uses pandoc-style math delimiters where ordinary parentheses
+        // and brackets wrap LaTeX. Convert them to standard \( \) and \[ \]
+        // delimiters, but only when the contents look like LaTeX (contain a
+        // backslash command, ^, _, or other math-y characters), so prose with
+        // parentheses isn't accidentally typeset.
+        function convertMathDelimiters(s) {
+            if (!s) return s;
+            const looksLikeMath = (txt) => /[\\^_]|\\[a-zA-Z]+|\\frac|\\cdots|\\dots|\\ge|\\le|\\sum|\\prod|\\int|\\gcd/.test(txt);
+
+            // First, extract display-math segments [ ... ] so their inner
+            // parentheses aren't re-processed as inline math.
+            const placeholders = [];
+            s = s.replace(/\[([^\[\]]+)\]/g, (m, inner) => {
+                if (!looksLikeMath(inner)) return m;
+                const token = '\u0000DISPLAY' + placeholders.length + '\u0000';
+                placeholders.push('\\[' + inner + '\\]');
+                return token;
+            });
+
+            // Inline math: ( ... ) on the remaining (non-display) text.
+            s = s.replace(/\(([^()]+)\)/g, (m, inner) =>
+                looksLikeMath(inner) ? '\\(' + inner + '\\)' : m
+            );
+
+            // Restore display-math segments.
+            s = s.replace(/\u0000DISPLAY(\d+)\u0000/g, (_, i) => placeholders[+i]);
+            return s;
+        }
+
 
         async function loadTheorems() {
             try {
@@ -47,7 +90,7 @@
             const t = theorems[currentIndex];
             container.innerHTML = `
                 <div class="title">${t.id}. ${t.title}</div>
-                <div class="statement"><strong>Statement:</strong> ${t.statement}</div>
+                <div class="statement"><strong>Statement:</strong> ${convertMathDelimiters(t.statement)}</div>
                 <div class="options">
                     <button onclick="handleAnswer(10)">A) Yes, I know theorem and proof. (10 points)</button>
                     <button onclick="handleAnswer(7)">B) No, but I can prove it. (7 points)</button>
@@ -55,6 +98,10 @@
                     <button onclick="handleAnswer(0)">D) No, I don't know theorem, and can't prove it. (0 points)</button>
                 </div>
             `;
+
+            if (window.MathJax && window.MathJax.typesetPromise) {
+                window.MathJax.typesetPromise([container]).catch((e) => console.error(e));
+            }
         }
 
         function handleAnswer(points) {
