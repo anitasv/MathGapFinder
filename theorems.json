@@ -218,7 +218,7 @@
   {
     "id": 28,
     "title": "Taylor\u2019s Theorem",
-    "statement": "If (f) is sufficiently differentiable near (a), then [f(x)=f(a)+f'(a)(x-a)+\\frac{f''(a)}{2!}(x-a)^2+\\cdots+\\frac{f^{(n)}(a)}{n!}(x-a)^n+R_n(x),] where (R_n(x)) is a remainder term.",
+    "statement": "If (f) is (n) times differentiable at (a), then [f(x)=f(a)+f'(a)(x-a)+\\frac{f''(a)}{2!}(x-a)^2+\\cdots+\\frac{f^{(n)}(a)}{n!}(x-a)^n+h_n(x)(x-a)^n,] where (h_n(x)\\to 0) as (x\\to a).",
     "course": "Undergraduate, Calculus II",
     "difficulty": 5.0,
     "proof_structure": "Subtract the Taylor polynomial from (f) and repeatedly apply Rolle\u2019s/Mean Value Theorem to control the remainder."

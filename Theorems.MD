@@ -336,7 +336,7 @@ then (f(x)) is irreducible over (\mathbb Q).
 
 28. **Taylor’s Theorem**
 
-**Statement:** If (f) is sufficiently differentiable near (a), then [f(x)=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}(x-a)^2+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^n+R_n(x),] where (R_n(x)) is a remainder term.
+**Statement:** If (f) is (n) times differentiable at (a), then [f(x)=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}(x-a)^2+\cdots+\frac{f^{(n)}(a)}{n!}(x-a)^n+h_n(x)(x-a)^n,] where (h_n(x)\to 0) as (x\to a).
 
 **Course:** Undergraduate, Calculus II
 
