@@ -32,12 +32,24 @@
         .course-bar { flex: 1; height: 10px; background: #eee; border-radius: 5px; overflow: hidden; }
         .course-bar-fill { height: 100%; background: #3498db; }
         .course-stats { min-width: 140px; text-align: right; color: #555; }
-
+        .course-name.clickable { cursor: pointer; color: #2980b9; text-decoration: underline dotted; }
+        .course-name.clickable:hover { color: #1c5980; }
+        .ref-detail { margin: 4px 0 10px 232px; padding: 10px 12px; background: #f8fbfd; border-left: 3px solid #2980b9; border-radius: 4px; font-size: 0.9em; }
+        .ref-detail h4 { margin: 0 0 4px 0; font-size: 0.95em; color: #2c3e50; }
+        .ref-detail ul { margin: 4px 0 8px 18px; padding: 0; }
+        .ref-detail a { color: #2980b9; }
         .course-tag { display: inline-block; margin-top: 6px; color: #555; font-size: 0.9em; }
+        .course-tag .course-link { color: #2980b9; cursor: pointer; text-decoration: underline dotted; }
+        #inline-refs { margin-top: 8px; }
         .nav { display: flex; justify-content: space-between; margin-top: 15px; }
         .nav button { min-width: 100px; }
         .nav button:disabled { opacity: 0.5; cursor: not-allowed; }
         button.selected { background: #3498db; color: #fff; font-weight: bold; }
+        .proof-hint { margin-top: 15px; font-size: 0.95em; }
+        .proof-hint summary { cursor: pointer; color: #2980b9; user-select: none; display: inline-block; padding: 4px 8px; border: 1px solid #2980b9; border-radius: 4px; background: #f8fbfd; }
+        .proof-hint summary:hover { background: #2980b9; color: #fff; }
+        .proof-hint[open] summary { background: #2980b9; color: #fff; }
+        .proof-hint .hint-body { margin-top: 8px; padding: 10px; background: #fffbe6; border-left: 3px solid #f1c40f; border-radius: 4px; }
     </style>
     <script>
         window.MathJax = {
@@ -64,6 +76,8 @@
 
     <script>
         let theorems = [];
+        let references = {};
+        const expandedCourses = {};
         let currentIndex = 0;
         let totalScore = 0;
         // answers[i] = points awarded for question i, or undefined if unanswered/skipped
@@ -194,6 +208,74 @@
             }
         }
 
+        async function loadReferences() {
+            try {
+                const response = await fetch('references.json');
+                references = await response.json();
+            } catch (err) {
+                console.warn('Could not load references.json:', err);
+                references = {};
+            }
+        }
+
+        // Convert markdown-ish *italic* to <em>, escape HTML.
+        function escapeHTML(s) {
+            return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+        function renderRefText(s) {
+            return escapeHTML(s).replace(/\*([^*]+)\*/g, '<em>$1</em>');
+        }
+
+        function findReferenceKey(course) {
+            if (!course) return null;
+            if (references[course]) return course;
+            // Try matching ignoring whitespace/case.
+            const norm = (x) => x.toLowerCase().replace(/\s+/g, ' ').trim();
+            const target = norm(course);
+            return Object.keys(references).find(k => norm(k) === target) || null;
+        }
+
+        function renderReferenceHTML(course) {
+            const key = findReferenceKey(course);
+            if (!key) {
+                return `<div class="ref-detail"><em>No study references available for &ldquo;${escapeHTML(course)}&rdquo;.</em></div>`;
+            }
+            const ref = references[key];
+            let html = `<div class="ref-detail"><h4>How to study: ${escapeHTML(key)}</h4>`;
+            if (ref.textbooks && ref.textbooks.length) {
+                html += `<strong>Textbooks</strong><ul>`;
+                ref.textbooks.forEach(b => { html += `<li>${renderRefText(b)}</li>`; });
+                html += `</ul>`;
+            }
+            if (ref.courses && ref.courses.length) {
+                html += `<strong>Courses</strong><ul>`;
+                ref.courses.forEach(c => {
+                    const note = c.note ? ' ' + escapeHTML(c.note) : '';
+                    html += `<li><a href="${escapeHTML(c.url)}" target="_blank" rel="noopener">${escapeHTML(c.title)}</a>${note}</li>`;
+                });
+                html += `</ul>`;
+            }
+            html += `</div>`;
+            return html;
+        }
+
+        function toggleCourseRef(course) {
+            expandedCourses[course] = !expandedCourses[course];
+            renderCourseScores(false);
+        }
+
+        function toggleInlineRef(course) {
+            const el = document.getElementById('inline-refs');
+            if (!el) return;
+            if (el.dataset.course === course && el.innerHTML) {
+                el.innerHTML = '';
+                el.dataset.course = '';
+            } else {
+                el.innerHTML = renderReferenceHTML(course);
+                el.dataset.course = course;
+            }
+        }
+
         function initCourseScores() {
             theorems.forEach(t => {
                 const c = t.course || 'Uncategorized';
@@ -218,8 +300,22 @@
                 return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
             });
 
+            // Compute per-level totals once so we can both render the bars
+            // and identify the earliest "blindspot" level (first level whose
+            // score is below 100%).
+            const levelTotals = {};
+            sortedLevels.forEach(level => {
+                let lScore = 0, lMax = 0;
+                levels[level].forEach(c => {
+                    lScore += courseScores[c].score;
+                    lMax += courseScores[c].max;
+                });
+                levelTotals[level] = { score: lScore, max: lMax };
+            });
+
             let html = `<h3>${final ? 'Final ' : ''}Score by Course Level</h3>`;
             sortedLevels.forEach(level => {
+
                 let lScore = 0, lMax = 0, lAns = 0, lCount = 0;
                 levels[level].forEach(c => {
                     lScore += courseScores[c].score;
@@ -249,18 +345,60 @@
                     const cs = courseScores[c];
                     const subject = c.includes(',') ? c.substring(c.indexOf(',') + 1).trim() : c;
                     const cpct = cs.max ? (cs.score / cs.max) * 100 : 0;
+                    const safeC = c.replace(/'/g, "\\'");
+                    const hasRef = !!findReferenceKey(c);
                     html += `
                         <div class="course-row">
-                            <span class="course-name">${subject}</span>
+                            <span class="course-name${hasRef ? ' clickable' : ''}"${hasRef ? ` onclick="toggleCourseRef('${safeC}')" title="Click for study references"` : ''}>${subject}</span>
                             <div class="course-bar"><div class="course-bar-fill" style="width:${cpct.toFixed(1)}%"></div></div>
                             <span class="course-stats">${cs.score}/${cs.max} (${cpct.toFixed(0)}%) · ${cs.answered}/${cs.count}</span>
                         </div>`;
+                    if (expandedCourses[c]) {
+                        html += renderReferenceHTML(c);
+                    }
                 });
                 html += `</div></div>`;
             });
+
+            // Blindspots: pick earliest level whose score is < 100% and
+            // surface the 3 courses with the largest headroom (max - score).
+            const blindLevel = sortedLevels.find(l => {
+                const t = levelTotals[l];
+                return t.max > 0 && t.score < t.max;
+            });
+            if (blindLevel) {
+                const blindCourses = levels[blindLevel].slice()
+                    .map(c => ({ c, headroom: courseScores[c].max - courseScores[c].score }))
+                    .filter(x => x.headroom > 0)
+                    .sort((a, b) => b.headroom - a.headroom)
+                    .slice(0, 3);
+                if (blindCourses.length) {
+                    html += `<h3>Blindspots <span style="font-weight:normal;font-size:0.8em;color:#777;">(${blindLevel})</span></h3>`;
+                    html += `<div style="margin-left:28px;">`;
+                    blindCourses.forEach(({ c, headroom }) => {
+                        const cs = courseScores[c];
+                        const subject = c.includes(',') ? c.substring(c.indexOf(',') + 1).trim() : c;
+                        const cpct = cs.max ? (cs.score / cs.max) * 100 : 0;
+                        const safeC = c.replace(/'/g, "\\'");
+                        const hasRef = !!findReferenceKey(c);
+                        html += `
+                            <div class="course-row">
+                                <span class="course-name${hasRef ? ' clickable' : ''}"${hasRef ? ` onclick="toggleCourseRef('${safeC}')" title="Click for study references"` : ''}>${subject}</span>
+                                <div class="course-bar"><div class="course-bar-fill" style="width:${cpct.toFixed(1)}%; background:#e74c3c;"></div></div>
+                                <span class="course-stats">${cs.score}/${cs.max} (${cpct.toFixed(0)}%) · headroom ${headroom}</span>
+                            </div>`;
+                        if (expandedCourses[c]) {
+                            html += renderReferenceHTML(c);
+                        }
+                    });
+                    html += `</div>`;
+                }
+            }
+
             el.innerHTML = html;
 
         }
+
 
         function renderTheorem() {
             const container = document.getElementById('quiz-content');
@@ -275,8 +413,10 @@
             const sel = (p) => prev === p ? ' selected' : '';
             container.innerHTML = `
                 <div class="title">${t.id}. ${t.title}</div>
-                <div class="course-tag">Course: ${t.course || 'Uncategorized'} · Question ${currentIndex + 1} of ${theorems.length}${prev !== undefined ? ' · answered (' + prev + ' pts)' : ''}</div>
+                <div class="course-tag">Course: <span class="course-link" onclick="toggleInlineRef('${(t.course || '').replace(/'/g, "\\'")}')" title="Click for study references">${t.course || 'Uncategorized'}</span> · Question ${currentIndex + 1} of ${theorems.length}${prev !== undefined ? ' · answered (' + prev + ' pts)' : ''}</div>
+                <div id="inline-refs"></div>
                 <div class="statement"><strong>Statement:</strong> ${convertMathDelimiters(t.statement)}</div>
+                ${t.proof_structure ? `<details class="proof-hint"><summary>💡 Show proof hint</summary><div class="hint-body">${convertMathDelimiters(t.proof_structure)}</div></details>` : ''}
                 <div class="options">
                     <button class="opt${sel(10)}" onclick="handleAnswer(10)">A) Yes, I know theorem and proof. (10 points)</button>
                     <button class="opt${sel(7)}" onclick="handleAnswer(7)">B) No, but I can prove it. (7 points)</button>
@@ -337,7 +477,7 @@
         });
 
         async function start() {
-            await loadTheorems();
+            await Promise.all([loadTheorems(), loadReferences()]);
             initCourseScores();
             currentIndex = readHash();
             updateHash();

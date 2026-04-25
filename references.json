@@ -1,0 +1,506 @@
+{
+  "High School, Algebra II": {
+    "textbooks": [
+      "I. M. Gelfand & A. Shen, *Algebra*",
+      "Serge Lang, *Basic Mathematics*",
+      "Richard Rusczyk, *Introduction to Algebra* (Art of Problem Solving)"
+    ],
+    "courses": [
+      {
+        "title": "Khan Academy — Algebra 2",
+        "url": "https://www.khanacademy.org/math/algebra2"
+      },
+      {
+        "title": "MIT Highlights for High School — Mathematics",
+        "url": "https://ocw.mit.edu/high-school/mathematics/"
+      }
+    ]
+  },
+  "High School, Number Theory": {
+    "textbooks": [
+      "Underwood Dudley, *Elementary Number Theory*",
+      "Richard Rusczyk & Mathew Crawford, *Introduction to Number Theory* (AoPS)"
+    ],
+    "courses": [
+      {
+        "title": "Khan Academy — Number Theory (Cryptography unit)",
+        "url": "https://www.khanacademy.org/computing/computer-science/cryptography"
+      },
+      {
+        "title": "MIT OCW 18.781 — Theory of Numbers",
+        "url": "https://ocw.mit.edu/courses/18-781-theory-of-numbers-spring-2012/",
+        "note": "(also fine as an UG follow-up)"
+      }
+    ]
+  },
+  "High School, Precalculus": {
+    "textbooks": [
+      "Michael Sullivan, *Precalculus*",
+      "Richard Rusczyk, *Precalculus* (AoPS)",
+      "James Stewart, *Precalculus: Mathematics for Calculus*"
+    ],
+    "courses": [
+      {
+        "title": "Khan Academy — Precalculus",
+        "url": "https://www.khanacademy.org/math/precalculus"
+      },
+      {
+        "title": "MIT OCW RES.18-001 — Calculus Online Textbook (Ch. 1 review)",
+        "url": "https://ocw.mit.edu/courses/res-18-001-calculus-online-textbook-spring-2005/"
+      }
+    ]
+  },
+  "Undergraduate, Calculus I": {
+    "textbooks": [
+      "James Stewart, *Calculus: Early Transcendentals*",
+      "Tom Apostol, *Calculus, Vol. I* (rigorous)",
+      "Michael Spivak, *Calculus* (rigorous)"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.01 — Single Variable Calculus",
+        "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/"
+      },
+      {
+        "title": "MIT OCW 18.01SC (with video)",
+        "url": "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/"
+      }
+    ]
+  },
+  "Undergraduate, Calculus II": {
+    "textbooks": [
+      "James Stewart, *Calculus: Early Transcendentals*",
+      "Tom Apostol, *Calculus, Vol. I & II*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.01 — Single Variable Calculus (Part II)",
+        "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/"
+      },
+      {
+        "title": "MIT OCW 18.014 — Calculus with Theory",
+        "url": "https://ocw.mit.edu/courses/18-014-calculus-with-theory-fall-2010/"
+      }
+    ]
+  },
+  "Undergraduate, Multivariable Calculus": {
+    "textbooks": [
+      "James Stewart, *Multivariable Calculus*",
+      "Hubbard & Hubbard, *Vector Calculus, Linear Algebra, and Differential Forms*",
+      "Tom Apostol, *Calculus, Vol. II*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.02 — Multivariable Calculus",
+        "url": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/"
+      },
+      {
+        "title": "MIT OCW 18.02SC (video)",
+        "url": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/"
+      }
+    ]
+  },
+  "Undergraduate, Linear Algebra": {
+    "textbooks": [
+      "Gilbert Strang, *Introduction to Linear Algebra*",
+      "Sheldon Axler, *Linear Algebra Done Right*",
+      "Friedberg, Insel & Spence, *Linear Algebra*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.06 — Linear Algebra (Strang)",
+        "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/"
+      },
+      {
+        "title": "MIT OCW 18.700 — Linear Algebra (proof-based)",
+        "url": "https://ocw.mit.edu/courses/18-700-linear-algebra-fall-2013/"
+      }
+    ]
+  },
+  "Undergraduate, Number Theory": {
+    "textbooks": [
+      "Kenneth Ireland & Michael Rosen, *A Classical Introduction to Modern Number Theory*",
+      "G. H. Hardy & E. M. Wright, *An Introduction to the Theory of Numbers*",
+      "Niven, Zuckerman & Montgomery, *An Introduction to the Theory of Numbers*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.781 — Theory of Numbers",
+        "url": "https://ocw.mit.edu/courses/18-781-theory-of-numbers-spring-2012/"
+      },
+      {
+        "title": "MIT OCW 18.785 — Number Theory I",
+        "url": "https://ocw.mit.edu/courses/18-785-number-theory-i-fall-2021/"
+      }
+    ]
+  },
+  "Undergraduate, Real Analysis": {
+    "textbooks": [
+      "Walter Rudin, *Principles of Mathematical Analysis* (\"baby Rudin\")",
+      "Stephen Abbott, *Understanding Analysis*",
+      "Terence Tao, *Analysis I & II*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.100A — Real Analysis",
+        "url": "https://ocw.mit.edu/courses/18-100a-real-analysis-fall-2020/"
+      },
+      {
+        "title": "MIT OCW 18.100B — Analysis I",
+        "url": "https://ocw.mit.edu/courses/18-100b-analysis-i-fall-2010/"
+      },
+      {
+        "title": "Harvard Math 25/55 syllabi",
+        "url": "https://www.math.harvard.edu/"
+      }
+    ]
+  },
+  "Undergraduate, Complex Analysis": {
+    "textbooks": [
+      "Lars Ahlfors, *Complex Analysis*",
+      "Stein & Shakarchi, *Complex Analysis* (Princeton Lectures in Analysis II)",
+      "Bak & Newman, *Complex Analysis*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.04 — Complex Variables with Applications",
+        "url": "https://ocw.mit.edu/courses/18-04-complex-variables-with-applications-spring-2018/"
+      },
+      {
+        "title": "Princeton MAT 335 — Analysis II: Complex Analysis",
+        "url": "https://www.math.princeton.edu/undergraduate/courses"
+      }
+    ]
+  },
+  "Undergraduate, Probability": {
+    "textbooks": [
+      "Sheldon Ross, *A First Course in Probability*",
+      "Blitzstein & Hwang, *Introduction to Probability*",
+      "Grimmett & Stirzaker, *Probability and Random Processes*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.05 — Introduction to Probability and Statistics",
+        "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/"
+      },
+      {
+        "title": "MIT OCW 6.041 — Probabilistic Systems Analysis",
+        "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/"
+      },
+      {
+        "title": "Harvard Stat 110 — Probability (Blitzstein, video)",
+        "url": "https://projects.iq.harvard.edu/stat110"
+      }
+    ]
+  },
+  "Undergraduate, Topology": {
+    "textbooks": [
+      "James Munkres, *Topology*",
+      "M. A. Armstrong, *Basic Topology*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.901 — Introduction to Topology",
+        "url": "https://ocw.mit.edu/courses/18-901-introduction-to-topology-fall-2004/"
+      }
+    ]
+  },
+  "Undergraduate, Abstract Algebra": {
+    "textbooks": [
+      "Dummit & Foote, *Abstract Algebra*",
+      "Michael Artin, *Algebra*",
+      "Joseph Gallian, *Contemporary Abstract Algebra*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.701 — Algebra I (Artin)",
+        "url": "https://ocw.mit.edu/courses/18-701-algebra-i-fall-2010/"
+      },
+      {
+        "title": "MIT OCW 18.702 — Algebra II",
+        "url": "https://ocw.mit.edu/courses/18-702-algebra-ii-spring-2011/"
+      },
+      {
+        "title": "Harvard Math 122/123",
+        "url": "https://www.math.harvard.edu/"
+      }
+    ]
+  },
+  "Undergraduate, Functional Analysis": {
+    "textbooks": [
+      "Erwin Kreyszig, *Introductory Functional Analysis with Applications*",
+      "Bryan Rynne & Martin Youngson, *Linear Functional Analysis*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.102 — Introduction to Functional Analysis",
+        "url": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/"
+      }
+    ]
+  },
+  "Graduate, Algebra": {
+    "textbooks": [
+      "Serge Lang, *Algebra*",
+      "Nathan Jacobson, *Basic Algebra I & II*",
+      "Hungerford, *Algebra*",
+      "Dummit & Foote, *Abstract Algebra* (advanced chapters)"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.705 — Commutative Algebra",
+        "url": "https://ocw.mit.edu/courses/18-705-commutative-algebra-fall-2008/"
+      },
+      {
+        "title": "MIT OCW 18.745 — Lie Groups and Lie Algebras",
+        "url": "https://ocw.mit.edu/courses/18-745-introduction-to-lie-groups-fall-2004/"
+      },
+      {
+        "title": "Harvard Math 221/222 (Commutative Algebra / Algebraic Geometry)",
+        "url": null
+      }
+    ]
+  },
+  "Graduate, Abstract Algebra": {
+    "textbooks": [
+      "Serge Lang, *Algebra*",
+      "Nathan Jacobson, *Basic Algebra I & II*",
+      "Hungerford, *Algebra*",
+      "Dummit & Foote, *Abstract Algebra* (advanced chapters)"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.705 — Commutative Algebra",
+        "url": "https://ocw.mit.edu/courses/18-705-commutative-algebra-fall-2008/"
+      },
+      {
+        "title": "MIT OCW 18.745 — Lie Groups and Lie Algebras",
+        "url": "https://ocw.mit.edu/courses/18-745-introduction-to-lie-groups-fall-2004/"
+      },
+      {
+        "title": "Harvard Math 221/222 (Commutative Algebra / Algebraic Geometry)",
+        "url": null
+      }
+    ]
+  },
+  "Graduate, Linear Algebra": {
+    "textbooks": [
+      "Roger Horn & Charles Johnson, *Matrix Analysis*",
+      "Peter Lax, *Linear Algebra and Its Applications*",
+      "Sheldon Axler, *Linear Algebra Done Right* (third edition, advanced)"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.065 — Matrix Methods (Strang)",
+        "url": "https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/"
+      }
+    ]
+  },
+  "Graduate, Commutative Algebra": {
+    "textbooks": [
+      "Atiyah & Macdonald, *Introduction to Commutative Algebra*",
+      "David Eisenbud, *Commutative Algebra with a View Toward Algebraic Geometry*",
+      "H. Matsumura, *Commutative Ring Theory*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.705 — Commutative Algebra",
+        "url": "https://ocw.mit.edu/courses/18-705-commutative-algebra-fall-2008/"
+      }
+    ]
+  },
+  "Graduate, Algebraic Geometry": {
+    "textbooks": [
+      "Robin Hartshorne, *Algebraic Geometry*",
+      "Ravi Vakil, *The Rising Sea: Foundations of Algebraic Geometry* ([free notes](https://math.stanford.edu/~vakil/216blog/))",
+      "Joe Harris, *Algebraic Geometry: A First Course*",
+      "Shafarevich, *Basic Algebraic Geometry*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.725 — Algebraic Geometry",
+        "url": "https://ocw.mit.edu/courses/18-725-algebraic-geometry-fall-2003/"
+      },
+      {
+        "title": "MIT OCW 18.726 — Algebraic Geometry",
+        "url": "https://ocw.mit.edu/courses/18-726-algebraic-geometry-spring-2009/"
+      },
+      {
+        "title": "Stanford Math 216 (Vakil)",
+        "url": "https://math.stanford.edu/~vakil/216blog/"
+      }
+    ]
+  },
+  "Graduate, Topology": {
+    "textbooks": [
+      "James Munkres, *Topology* (advanced chapters)",
+      "John Kelley, *General Topology*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.901 — Introduction to Topology",
+        "url": "https://ocw.mit.edu/courses/18-901-introduction-to-topology-fall-2004/"
+      },
+      {
+        "title": "MIT OCW 18.905 — Algebraic Topology I",
+        "url": "https://ocw.mit.edu/courses/18-905-algebraic-topology-i-fall-2016/"
+      }
+    ]
+  },
+  "Graduate, Algebraic Topology": {
+    "textbooks": [
+      "Allen Hatcher, *Algebraic Topology* ([free PDF](https://pi.math.cornell.edu/~hatcher/AT/ATpage.html))",
+      "James Munkres, *Elements of Algebraic Topology*",
+      "Bott & Tu, *Differential Forms in Algebraic Topology*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.905 — Algebraic Topology I",
+        "url": "https://ocw.mit.edu/courses/18-905-algebraic-topology-i-fall-2016/"
+      },
+      {
+        "title": "MIT OCW 18.906 — Algebraic Topology II",
+        "url": "https://ocw.mit.edu/courses/18-906-algebraic-topology-ii-spring-2020/"
+      }
+    ]
+  },
+  "Graduate, Differential Geometry": {
+    "textbooks": [
+      "John M. Lee, *Introduction to Smooth Manifolds*; *Riemannian Manifolds*",
+      "Manfredo do Carmo, *Differential Geometry of Curves and Surfaces*; *Riemannian Geometry*",
+      "Spivak, *A Comprehensive Introduction to Differential Geometry*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.950 — Differential Geometry",
+        "url": "https://ocw.mit.edu/courses/18-950-differential-geometry-fall-2008/"
+      },
+      {
+        "title": "MIT OCW 18.965 — Geometry of Manifolds",
+        "url": "https://ocw.mit.edu/courses/18-965-geometry-of-manifolds-fall-2004/"
+      }
+    ]
+  },
+  "Graduate, Differential Topology": {
+    "textbooks": [
+      "Victor Guillemin & Alan Pollack, *Differential Topology*",
+      "John Milnor, *Topology from the Differentiable Viewpoint*",
+      "Morris Hirsch, *Differential Topology*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.952 — Theory of Differential Forms",
+        "url": "https://ocw.mit.edu/courses/18-952-theory-of-differential-forms-spring-2005/"
+      },
+      {
+        "title": "MIT OCW 18.965 — Geometry of Manifolds",
+        "url": "https://ocw.mit.edu/courses/18-965-geometry-of-manifolds-fall-2004/"
+      }
+    ]
+  },
+  "Graduate, Real Analysis": {
+    "textbooks": [
+      "Walter Rudin, *Real and Complex Analysis* (\"papa Rudin\")",
+      "Gerald Folland, *Real Analysis: Modern Techniques and Their Applications*",
+      "Stein & Shakarchi, *Real Analysis* (Princeton Lectures III)"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.125 — Measure Theory and Analysis",
+        "url": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/"
+      },
+      {
+        "title": "MIT OCW 18.155 — Differential Analysis I",
+        "url": "https://ocw.mit.edu/courses/18-155-differential-analysis-fall-2004/"
+      }
+    ]
+  },
+  "Graduate, Measure Theory": {
+    "textbooks": [
+      "Gerald Folland, *Real Analysis*",
+      "Paul Halmos, *Measure Theory*",
+      "Terence Tao, *An Introduction to Measure Theory*",
+      "Stein & Shakarchi, *Real Analysis*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.125 — Measure and Integration",
+        "url": "https://ocw.mit.edu/courses/18-125-measure-and-integration-fall-2003/"
+      }
+    ]
+  },
+  "Graduate, Functional Analysis": {
+    "textbooks": [
+      "Walter Rudin, *Functional Analysis*",
+      "John Conway, *A Course in Functional Analysis*",
+      "Brezis, *Functional Analysis, Sobolev Spaces and PDEs*",
+      "Reed & Simon, *Methods of Modern Mathematical Physics, Vol. I*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.102 — Introduction to Functional Analysis",
+        "url": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/"
+      },
+      {
+        "title": "MIT OCW 18.155 — Differential Analysis",
+        "url": "https://ocw.mit.edu/courses/18-155-differential-analysis-fall-2004/"
+      }
+    ]
+  },
+  "Graduate, Probability Theory": {
+    "textbooks": [
+      "Rick Durrett, *Probability: Theory and Examples* ([free PDF](https://services.math.duke.edu/~rtd/PTE/pte.html))",
+      "Patrick Billingsley, *Probability and Measure*",
+      "Olav Kallenberg, *Foundations of Modern Probability*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.175 — Theory of Probability",
+        "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/"
+      },
+      {
+        "title": "MIT OCW 18.176 — Stochastic Calculus",
+        "url": "https://ocw.mit.edu/courses/18-176-stochastic-calculus-spring-2014/"
+      }
+    ]
+  },
+  "Graduate, Analytic Number Theory": {
+    "textbooks": [
+      "Tom Apostol, *Introduction to Analytic Number Theory*",
+      "Henryk Iwaniec & Emmanuel Kowalski, *Analytic Number Theory* (AMS Colloquium 53)",
+      "Hugh Montgomery & Robert Vaughan, *Multiplicative Number Theory I*",
+      "Harold Davenport, *Multiplicative Number Theory*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.785 — Number Theory I",
+        "url": "https://ocw.mit.edu/courses/18-785-number-theory-i-fall-2021/"
+      },
+      {
+        "title": "MIT OCW 18.099 — Analytic Number Theory (seminar)",
+        "url": "https://ocw.mit.edu/courses/18-099-analytic-number-theory-spring-2002/"
+      }
+    ]
+  },
+  "Graduate, Logic": {
+    "textbooks": [
+      "Herbert Enderton, *A Mathematical Introduction to Logic*",
+      "Joseph Shoenfield, *Mathematical Logic*",
+      "Kenneth Kunen, *Set Theory: An Introduction to Independence Proofs*",
+      "Yiannis Moschovakis, *Notes on Set Theory*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 24.241 — Logic I",
+        "url": "https://ocw.mit.edu/courses/24-241-logic-i-fall-2009/"
+      },
+      {
+        "title": "MIT OCW 24.242 — Logic II",
+        "url": "https://ocw.mit.edu/courses/24-242-logic-ii-spring-2004/"
+      },
+      {
+        "title": "MIT OCW 18.510 — Introduction to Mathematical Logic and Set Theory",
+        "url": "https://ocw.mit.edu/courses/18-510-introduction-to-mathematical-logic-and-set-theory-fall-2014/"
+      }
+    ]
+  }
+}
