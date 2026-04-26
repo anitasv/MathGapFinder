@@ -14,7 +14,7 @@
 
 **Statement:** For any integer (n\ge 0),
 
-[\sum_{k=0}^{n}\binom{n}{k}x^{n-k}y^k.]
+[(x+y)^n = \sum_{k=0}^{n}\binom{n}{k}x^{n-k}y^k.]
 
 **Course:** High School, Algebra II
 

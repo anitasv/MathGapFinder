@@ -14,6 +14,15 @@ const MAX_SCORE = SCORE_A;
 const BLINDSPOT_THRESHOLD = SCORE_B / MAX_SCORE;
 // answers[i] = points awarded for question i, or undefined if unanswered/skipped
 let answers = [];
+// When true, the user is viewing a shared results page (#p=share).
+// They see read-only results plus a "Try it yourself" CTA instead of
+// the normal share/restart controls, and answers are not persisted
+// back into the URL hash.
+let shareView = false;
+// Optional display name attached to a shared results link via #...&n=...
+let shareName = '';
+
+
 
 // Per-course tally: { [course]: { score, max, count, answered } }
 const courseScores = {};
@@ -91,7 +100,17 @@ function decodeState(str, n) {
 function updateHash() {
     const s = encodeState();
     const qPart = currentIndex >= theorems.length ? 'results' : (currentIndex + 1);
-    const newHash = '#q=' + qPart + (s ? '&s=' + s : '');
+    let newHash;
+    if (shareView) {
+        // Preserve p=share + n=name so refreshes / back nav keep the
+        // shared read-only view, but still surface q= as the user
+        // navigates between questions.
+        newHash = '#p=share&q=' + qPart + (s ? '&s=' + s : '');
+        const nm = (shareName || '').trim();
+        if (nm) newHash += '&n=' + encodeURIComponent(nm);
+    } else {
+        newHash = '#q=' + qPart + (s ? '&s=' + s : '');
+    }
     if (location.hash !== newHash) {
         history.replaceState(null, '', newHash);
     }
@@ -101,6 +120,8 @@ function readHash() {
     const h = location.hash || '';
     const mq = /[#&]q=(\d+|results)/.exec(h);
     const ms = /[#&]s=([A-Za-z0-9_-]+)/.exec(h);
+    const mp = /[#&]p=([A-Za-z0-9_-]+)/.exec(h);
+    const mn = /[#&]n=([^&]+)/.exec(h);
     let index = 0;
     if (mq) {
         if (mq[1] === 'results') {
@@ -110,7 +131,13 @@ function readHash() {
             if (n >= 0 && n <= theorems.length) index = n;
         }
     }
-    return { index, state: ms ? ms[1] : '' };
+    const page = mp ? mp[1] : '';
+    if (page === 'share') index = theorems.length;
+    let name = '';
+    if (mn) {
+        try { name = decodeURIComponent(mn[1].replace(/\+/g, ' ')); } catch (e) {}
+    }
+    return { index, state: ms ? ms[1] : '', page, name };
 }
 
 function applyDecodedAnswers(decoded) {
@@ -419,8 +446,178 @@ function renderCourseScores(final = false) {
         }
     }
 
+    if (final) {
+        html += renderShareHTML();
+    }
+
     el.innerHTML = html;
 
+    if (final) {
+        updateShareLinks();
+    }
+}
+
+function buildShareSummary() {
+    // Build a short text summary of total score + per-level breakdown.
+    const lines = [];
+    const totalMax = theorems.length * MAX_SCORE;
+    const pct = totalMax ? Math.round((totalScore / totalMax) * 100) : 0;
+    const who = (shareName || '').trim();
+    if (who) {
+        lines.push(`${who} scored ${totalScore}/${totalMax} (${pct}%) on Math Gap Finder!`);
+    } else {
+        lines.push(`I scored ${totalScore}/${totalMax} (${pct}%) on Math Gap Finder!`);
+    }
+    // Per-level summary.
+    const levels = {};
+    Object.keys(courseScores).forEach(course => {
+        const level = course.split(',')[0].trim();
+        if (!levels[level]) levels[level] = { score: 0, max: 0 };
+        levels[level].score += courseScores[course].score;
+        levels[level].max += courseScores[course].max;
+    });
+    const levelOrder = ['High School', 'Undergraduate', 'Graduate'];
+    const sortedLevels = Object.keys(levels).sort((a, b) => {
+        const ia = levelOrder.indexOf(a), ib = levelOrder.indexOf(b);
+        return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+    });
+    sortedLevels.forEach(l => {
+        const t = levels[l];
+        const lpct = t.max ? Math.round((t.score / t.max) * 100) : 0;
+        lines.push(`• ${l}: ${t.score}/${t.max} (${lpct}%)`);
+    });
+    return lines.join('\n');
+}
+
+function getShareURL() {
+    // Build a "share" page URL that displays the same results to the
+    // recipient but offers a "Try it yourself" CTA instead of letting
+    // them keep modifying these answers.
+    const s = encodeState();
+    let hash = '#p=share' + (s ? '&s=' + s : '');
+    const nm = (shareName || '').trim();
+    if (nm) hash += '&n=' + encodeURIComponent(nm);
+    return location.origin + location.pathname + hash;
+}
+
+function getOwnURL() {
+    // Bare URL to the quiz home, used by the "Try it yourself" button
+    // on shared pages to start a fresh attempt.
+    return location.origin + location.pathname;
+}
+
+function renderShareHTML() {
+    if (shareView) {
+        // On a shared page we don't render the big share box — there's
+        // a small "Try it yourself" button shown elsewhere.
+        return '';
+    }
+    const nameVal = escapeHTML(shareName || '');
+    return `
+        <div id="share-box">
+            <h3>📣 Share your results</h3>
+            <div>Show your friends where your math blind spots are — challenge them to beat your score!</div>
+            <div class="share-name-row">
+                <label for="share-name-input">Your name (optional):</label>
+                <input id="share-name-input" type="text" maxlength="40" value="${nameVal}" placeholder="e.g. Abc" oninput="onShareNameInput(this.value)" />
+            </div>
+            <div class="share-buttons">
+                <button onclick="shareNative()">Share…</button>
+                <a id="share-twitter" href="#" target="_blank" rel="noopener">𝕏 / Twitter</a>
+                <a id="share-facebook" href="#" target="_blank" rel="noopener">Facebook</a>
+                <a id="share-linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
+                <a id="share-reddit" href="#" target="_blank" rel="noopener">Reddit</a>
+                <a id="share-whatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a>
+                <a id="share-telegram" href="#" target="_blank" rel="noopener">Telegram</a>
+                <a id="share-email" href="#">Email</a>
+                <button onclick="copyShareLink()">📋 Copy link</button>
+                <span id="share-status"></span>
+            </div>
+        </div>
+    `;
+}
+
+function onShareNameInput(v) {
+    shareName = (v || '').slice(0, 40);
+    updateShareLinks();
+}
+
+function tryItYourself(e) {
+    if (e) e.preventDefault();
+    // Wipe the shared state and start from question 1.
+    shareView = false;
+    shareName = '';
+    answers = [];
+    totalScore = 0;
+    Object.keys(courseScores).forEach(c => {
+        courseScores[c].score = 0;
+        courseScores[c].answered = 0;
+    });
+    document.getElementById('score-board').innerText =
+        'Total Score: 0 / ' + (theorems.length * MAX_SCORE);
+    document.body.classList.remove('share-view');
+    history.replaceState(null, '', '#q=1');
+    goTo(0);
+}
+
+function updateShareLinks() {
+    if (shareView) return;
+    const url = getShareURL();
+    const summary = buildShareSummary();
+    const eu = encodeURIComponent(url);
+    const et = encodeURIComponent(summary);
+    const etu = encodeURIComponent(summary + '\n\n');
+    const map = {
+        'share-twitter': `https://twitter.com/intent/tweet?text=${etu}&url=${eu}`,
+        'share-facebook': `https://www.facebook.com/sharer/sharer.php?u=${eu}&quote=${et}`,
+        'share-linkedin': `https://www.linkedin.com/sharing/share-offsite/?url=${eu}`,
+        'share-reddit': `https://www.reddit.com/submit?url=${eu}&title=${et}`,
+        'share-whatsapp': `https://api.whatsapp.com/send?text=${etu}${eu}`,
+        'share-telegram': `https://t.me/share/url?url=${eu}&text=${et}`,
+        'share-email': `mailto:?subject=${encodeURIComponent('My Math Gap Finder results')}&body=${etu}${eu}`,
+    };
+    Object.keys(map).forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.href = map[id];
+    });
+}
+
+function copyShareLink() {
+    const text = buildShareSummary() + '\n\n' + getShareURL();
+    const status = document.getElementById('share-status');
+    const done = (msg) => {
+        if (status) {
+            status.innerText = msg;
+            setTimeout(() => { if (status) status.innerText = ''; }, 2500);
+        }
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => done('Copied!'),
+            () => done('Copy failed'));
+    } else {
+        try {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            done('Copied!');
+        } catch (e) { done('Copy failed'); }
+    }
+}
+
+function shareNative() {
+    const data = {
+        title: 'Math Gap Finder',
+        text: buildShareSummary(),
+        url: getShareURL(),
+    };
+    if (navigator.share) {
+        navigator.share(data).catch(() => {});
+    } else {
+        copyShareLink();
+    }
 }
 
 
@@ -438,17 +635,36 @@ function renderTheorem() {
     const t = theorems[currentIndex];
     const prev = answers[currentIndex];
     const sel = (p) => prev === p ? ' selected' : '';
+    const optionLabels = {
+        [SCORE_A]: `A) Yes, I know theorem and proof. (${SCORE_A} points)`,
+        [SCORE_B]: `B) No, but I can prove it looking at statement. (${SCORE_B} points)`,
+        [SCORE_C]: `C) Yes, I understand the theorem and how to apply it but not prove it. (${SCORE_C} points)`,
+        [SCORE_D]: `D) No, I don't understand. (${SCORE_D} points)`,
+    };
+    let optionsHTML;
+    if (shareView) {
+        // Read-only: show only the answer the sharer chose (or
+        // "(unanswered)" if they skipped this question).
+        if (prev !== undefined && optionLabels.hasOwnProperty(prev)) {
+            optionsHTML = `<button class="opt selected" disabled>${optionLabels[prev]}</button>`;
+        } else {
+            optionsHTML = `<button class="opt" disabled style="font-style:italic;color:#888;">(unanswered)</button>`;
+        }
+    } else {
+        optionsHTML = `
+            <button class="opt${sel(SCORE_A)}" onclick="handleAnswer(${SCORE_A})">${optionLabels[SCORE_A]}</button>
+            <button class="opt${sel(SCORE_B)}" onclick="handleAnswer(${SCORE_B})">${optionLabels[SCORE_B]}</button>
+            <button class="opt${sel(SCORE_C)}" onclick="handleAnswer(${SCORE_C})">${optionLabels[SCORE_C]}</button>
+            <button class="opt${sel(SCORE_D)}" onclick="handleAnswer(${SCORE_D})">${optionLabels[SCORE_D]}</button>
+        `;
+    }
     container.innerHTML = `
         <div class="title">${t.id}. ${t.title}</div>
         <div id="inline-refs"></div>
         <div class="statement"><strong>Statement:</strong> ${convertMathDelimiters(t.statement)}</div>
         ${t.proof_structure ? `<details class="proof-hint"><summary>💡 Show proof hint</summary><div class="hint-body">${convertMathDelimiters(t.proof_structure)}</div></details>` : ''}
         <div class="options">
-            <button class="opt${sel(SCORE_A)}" onclick="handleAnswer(${SCORE_A})">A) Yes, I know theorem and proof. (${SCORE_A} points)</button>
-            <button class="opt${sel(SCORE_B)}" onclick="handleAnswer(${SCORE_B})">B) No, but I can prove it looking at statement. (${SCORE_B} points)</button>
-            <button class="opt${sel(SCORE_C)}" onclick="handleAnswer(${SCORE_C})">C) Yes, I understand the theorem and how to apply it but not prove it. (${SCORE_C} points)</button>
-            <button class="opt${sel(SCORE_D)}" onclick="handleAnswer(${SCORE_D})">D) No, I don't understand. (${SCORE_D} points)</button>
-
+            ${optionsHTML}
         </div>
         <div class="nav">
             <button onclick="goPrev()" ${currentIndex === 0 ? 'disabled' : ''}>← Back</button>
@@ -497,28 +713,84 @@ document.addEventListener('keydown', (e) => {
 });
 
 window.addEventListener('hashchange', () => {
-    const { index } = readHash();
-    if (index !== currentIndex) {
+    const { index, page, name } = readHash();
+    const wasShare = shareView;
+    shareView = (page === 'share');
+    shareName = name || '';
+    if (wasShare !== shareView || shareView) {
+        applyShareViewChrome();
+    }
+    if (index !== currentIndex || wasShare !== shareView) {
         currentIndex = index;
         renderTheorem();
+        if (currentIndex >= theorems.length) {
+            renderCourseScores(true);
+        }
     }
 });
 
 async function start() {
     await Promise.all([loadTheorems(), loadReferences()]);
     initCourseScores();
-    const { index, state } = readHash();
+    const { index, state, page, name } = readHash();
     if (state) {
         const decoded = decodeState(state, theorems.length);
         applyDecodedAnswers(decoded);
     }
+    shareView = (page === 'share');
+    shareName = name || '';
+    applyShareViewChrome();
     currentIndex = index;
     document.getElementById('score-board').innerText =
         'Total Score: ' + totalScore + ' / ' + (theorems.length * MAX_SCORE);
     updateHash();
 
     renderTheorem();
-    renderCourseScores(false);
+    renderCourseScores(currentIndex >= theorems.length);
+}
+
+function applyShareViewChrome() {
+    // Shows / hides the share-only header bits (custom title, small
+    // "Try it yourself" button) and toggles the .share-view body class
+    // so the score board / Restart row are hidden.
+    const titleEl = document.querySelector('.header h1');
+    const taglineEl = document.querySelector('.tagline');
+    const tryBtnId = 'try-yourself-btn';
+    let tryBtn = document.getElementById(tryBtnId);
+    if (shareView) {
+        document.body.classList.add('share-view');
+        if (titleEl) {
+            const who = (shareName || '').trim();
+            titleEl.innerText = who ? `${who}'s Math Gap results!` : 'Shared Math Gap results';
+        }
+        if (taglineEl) {
+            taglineEl.innerText = '';
+            taglineEl.style.display = 'none';
+        }
+        if (!tryBtn) {
+            tryBtn = document.createElement('a');
+            tryBtn.id = tryBtnId;
+            tryBtn.href = getOwnURL();
+            tryBtn.className = 'try-yourself-btn';
+            tryBtn.innerText = '🚀 Try it yourself';
+            tryBtn.onclick = tryItYourself;
+            const tagline = document.querySelector('.tagline');
+            if (tagline && tagline.parentNode) {
+                tagline.parentNode.insertBefore(tryBtn, tagline.nextSibling);
+            } else {
+                document.body.insertBefore(tryBtn, document.body.firstChild);
+            }
+        }
+    } else {
+        document.body.classList.remove('share-view');
+        if (titleEl) titleEl.innerText = 'Math Gap Finder';
+        if (taglineEl) {
+            taglineEl.innerText = 'Discover your blind spots and chart your path through mathematics.';
+            taglineEl.style.display = '';
+        }
+        if (tryBtn && tryBtn.parentNode) tryBtn.parentNode.removeChild(tryBtn);
+    }
 }
 
 start();
+

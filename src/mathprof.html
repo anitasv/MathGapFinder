@@ -56,6 +56,18 @@
         .github-link { color: #2c3e50; text-decoration: none; flex-shrink: 0; }
         .github-link:hover { color: #2980b9; }
         .github-link svg { display: block; width: 32px; height: 32px; }
+        #share-box { margin-top: 20px; padding: 14px 16px; background: #f8fbfd; border: 1px solid #d6e6f2; border-radius: 6px; }
+        #share-box h3 { margin: 0 0 8px 0; font-size: 1.05em; color: #2c3e50; }
+        #share-box .share-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+        #share-box .share-buttons button, #share-box .share-buttons a { padding: 8px 12px; font-size: 0.9em; border: 1px solid #2980b9; background: #fff; color: #2980b9; border-radius: 4px; cursor: pointer; text-decoration: none; display: inline-block; }
+        #share-box .share-buttons button:hover, #share-box .share-buttons a:hover { background: #2980b9; color: #fff; }
+        #share-status { margin-left: 8px; font-size: 0.85em; color: #27ae60; }
+        body.share-view #score-board,
+        body.share-view #restart-row { display: none; }
+        #share-box .share-name-row { margin-top: 8px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 0.9em; }
+        #share-box .share-name-row input { padding: 6px 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95em; min-width: 180px; }
+        a.try-yourself-btn { display: inline-block; margin: 4px 0 12px 2px; padding: 6px 10px; font-size: 0.85em; border: 1px solid #2980b9; background: #fff; color: #2980b9; border-radius: 4px; text-decoration: none; }
+        a.try-yourself-btn:hover { background: #2980b9; color: #fff; }
     </style>
     <script>
         window.MathJax = {
@@ -81,7 +93,7 @@
         <div id="quiz-content">Loading theorems...</div>
     </div>
     <div id="score-board">Total Score: 0</div>
-    <div style="margin-top:10px;"><button onclick="restartQuiz()">↺ Restart</button></div>
+    <div id="restart-row" style="margin-top:10px;"><button onclick="restartQuiz()">↺ Restart</button></div>
     <div id="course-scores"></div>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y0MVF8NVPT"></script>

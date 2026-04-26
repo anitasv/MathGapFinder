@@ -10,7 +10,7 @@
   {
     "id": 2,
     "title": "Binomial Theorem",
-    "statement": "For any integer (n\\ge 0),\n\n[\\sum_{k=0}^{n}\\binom{n}{k}x^{n-k}y^k.]",
+    "statement": "For any integer (n\\ge 0),\n\n[(x+y)^n = \\sum_{k=0}^{n}\\binom{n}{k}x^{n-k}y^k.]",
     "course": "High School, Algebra II",
     "difficulty": 2.5,
     "proof_structure": "Expand ((x+y)^n) and count the ways to choose (k) of the (n) factors to supply (y) (or use induction with Pascal\u2019s identity)."
