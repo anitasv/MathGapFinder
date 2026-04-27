@@ -4,9 +4,18 @@ const expandedCourses = {};
 let currentIndex = 0;
 let totalScore = 0;
 // Scoring constants - change here to adjust point values for each option.
-const SCORE_A = 10;
-const SCORE_B = 9;
-const SCORE_C = 4;
+// Scoring uses a Fibonacci-style non-linear scale so that the gaps
+// between levels reflect the actual effort/skill jump between them:
+//   D=0  -> can't do anything
+//   C=1  -> recognize / can apply but cannot prove (minutes of exposure)
+//   B=5  -> can prove the theorem given its statement (hours-days)
+//   A=8  -> fully internalized: knows statement and proof unaided (weeks)
+// The big jump from C(1) to B(5) captures that learning a proof is a
+// substantially larger skill increment than merely being able to apply
+// a theorem -- e.g. recalling vs proving Tychonoff's theorem.
+const SCORE_A = 8;
+const SCORE_B = 5;
+const SCORE_C = 1;
 const SCORE_D = 0;
 const MAX_SCORE = SCORE_A;
 // A level is treated as "mastered" (skipped in blindspot suggestions)
@@ -36,7 +45,7 @@ function toggleLevel(level) {
 
 
 // Answer <-> 3-bit code mapping.
-// 0 = unanswered, 1=A(10), 2=B(7), 3=C(2), 4=D(0)
+// 0 = unanswered, 1=A(8), 2=B(5), 3=C(1), 4=D(0)
 const POINTS_TO_CODE = { [SCORE_A]: 1, [SCORE_B]: 2, [SCORE_C]: 3, [SCORE_D]: 4 };
 const CODE_TO_POINTS = { 1: SCORE_A, 2: SCORE_B, 3: SCORE_C, 4: SCORE_D };
 
@@ -614,8 +623,9 @@ function renderTheorem() {
             ${optionsHTML}
         </div>
         <div class="nav">
-            <button onclick="goPrev()" ${currentIndex === 0 ? 'disabled' : ''}>← Back</button>
-            <button onclick="goNext()" ${currentIndex >= theorems.length - 1 ? 'disabled' : ''}>Forward →</button>
+            <button onclick="goPrev()" title="Previous (←)" ${currentIndex === 0 ? 'disabled' : ''}>← Back</button>
+            <span class="nav-hint" style="font-size:0.8em; color:#888; align-self:center;">Tip: Arrow keys ←↕→ </span>
+            <button onclick="goNext()" title="Next (→)" ${currentIndex >= theorems.length - 1 ? 'disabled' : ''}>Forward →</button>
         </div>
     `;
 
@@ -657,7 +667,30 @@ document.addEventListener('keydown', (e) => {
     if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
     if (e.key === 'ArrowLeft') { e.preventDefault(); goPrev(); }
     else if (e.key === 'ArrowRight') { e.preventDefault(); goNext(); }
+    else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        if (shareView) return;
+        const opts = Array.from(document.querySelectorAll('.options .opt:not([disabled])'));
+        if (!opts.length) return;
+        e.preventDefault();
+        let idx = opts.indexOf(document.activeElement);
+        if (idx === -1) {
+            // Default to currently selected option, else first.
+            idx = opts.findIndex(o => o.classList.contains('selected'));
+            if (idx === -1) idx = e.key === 'ArrowDown' ? -1 : opts.length;
+        }
+        const delta = e.key === 'ArrowDown' ? 1 : -1;
+        const next = (idx + delta + opts.length) % opts.length;
+        opts[next].focus();
+    } else if (e.key === 'Enter') {
+        if (shareView) return;
+        const ae = document.activeElement;
+        if (ae && ae.classList && ae.classList.contains('opt') && !ae.disabled) {
+            e.preventDefault();
+            ae.click();
+        }
+    }
 });
+
 
 window.addEventListener('hashchange', () => {
     const { index, page, name } = readHash();
