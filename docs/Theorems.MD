@@ -50,7 +50,7 @@ $$(x+y)^n = \sum_{k=0}^{n}\binom{n}{k}x^{n-k}y^k.$$
 
 5. **Euclidean Algorithm**
 
-**Statement:** For integers $a,b$ not both zero, repeated division with remainder computes $\gcd(a,b)$.
+**Statement:** For integers $a,b$ with $b\ne 0$, if $a=bq+r$ with $0\le r<|b|$, then $$\gcd(a,b)=\gcd(b,r),$$ and iterating this reduction terminates at the gcd in finitely many steps.
 
 **Course:** Undergraduate, Number Theory
 
@@ -185,7 +185,7 @@ $$\|x+y\|\le \|x\|+\|y\|.$$
 
 16. **Cauchy–Schwarz Inequality**
 
-**Statement:** In an inner product space, $$|\langle x,y\rangle|\le |x||y|.$$
+**Statement:** In an inner product space, $$|\langle x,y\rangle|\le \|x\|\,\|y\|.$$
 
 **Course:** Undergraduate, Linear Algebra
 
@@ -357,7 +357,7 @@ then $f(x)$ is irreducible over $\mathbb Q$.
 
 30. **Parseval’s Identity**
 
-**Statement:** If $\{e_n\}$ is an orthonormal basis of a Hilbert space, then for any vector $x$, $$|x|^2=\sum_n |\langle x,e_n\rangle|^2.$$
+**Statement:** If $\{e_n\}$ is an orthonormal basis of a Hilbert space, then for any vector $x$, $$\|x\|^2=\sum_n |\langle x,e_n\rangle|^2.$$
 
 **Course:** Undergraduate, Functional Analysis
 
@@ -527,7 +527,7 @@ then $f(x)$ is irreducible over $\mathbb Q$.
 
 44. **Fundamental Theorem of Symmetric Polynomials**
 
-**Statement:** Every symmetric polynomial in $x_1,\dots,x_n$ can be written as a polynomial in the elementary symmetric polynomials.
+**Statement:** Every symmetric polynomial in $x_1,\dots,x_n$ over a commutative ring $R$ can be written **uniquely** as a polynomial in the elementary symmetric polynomials $e_1,\dots,e_n$ with coefficients in $R$.
 
 **Course:** Undergraduate, Abstract Algebra
 
@@ -575,7 +575,7 @@ then $f(x)$ is irreducible over $\mathbb Q$.
 
 48. **Law of Large Numbers**
 
-**Statement:** For i.i.d. random variables $X_1,X_2,\dots$ with mean $\mu$, $$\frac{X_1+\cdots+X_n}{n}\to \mu$$ (in probability or almost surely).
+**Statement:** Let $X_1,X_2,\dots$ be i.i.d. random variables with $\mathbb E|X_1|<\infty$ and mean $\mu$. Then (Strong Law) $$\frac{X_1+\cdots+X_n}{n}\xrightarrow{a.s.} \mu.$$ In particular, the same convergence holds in probability (Weak Law, which only needs $\mathbb E|X_1|<\infty$ as well, or finite variance for the elementary proof).
 
 **Course:** Undergraduate, Probability
 
@@ -683,7 +683,7 @@ then $f(x)$ is irreducible over $\mathbb Q$.
 
 57. **Riesz Representation Theorem (Hilbert Space Version)**
 
-**Statement:** Every bounded linear functional $\phi$ on a Hilbert space $H$ can be written uniquely as $$\phi(x)=\langle x,y\rangle$$ for some unique $y\in H$.
+**Statement:** Every bounded linear functional $\phi$ on a Hilbert space $H$ can be written as $$\phi(x)=\langle x,y\rangle$$ for a unique $y\in H$.
 
 **Course:** Graduate, Functional Analysis
 
@@ -755,7 +755,7 @@ then $f(x)$ is irreducible over $\mathbb Q$.
 
 63. **Perron–Frobenius Theorem**
 
-**Statement:** A positive square matrix has a largest positive real eigenvalue with a positive eigenvector.
+**Statement:** A square matrix with strictly positive entries has a positive real eigenvalue $\lambda^*$ that is simple, strictly greater in modulus than every other eigenvalue, and admits a (unique up to scaling) strictly positive eigenvector; moreover $\lambda^*$ is the only eigenvalue with a positive eigenvector.
 
 **Course:** Graduate, Linear Algebra
 
@@ -767,13 +767,13 @@ then $f(x)$ is irreducible over $\mathbb Q$.
 
 64. **Hilbert–Schmidt Theorem**
 
-**Statement:** A compact self-adjoint operator on a Hilbert space has an orthonormal basis of eigenvectors.
+**Statement:** If $K\in L^2(X\times X,\mu\otimes\mu)$, then the integral operator $$(T_K f)(x)=\int_X K(x,y)f(y)\,d\mu(y)$$ is a compact (Hilbert–Schmidt) operator on $L^2(X,\mu)$, and its Hilbert–Schmidt norm equals $\|K\|_{L^2(X\times X)}$.
 
 **Course:** Graduate, Functional Analysis
 
 **Difficulty:** 6.5
 
-**Proof hint:** Apply the compact self-adjoint spectral theorem to obtain an orthonormal eigenbasis.
+**Proof hint:** Expand $K$ in an orthonormal basis of $L^2(X\times X)$ given by tensor products $e_i(x)\overline{e_j(y)}$, identify $T_K$ with a Hilbert–Schmidt matrix on $L^2(X)$, and approximate by finite-rank operators.
 
 ---
 
@@ -851,7 +851,7 @@ then $f(x)$ is irreducible over $\mathbb Q$.
 
 71. **Hahn–Banach Theorem**
 
-**Statement:** A bounded linear functional defined on a subspace can be extended to the whole vector space without increasing its norm.
+**Statement:** Let $X$ be a real or complex normed vector space, $Y\subseteq X$ a subspace, and $\phi:Y\to\mathbb{F}$ a bounded linear functional. Then there exists a bounded linear functional $\tilde\phi:X\to\mathbb{F}$ extending $\phi$ with $\|\tilde\phi\|_{X^*}=\|\phi\|_{Y^*}$. (More generally: if $p:X\to\mathbb R$ is sublinear and $\phi\le p$ on $Y$, then $\phi$ extends to $X$ with $\tilde\phi\le p$.)
 
 **Course:** Graduate, Functional Analysis
 
@@ -947,7 +947,7 @@ then $f(x)$ is irreducible over $\mathbb Q$.
 
 79. **Whitehead Theorem**
 
-**Statement:** A map $f: X \to Y$ between connected CW-complexes is a homotopy equivalence if it induces an isomorphism on all homotopy groups $\pi_n$.
+**Statement:** A map $f: X \to Y$ between connected CW-complexes is a homotopy equivalence if and only if it induces an isomorphism $\pi_n(X,x_0)\to\pi_n(Y,f(x_0))$ for every $n\ge 0$ and every basepoint $x_0\in X$ (equivalently, $f$ is a weak homotopy equivalence).
 
 **Course:** Graduate, Algebraic Topology
 

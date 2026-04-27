@@ -34,7 +34,7 @@
   {
     "id": 5,
     "title": "Euclidean Algorithm",
-    "statement": "For integers $a,b$ not both zero, repeated division with remainder computes $\\gcd(a,b)$.",
+    "statement": "For integers $a,b$ with $b\\ne 0$, if $a=bq+r$ with $0\\le r<|b|$, then $$\\gcd(a,b)=\\gcd(b,r),$$ and iterating this reduction terminates at the gcd in finitely many steps.",
     "course": "Undergraduate, Number Theory",
     "difficulty": 2.5,
     "proof_structure": "Use that $\\gcd(a,b)=\\gcd(b,r)$ with $r=a-bq$ and the remainders strictly decrease until the last nonzero remainder."
@@ -122,7 +122,7 @@
   {
     "id": 16,
     "title": "Cauchy\u2013Schwarz Inequality",
-    "statement": "In an inner product space, $$|\\langle x,y\\rangle|\\le |x||y|.$$",
+    "statement": "In an inner product space, $$|\\langle x,y\\rangle|\\le \\|x\\|\\,\\|y\\|.$$",
     "course": "Undergraduate, Linear Algebra",
     "difficulty": 4.0,
     "proof_structure": "Consider the nonnegative quadratic $$|x-ty|^2\\ge 0$$ in $t$ and require its discriminant to be nonpositive."
@@ -234,7 +234,7 @@
   {
     "id": 30,
     "title": "Parseval\u2019s Identity",
-    "statement": "If $\\{e_n\\}$ is an orthonormal basis of a Hilbert space, then for any vector $x$, $$|x|^2=\\sum_n |\\langle x,e_n\\rangle|^2.$$",
+    "statement": "If $\\{e_n\\}$ is an orthonormal basis of a Hilbert space, then for any vector $x$, $$\\|x\\|^2=\\sum_n |\\langle x,e_n\\rangle|^2.$$",
     "course": "Undergraduate, Functional Analysis",
     "difficulty": 5.0,
     "proof_structure": "Use Pythagoras on finite partial sums of the orthogonal expansion, then pass to the limit using completeness."
@@ -346,7 +346,7 @@
   {
     "id": 44,
     "title": "Fundamental Theorem of Symmetric Polynomials",
-    "statement": "Every symmetric polynomial in $x_1,\\dots,x_n$ can be written as a polynomial in the elementary symmetric polynomials.",
+    "statement": "Every symmetric polynomial in $x_1,\\dots,x_n$ over a commutative ring $R$ can be written **uniquely** as a polynomial in the elementary symmetric polynomials $e_1,\\dots,e_n$ with coefficients in $R$.",
     "course": "Undergraduate, Abstract Algebra",
     "difficulty": 6.0,
     "proof_structure": "Order monomials and eliminate the leading symmetric monomial using suitable products of elementary symmetric polynomials, then iterate."
@@ -378,7 +378,7 @@
   {
     "id": 48,
     "title": "Law of Large Numbers",
-    "statement": "For i.i.d. random variables $X_1,X_2,\\dots$ with mean $\\mu$, $$\\frac{X_1+\\cdots+X_n}{n}\\to \\mu$$ (in probability or almost surely).",
+    "statement": "Let $X_1,X_2,\\dots$ be i.i.d. random variables with $\\mathbb E|X_1|<\\infty$ and mean $\\mu$. Then (Strong Law) $$\\frac{X_1+\\cdots+X_n}{n}\\xrightarrow{a.s.} \\mu.$$ In particular, the same convergence holds in probability (Weak Law, which only needs $\\mathbb E|X_1|<\\infty$ as well, or finite variance for the elementary proof).",
     "course": "Undergraduate, Probability",
     "difficulty": 6.5,
     "proof_structure": "Control variance of averages (weak form), or combine truncation + Borel\u2013Cantelli for almost sure convergence."
@@ -450,7 +450,7 @@
   {
     "id": 57,
     "title": "Riesz Representation Theorem (Hilbert Space Version)",
-    "statement": "Every bounded linear functional $\\phi$ on a Hilbert space $H$ can be written uniquely as $$\\phi(x)=\\langle x,y\\rangle$$ for some unique $y\\in H$.",
+    "statement": "Every bounded linear functional $\\phi$ on a Hilbert space $H$ can be written as $$\\phi(x)=\\langle x,y\\rangle$$ for a unique $y\\in H$.",
     "course": "Graduate, Functional Analysis",
     "difficulty": 5.5,
     "proof_structure": "Look at $\\ker \\phi$, take a vector orthogonal to it, and decompose every vector into kernel part plus one orthogonal direction."
@@ -498,7 +498,7 @@
   {
     "id": 63,
     "title": "Perron\u2013Frobenius Theorem",
-    "statement": "A positive square matrix has a largest positive real eigenvalue with a positive eigenvector.",
+    "statement": "A square matrix with strictly positive entries has a positive real eigenvalue $\\lambda^*$ that is simple, strictly greater in modulus than every other eigenvalue, and admits a (unique up to scaling) strictly positive eigenvector; moreover $\\lambda^*$ is the only eigenvalue with a positive eigenvector.",
     "course": "Graduate, Linear Algebra",
     "difficulty": 6.5,
     "proof_structure": "Map the positive simplex to itself using the matrix, then use compactness / fixed-point ideas; stronger versions handle irreducible nonnegative matrices."
@@ -506,10 +506,10 @@
   {
     "id": 64,
     "title": "Hilbert\u2013Schmidt Theorem",
-    "statement": "A compact self-adjoint operator on a Hilbert space has an orthonormal basis of eigenvectors.",
+    "statement": "If $K\\in L^2(X\\times X,\\mu\\otimes\\mu)$, then the integral operator $$(T_K f)(x)=\\int_X K(x,y)f(y)\\,d\\mu(y)$$ is a compact (Hilbert\u2013Schmidt) operator on $L^2(X,\\mu)$, and its Hilbert\u2013Schmidt norm equals $\\|K\\|_{L^2(X\\times X)}$.",
     "course": "Graduate, Functional Analysis",
     "difficulty": 6.5,
-    "proof_structure": "Apply the compact self-adjoint spectral theorem to obtain an orthonormal eigenbasis."
+    "proof_structure": "Expand $K$ in an orthonormal basis of $L^2(X\\times X)$ given by tensor products $e_i(x)\\overline{e_j(y)}$, identify $T_K$ with a Hilbert\u2013Schmidt matrix on $L^2(X)$, and approximate by finite-rank operators."
   },
   {
     "id": 65,
@@ -562,7 +562,7 @@
   {
     "id": 71,
     "title": "Hahn\u2013Banach Theorem",
-    "statement": "A bounded linear functional defined on a subspace can be extended to the whole vector space without increasing its norm.",
+    "statement": "Let $X$ be a real or complex normed vector space, $Y\\subseteq X$ a subspace, and $\\phi:Y\\to\\mathbb{F}$ a bounded linear functional. Then there exists a bounded linear functional $\\tilde\\phi:X\\to\\mathbb{F}$ extending $\\phi$ with $\\|\\tilde\\phi\\|_{X^*}=\\|\\phi\\|_{Y^*}$. (More generally: if $p:X\\to\\mathbb R$ is sublinear and $\\phi\\le p$ on $Y$, then $\\phi$ extends to $X$ with $\\tilde\\phi\\le p$.)",
     "course": "Graduate, Functional Analysis",
     "difficulty": 7.0,
     "proof_structure": "Extend one dimension at a time while preserving the norm bound and invoke Zorn\u2019s Lemma for a maximal extension."
@@ -626,7 +626,7 @@
   {
     "id": 79,
     "title": "Whitehead Theorem",
-    "statement": "A map $f: X \\to Y$ between connected CW-complexes is a homotopy equivalence if it induces an isomorphism on all homotopy groups $\\pi_n$.",
+    "statement": "A map $f: X \\to Y$ between connected CW-complexes is a homotopy equivalence if and only if it induces an isomorphism $\\pi_n(X,x_0)\\to\\pi_n(Y,f(x_0))$ for every $n\\ge 0$ and every basepoint $x_0\\in X$ (equivalently, $f$ is a weak homotopy equivalence).",
     "course": "Graduate, Algebraic Topology",
     "difficulty": 7.0,
     "proof_structure": "Attach cells to $f$ to force homology isomorphisms, then use lifting properties to conclude $f$ is a homotopy equivalence."
