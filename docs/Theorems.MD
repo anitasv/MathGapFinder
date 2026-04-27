@@ -765,43 +765,7 @@ then $f(x)$ is irreducible over $\mathbb Q$.
 
 ---
 
-64. **Hilbert–Schmidt Theorem**
-
-**Statement:** If $K\in L^2(X\times X,\mu\otimes\mu)$, then the integral operator $$(T_K f)(x)=\int_X K(x,y)f(y)\,d\mu(y)$$ is a compact (Hilbert–Schmidt) operator on $L^2(X,\mu)$, and its Hilbert–Schmidt norm equals $\|K\|_{L^2(X\times X)}$.
-
-**Course:** Graduate, Functional Analysis
-
-**Difficulty:** 6.5
-
-**Proof hint:** Expand $K$ in an orthonormal basis of $L^2(X\times X)$ given by tensor products $e_i(x)\overline{e_j(y)}$, identify $T_K$ with a Hilbert–Schmidt matrix on $L^2(X)$, and approximate by finite-rank operators.
-
----
-
-65. **Compactness Theorem (First-Order Logic)**
-
-**Statement:** A set of first-order sentences has a model iff every finite subset has a model.
-
-**Course:** Graduate, Logic
-
-**Difficulty:** 6.5
-
-**Proof hint:** Use completeness: any inconsistency yields a finite proof, so finite satisfiability implies a model.
-
----
-
-66. **Löwenheim–Skolem Theorem**
-
-**Statement:** If a first-order theory has an infinite model, then it has models of other cardinalities (in particular, a countable model in the downward form).
-
-**Course:** Graduate, Logic
-
-**Difficulty:** 6.5
-
-**Proof hint:** Add Skolem functions and take the closure of a countable set under those functions (Skolem hull), producing a countable elementary submodel.
-
----
-
-67. **Spectral Theorem (Compact Self-Adjoint Operators)**
+64. **Spectral Theorem (Compact Self-Adjoint Operators)**
 
 **Statement:** A compact self-adjoint operator on a Hilbert space has an orthonormal basis of eigenvectors, with real eigenvalues accumulating only at $0$.
 
@@ -813,7 +777,7 @@ then $f(x)$ is irreducible over $\mathbb Q$.
 
 ---
 
-68. **Uniform Boundedness Principle**
+65. **Uniform Boundedness Principle**
 
 **Statement:** Let $\{T_\alpha\}$ be bounded linear operators from a Banach space $X$ to a normed space $Y$. If for every $x\in X$, $$\sup_\alpha |T_\alpha x|<\infty,$$ then $$\sup_\alpha |T_\alpha|<\infty.$$
 
@@ -825,7 +789,7 @@ then $f(x)$ is irreducible over $\mathbb Q$.
 
 ---
 
-69. **Open Mapping Theorem (Banach Spaces)**
+66. **Open Mapping Theorem (Banach Spaces)**
 
 **Statement:** If $T:X\to Y$ is a surjective bounded linear operator between Banach spaces, then $T$ maps open sets to open sets.
 
@@ -837,19 +801,7 @@ then $f(x)$ is irreducible over $\mathbb Q$.
 
 ---
 
-70. **Krull Intersection Theorem**
-
-**Statement:** If $R$ is Noetherian, $I\subseteq J(R)$, and $M$ is a finitely generated $R$-module, then $$\bigcap_{n\ge1} I^n M = 0.$$
-
-**Course:** Graduate, Commutative Algebra
-
-**Difficulty:** 7.0
-
-**Proof hint:** Let $$N=\bigcap I^nM.$$ Show $N=IN$, then apply Nakayama’s Lemma.
-
----
-
-71. **Hahn–Banach Theorem**
+67. **Hahn–Banach Theorem**
 
 **Statement:** Let $X$ be a real or complex normed vector space, $Y\subseteq X$ a subspace, and $\phi:Y\to\mathbb{F}$ a bounded linear functional. Then there exists a bounded linear functional $\tilde\phi:X\to\mathbb{F}$ extending $\phi$ with $\|\tilde\phi\|_{X^*}=\|\phi\|_{Y^*}$. (More generally: if $p:X\to\mathbb R$ is sublinear and $\phi\le p$ on $Y$, then $\phi$ extends to $X$ with $\tilde\phi\le p$.)
 
@@ -861,7 +813,7 @@ then $f(x)$ is irreducible over $\mathbb Q$.
 
 ---
 
-72. **Stone–Weierstrass Theorem**
+68. **Stone–Weierstrass Theorem**
 
 **Statement:** If a subalgebra $A\subset C(K)$ on a compact space $K$ contains constants and separates points, then $A$ is dense in $C(K)$.
 
@@ -873,7 +825,7 @@ then $f(x)$ is irreducible over $\mathbb Q$.
 
 ---
 
-73. **Structure Theorem for PID Modules**
+69. **Structure Theorem for PID Modules**
 
 **Statement:** Every finitely generated module over a principal ideal domain is a direct sum of a free part and cyclic torsion modules.
 
@@ -885,31 +837,7 @@ then $f(x)$ is irreducible over $\mathbb Q$.
 
 ---
 
-74. **Wedderburn’s Little Theorem**
-
-**Statement:** Every finite division ring is commutative.
-
-**Course:** Graduate, Algebra
-
-**Difficulty:** 7.0
-
-**Proof hint:** Assume a minimal counterexample and use conjugacy class counting with proper subfields to reach a contradiction.
-
----
-
-75. **Nielsen–Schreier Theorem**
-
-**Statement:** Every subgroup of a free group is itself free.
-
-**Course:** Graduate, Algebra
-
-**Difficulty:** 7.0
-
-**Proof hint:** Choose coset representatives and explicitly construct generators (Schreier generators), or use covering spaces of graphs.
-
----
-
-76. **Brouwer Fixed Point Theorem**
+70. **Brouwer Fixed Point Theorem**
 
 **Statement:** Every continuous map $$f:B^n \to B^n$$ from the closed unit ball to itself has a fixed point.
 
@@ -921,19 +849,7 @@ then $f(x)$ is irreducible over $\mathbb Q$.
 
 ---
 
-77. **Mercer’s Theorem**
-
-**Statement:** A continuous symmetric positive kernel $K(x,y)$ on a compact domain has an eigenfunction expansion $$K(x,y)=\sum_{n=1}^\infty \lambda_n \phi_n(x)\phi_n(y).$$
-
-**Course:** Graduate, Functional Analysis
-
-**Difficulty:** 7.0
-
-**Proof hint:** Convert the kernel into a compact self-adjoint integral operator, apply the spectral theorem, then use continuity to upgrade convergence.
-
----
-
-78. **Radon–Nikodym Theorem**
+71. **Radon–Nikodym Theorem**
 
 **Statement:** If $\nu$ is absolutely continuous with respect to $\mu$ ($\nu \ll \mu$), then there exists a measurable function $f$ such that $$\nu(A)=\int_A f d\mu$$ for all measurable sets $A$.
 
@@ -945,19 +861,7 @@ then $f(x)$ is irreducible over $\mathbb Q$.
 
 ---
 
-79. **Whitehead Theorem**
-
-**Statement:** A map $f: X \to Y$ between connected CW-complexes is a homotopy equivalence if and only if it induces an isomorphism $\pi_n(X,x_0)\to\pi_n(Y,f(x_0))$ for every $n\ge 0$ and every basepoint $x_0\in X$ (equivalently, $f$ is a weak homotopy equivalence).
-
-**Course:** Graduate, Algebraic Topology
-
-**Difficulty:** 7.0
-
-**Proof hint:** Attach cells to $f$ to force homology isomorphisms, then use lifting properties to conclude $f$ is a homotopy equivalence.
-
----
-
-80. **Schauder Fixed Point Theorem**
+72. **Schauder Fixed Point Theorem**
 
 **Statement:** A continuous map from a nonempty compact convex subset of a Banach space to itself has a fixed point.
 
@@ -969,19 +873,7 @@ then $f(x)$ is irreducible over $\mathbb Q$.
 
 ---
 
-81. **Noether Normalization Lemma**
-
-**Statement:** Every finitely generated algebra over a field is integral over a polynomial ring in finitely many algebraically independent variables.
-
-**Course:** Graduate, Commutative Algebra
-
-**Difficulty:** 7.5
-
-**Proof hint:** Change generators so one satisfies a monic polynomial relation, then induct on the number of generators.
-
----
-
-82. **Tychonoff Theorem**
+73. **Tychonoff Theorem**
 
 **Statement:** Any product of compact topological spaces is compact.
 
@@ -993,19 +885,7 @@ then $f(x)$ is irreducible over $\mathbb Q$.
 
 ---
 
-83. **Gauss–Bonnet Theorem**
-
-**Statement:** For a compact oriented surface $M$, $$\int_M K dA = 2\pi \chi(M),$$ where $K$ is Gaussian curvature and $\chi(M)$ is the Euler characteristic.
-
-**Course:** Graduate, Differential Geometry
-
-**Difficulty:** 7.5
-
-**Proof hint:** Triangulate the surface, relate the angle defect in each triangle to curvature, and then sum globally.
-
----
-
-84. **Seifert–van Kampen Theorem**
+74. **Seifert–van Kampen Theorem**
 
 **Statement:** If a topological space $X = U \cup V$ with $U, V, U \cap V$ path-connected, then $$\pi_1(X) \cong \pi_1(U) *_{\pi_1(U\cap V)} \pi_1(V).$$
 
@@ -1017,55 +897,7 @@ then $f(x)$ is irreducible over $\mathbb Q$.
 
 ---
 
-85. **Primary Decomposition Theorem**
-
-**Statement:** In a Noetherian ring, every ideal can be written as an intersection of finitely many primary ideals.
-
-**Course:** Graduate, Commutative Algebra
-
-**Difficulty:** 7.5
-
-**Proof hint:** Use Noetherian induction with a maximal counterexample, splitting ideals using zero divisors and associated primes.
-
----
-
-86. **Sard’s Theorem**
-
-**Statement:** For a sufficiently smooth map $f:\mathbb R^n \to \mathbb R^m$, the set of critical values has measure zero.
-
-**Course:** Graduate, Differential Topology
-
-**Difficulty:** 7.5
-
-**Proof hint:** Near critical points, the map flattens directions; cover the domain by small cubes and estimate that their images have very small total volume.
-
----
-
-87. **Kolmogorov Extension Theorem**
-
-**Statement:** A consistent family of finite-dimensional probability distributions defines a probability measure on the infinite product space.
-
-**Course:** Graduate, Probability Theory
-
-**Difficulty:** 7.5
-
-**Proof hint:** Define probabilities on cylinder sets, verify finite additivity and consistency, then extend via Carathéodory’s extension theorem.
-
----
-
-88. **Artin–Wedderburn Theorem**
-
-**Statement:** Every semisimple Artinian ring is isomorphic to a finite product of matrix rings over division rings.
-
-**Course:** Graduate, Abstract Algebra
-
-**Difficulty:** 7.5
-
-**Proof hint:** Decompose the regular module into simple modules so their endomorphism rings produce matrix blocks and assemble the product.
-
----
-
-89. **Nullstellensatz (Hilbert’s Nullstellensatz)**
+75. **Nullstellensatz (Hilbert’s Nullstellensatz)**
 
 **Statement:** Over an algebraically closed field $k$, maximal ideals of $$k[x_1,\dots,x_n]$$ are exactly ideals of the form $$(x_1-a_1,\dots,x_n-a_n).$$
 
@@ -1077,19 +909,7 @@ then $f(x)$ is irreducible over $\mathbb Q$.
 
 ---
 
-90. **de Rham Theorem**
-
-**Statement:** For a smooth manifold $M$, de Rham cohomology is naturally isomorphic to singular cohomology with real coefficients: $$H^k_{dR}(M)\cong H^k(M;\mathbb R).$$
-
-**Course:** Graduate, Differential Geometry
-
-**Difficulty:** 8.0
-
-**Proof hint:** Integrate differential forms over simplices to build a cochain map, then prove it is an isomorphism using local exactness and Mayer–Vietoris patching.
-
----
-
-91. **Gelfand–Naimark Theorem**
+76. **Gelfand–Naimark Theorem**
 
 **Statement:** Every commutative $C^*$-algebra with identity is isometrically isomorphic to the algebra of continuous functions on its space of maximal ideals.
 
@@ -1098,111 +918,3 @@ then $f(x)$ is irreducible over $\mathbb Q$.
 **Difficulty:** 8.0
 
 **Proof hint:** Map elements to continuous functions via the Gelfand transform (evaluation at characters), then use Stone–Weierstrass to show it is a surjective isometry.
-
----
-
-92. **Stone’s Theorem on One-Parameter Unitary Groups**
-
-**Statement:** Every strongly continuous unitary group $(U_t)_{t\in\mathbb R}$ on a Hilbert space has the form $$U_t=e^{itA}$$ for a unique self-adjoint operator $A$.
-
-**Course:** Graduate, Functional Analysis
-
-**Difficulty:** 8.0
-
-**Proof hint:** Use the spectral theorem to exponentiate a self-adjoint operator, and recover the generator from the strong derivative or resolvent.
-
----
-
-93. **Gödel’s First Incompleteness Theorem**
-
-**Statement:** Any consistent effectively axiomatized theory strong enough to encode arithmetic contains a true arithmetic statement that it cannot prove.
-
-**Course:** Graduate, Logic
-
-**Difficulty:** 8.0
-
-**Proof hint:** Encode syntax as numbers (Gödel numbering), then diagonalize to construct a sentence that asserts its own unprovability.
-
----
-
-94. **Brouwer Invariance of Domain**
-
-**Statement:** If $U \subset \mathbb{R}^n$ is open and $f:U \to \mathbb{R}^n$ is continuous and injective, then $f(U)$ is open and $f$ is a homeomorphism onto its image.
-
-**Course:** Graduate, Topology
-
-**Difficulty:** 8.0
-
-**Proof hint:** Show a continuous injective map cannot collapse local degree, using homology or degree theory to deduce openness and homeomorphism onto its image.
-
----
-
-95. **Spectral Theorem (General Normal Operators)**
-
-**Statement:** Every bounded normal operator $T$ on a complex Hilbert space admits a spectral resolution $$T=\int_{\sigma(T)} z dE(z),$$ where $E$ is a projection-valued measure.
-
-**Course:** Graduate, Functional Analysis
-
-**Difficulty:** 8.0
-
-**Proof hint:** Build the continuous functional calculus for normal operators and extend it to measurable sets to produce spectral projections.
-
----
-
-96. **Prime Number Theorem**
-
-**Statement:** If $\pi(x)$ is the number of primes $\le x$, then $$\pi(x)\sim \frac{x}{\log x}.$$
-
-**Course:** Graduate, Analytic Number Theory
-
-**Difficulty:** 8.5
-
-**Proof hint:** Study the Riemann zeta function $\zeta(s)$, relate its logarithmic derivative to primes, prove suitable zero-free behavior near $\Re(s)=1$, then use Tauberian or contour arguments.
-
----
-
-97. **Gödel’s Second Incompleteness Theorem**
-
-**Statement:** Any consistent, effectively axiomatized theory strong enough for arithmetic cannot prove its own consistency.
-
-**Course:** Graduate, Logic
-
-**Difficulty:** 8.5
-
-**Proof hint:** Formalize the First Incompleteness Theorem inside the theory itself; if the theory proved its own consistency, it would prove its Gödel sentence, contradiction.
-
----
-
-98. **Hodge Decomposition Theorem**
-
-**Statement:** On a compact Riemannian manifold, every differential form decomposes uniquely as $$\omega = d\alpha + \delta\beta + h,$$ where $h$ is harmonic.
-
-**Course:** Graduate, Differential Geometry
-
-**Difficulty:** 8.5
-
-**Proof hint:** Study the Laplacian $$\Delta = d\delta + \delta d$$ as a self-adjoint elliptic operator and use Hilbert space orthogonal decomposition to split forms into exact, coexact, and harmonic parts.
-
----
-
-99. **Riemann–Roch Theorem**
-
-**Statement:** For a divisor $D$ on a compact Riemann surface, $$\ell(D) - \ell(K-D) = \deg(D) + 1 - g,$$ where $\ell(D)$ is the dimension of meromorphic functions with poles bounded by $D$, $K$ is the canonical divisor, and $g$ is the genus.
-
-**Course:** Graduate, Algebraic Geometry
-
-**Difficulty:** 8.5
-
-**Proof hint:** Compare spaces of meromorphic functions and differentials via residue pairing and compute dimensions with cohomological arguments.
-
----
-
-100. **Prime Number Theorem for Arithmetic Progressions**
-
-**Statement:** For any coprime integers $a$ and $d$, the number of primes $p \le x$ with $p \equiv a \pmod d$ is asymptotically $\frac{1}{\varphi(d)} \frac{x}{\log x}$.
-
-**Course:** Graduate, Analytic Number Theory
-
-**Difficulty:** 9.0
-
-**Proof hint:** Use Dirichlet characters and $L$-series, prove $L(1,\chi)\neq 0$ for nonprincipal characters, then translate logarithmic sums into the asymptotic prime count.

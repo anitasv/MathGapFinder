@@ -1,22 +1,16 @@
 # Courses
 
-Unique courses found in `data/theorems.json`: **29**
+Unique courses found in `data/theorems.json`: **23**
 
 ## Graduate
 
-- Abstract Algebra
 - Algebra
 - Algebraic Geometry
 - Algebraic Topology
-- Analytic Number Theory
 - Commutative Algebra
-- Differential Geometry
-- Differential Topology
 - Functional Analysis
 - Linear Algebra
-- Logic
 - Measure Theory
-- Probability Theory
 - Real Analysis
 - Topology
 

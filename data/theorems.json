@@ -505,30 +505,6 @@
   },
   {
     "id": 64,
-    "title": "Hilbert\u2013Schmidt Theorem",
-    "statement": "If $K\\in L^2(X\\times X,\\mu\\otimes\\mu)$, then the integral operator $$(T_K f)(x)=\\int_X K(x,y)f(y)\\,d\\mu(y)$$ is a compact (Hilbert\u2013Schmidt) operator on $L^2(X,\\mu)$, and its Hilbert\u2013Schmidt norm equals $\\|K\\|_{L^2(X\\times X)}$.",
-    "course": "Graduate, Functional Analysis",
-    "difficulty": 6.5,
-    "proof_structure": "Expand $K$ in an orthonormal basis of $L^2(X\\times X)$ given by tensor products $e_i(x)\\overline{e_j(y)}$, identify $T_K$ with a Hilbert\u2013Schmidt matrix on $L^2(X)$, and approximate by finite-rank operators."
-  },
-  {
-    "id": 65,
-    "title": "Compactness Theorem (First-Order Logic)",
-    "statement": "A set of first-order sentences has a model iff every finite subset has a model.",
-    "course": "Graduate, Logic",
-    "difficulty": 6.5,
-    "proof_structure": "Use completeness: any inconsistency yields a finite proof, so finite satisfiability implies a model."
-  },
-  {
-    "id": 66,
-    "title": "L\u00f6wenheim\u2013Skolem Theorem",
-    "statement": "If a first-order theory has an infinite model, then it has models of other cardinalities (in particular, a countable model in the downward form).",
-    "course": "Graduate, Logic",
-    "difficulty": 6.5,
-    "proof_structure": "Add Skolem functions and take the closure of a countable set under those functions (Skolem hull), producing a countable elementary submodel."
-  },
-  {
-    "id": 67,
     "title": "Spectral Theorem (Compact Self-Adjoint Operators)",
     "statement": "A compact self-adjoint operator on a Hilbert space has an orthonormal basis of eigenvectors, with real eigenvalues accumulating only at $0$.",
     "course": "Graduate, Functional Analysis",
@@ -536,7 +512,7 @@
     "proof_structure": "Maximize the Rayleigh quotient to obtain one eigenvector, restrict to its orthogonal complement, then iterate using compactness."
   },
   {
-    "id": 68,
+    "id": 65,
     "title": "Uniform Boundedness Principle",
     "statement": "Let $\\{T_\\alpha\\}$ be bounded linear operators from a Banach space $X$ to a normed space $Y$. If for every $x\\in X$, $$\\sup_\\alpha |T_\\alpha x|<\\infty,$$ then $$\\sup_\\alpha |T_\\alpha|<\\infty.$$",
     "course": "Graduate, Functional Analysis",
@@ -544,7 +520,7 @@
     "proof_structure": "Consider sets where operators are uniformly bounded on a point. Use Baire Category Theorem to upgrade pointwise boundedness to norm boundedness."
   },
   {
-    "id": 69,
+    "id": 66,
     "title": "Open Mapping Theorem (Banach Spaces)",
     "statement": "If $T:X\\to Y$ is a surjective bounded linear operator between Banach spaces, then $T$ maps open sets to open sets.",
     "course": "Graduate, Functional Analysis",
@@ -552,15 +528,7 @@
     "proof_structure": "Show the image of the unit ball is dense enough to contain a small ball around $0$, then use scaling and translation."
   },
   {
-    "id": 70,
-    "title": "Krull Intersection Theorem",
-    "statement": "If $R$ is Noetherian, $I\\subseteq J(R)$, and $M$ is a finitely generated $R$-module, then $$\\bigcap_{n\\ge1} I^n M = 0.$$",
-    "course": "Graduate, Commutative Algebra",
-    "difficulty": 7.0,
-    "proof_structure": "Let $$N=\\bigcap I^nM.$$ Show $N=IN$, then apply Nakayama\u2019s Lemma."
-  },
-  {
-    "id": 71,
+    "id": 67,
     "title": "Hahn\u2013Banach Theorem",
     "statement": "Let $X$ be a real or complex normed vector space, $Y\\subseteq X$ a subspace, and $\\phi:Y\\to\\mathbb{F}$ a bounded linear functional. Then there exists a bounded linear functional $\\tilde\\phi:X\\to\\mathbb{F}$ extending $\\phi$ with $\\|\\tilde\\phi\\|_{X^*}=\\|\\phi\\|_{Y^*}$. (More generally: if $p:X\\to\\mathbb R$ is sublinear and $\\phi\\le p$ on $Y$, then $\\phi$ extends to $X$ with $\\tilde\\phi\\le p$.)",
     "course": "Graduate, Functional Analysis",
@@ -568,7 +536,7 @@
     "proof_structure": "Extend one dimension at a time while preserving the norm bound and invoke Zorn\u2019s Lemma for a maximal extension."
   },
   {
-    "id": 72,
+    "id": 68,
     "title": "Stone\u2013Weierstrass Theorem",
     "statement": "If a subalgebra $A\\subset C(K)$ on a compact space $K$ contains constants and separates points, then $A$ is dense in $C(K)$.",
     "course": "Graduate, Real Analysis",
@@ -576,7 +544,7 @@
     "proof_structure": "Use the algebra operations to approximate maxima/minima and then build uniform approximations from point-separating functions."
   },
   {
-    "id": 73,
+    "id": 69,
     "title": "Structure Theorem for PID Modules",
     "statement": "Every finitely generated module over a principal ideal domain is a direct sum of a free part and cyclic torsion modules.",
     "course": "Graduate, Algebra",
@@ -584,23 +552,7 @@
     "proof_structure": "Represent the module by generators/relations and diagonalize the relation matrix via Smith normal form."
   },
   {
-    "id": 74,
-    "title": "Wedderburn\u2019s Little Theorem",
-    "statement": "Every finite division ring is commutative.",
-    "course": "Graduate, Algebra",
-    "difficulty": 7.0,
-    "proof_structure": "Assume a minimal counterexample and use conjugacy class counting with proper subfields to reach a contradiction."
-  },
-  {
-    "id": 75,
-    "title": "Nielsen\u2013Schreier Theorem",
-    "statement": "Every subgroup of a free group is itself free.",
-    "course": "Graduate, Algebra",
-    "difficulty": 7.0,
-    "proof_structure": "Choose coset representatives and explicitly construct generators (Schreier generators), or use covering spaces of graphs."
-  },
-  {
-    "id": 76,
+    "id": 70,
     "title": "Brouwer Fixed Point Theorem",
     "statement": "Every continuous map $$f:B^n \\to B^n$$ from the closed unit ball to itself has a fixed point.",
     "course": "Graduate, Topology",
@@ -608,15 +560,7 @@
     "proof_structure": "Assume no fixed point, then push each point radially to the boundary to build a continuous retraction $B^n \\to S^{n-1}$, which is impossible."
   },
   {
-    "id": 77,
-    "title": "Mercer\u2019s Theorem",
-    "statement": "A continuous symmetric positive kernel $K(x,y)$ on a compact domain has an eigenfunction expansion $$K(x,y)=\\sum_{n=1}^\\infty \\lambda_n \\phi_n(x)\\phi_n(y).$$",
-    "course": "Graduate, Functional Analysis",
-    "difficulty": 7.0,
-    "proof_structure": "Convert the kernel into a compact self-adjoint integral operator, apply the spectral theorem, then use continuity to upgrade convergence."
-  },
-  {
-    "id": 78,
+    "id": 71,
     "title": "Radon\u2013Nikodym Theorem",
     "statement": "If $\\nu$ is absolutely continuous with respect to $\\mu$ ($\\nu \\ll \\mu$), then there exists a measurable function $f$ such that $$\\nu(A)=\\int_A f d\\mu$$ for all measurable sets $A$.",
     "course": "Graduate, Measure Theory",
@@ -624,15 +568,7 @@
     "proof_structure": "Work in $L^1(\\mu)$ and construct $f$ using approximation by simple functions to represent $\\nu$ as an integral."
   },
   {
-    "id": 79,
-    "title": "Whitehead Theorem",
-    "statement": "A map $f: X \\to Y$ between connected CW-complexes is a homotopy equivalence if and only if it induces an isomorphism $\\pi_n(X,x_0)\\to\\pi_n(Y,f(x_0))$ for every $n\\ge 0$ and every basepoint $x_0\\in X$ (equivalently, $f$ is a weak homotopy equivalence).",
-    "course": "Graduate, Algebraic Topology",
-    "difficulty": 7.0,
-    "proof_structure": "Attach cells to $f$ to force homology isomorphisms, then use lifting properties to conclude $f$ is a homotopy equivalence."
-  },
-  {
-    "id": 80,
+    "id": 72,
     "title": "Schauder Fixed Point Theorem",
     "statement": "A continuous map from a nonempty compact convex subset of a Banach space to itself has a fixed point.",
     "course": "Graduate, Functional Analysis",
@@ -640,15 +576,7 @@
     "proof_structure": "Approximate by finite-dimensional compact convex sets, apply Brouwer\u2019s theorem, then pass to a limit."
   },
   {
-    "id": 81,
-    "title": "Noether Normalization Lemma",
-    "statement": "Every finitely generated algebra over a field is integral over a polynomial ring in finitely many algebraically independent variables.",
-    "course": "Graduate, Commutative Algebra",
-    "difficulty": 7.5,
-    "proof_structure": "Change generators so one satisfies a monic polynomial relation, then induct on the number of generators."
-  },
-  {
-    "id": 82,
+    "id": 73,
     "title": "Tychonoff Theorem",
     "statement": "Any product of compact topological spaces is compact.",
     "course": "Graduate, Topology",
@@ -656,15 +584,7 @@
     "proof_structure": "Use the finite intersection property or ultrafilters coordinatewise, then assemble a point in the full product using Choice."
   },
   {
-    "id": 83,
-    "title": "Gauss\u2013Bonnet Theorem",
-    "statement": "For a compact oriented surface $M$, $$\\int_M K dA = 2\\pi \\chi(M),$$ where $K$ is Gaussian curvature and $\\chi(M)$ is the Euler characteristic.",
-    "course": "Graduate, Differential Geometry",
-    "difficulty": 7.5,
-    "proof_structure": "Triangulate the surface, relate the angle defect in each triangle to curvature, and then sum globally."
-  },
-  {
-    "id": 84,
+    "id": 74,
     "title": "Seifert\u2013van Kampen Theorem",
     "statement": "If a topological space $X = U \\cup V$ with $U, V, U \\cap V$ path-connected, then $$\\pi_1(X) \\cong \\pi_1(U) *_{\\pi_1(U\\cap V)} \\pi_1(V).$$",
     "course": "Graduate, Algebraic Topology",
@@ -672,39 +592,7 @@
     "proof_structure": "Break loops into pieces lying in $U$ or $V$, then translate concatenation into generators and relations."
   },
   {
-    "id": 85,
-    "title": "Primary Decomposition Theorem",
-    "statement": "In a Noetherian ring, every ideal can be written as an intersection of finitely many primary ideals.",
-    "course": "Graduate, Commutative Algebra",
-    "difficulty": 7.5,
-    "proof_structure": "Use Noetherian induction with a maximal counterexample, splitting ideals using zero divisors and associated primes."
-  },
-  {
-    "id": 86,
-    "title": "Sard\u2019s Theorem",
-    "statement": "For a sufficiently smooth map $f:\\mathbb R^n \\to \\mathbb R^m$, the set of critical values has measure zero.",
-    "course": "Graduate, Differential Topology",
-    "difficulty": 7.5,
-    "proof_structure": "Near critical points, the map flattens directions; cover the domain by small cubes and estimate that their images have very small total volume."
-  },
-  {
-    "id": 87,
-    "title": "Kolmogorov Extension Theorem",
-    "statement": "A consistent family of finite-dimensional probability distributions defines a probability measure on the infinite product space.",
-    "course": "Graduate, Probability Theory",
-    "difficulty": 7.5,
-    "proof_structure": "Define probabilities on cylinder sets, verify finite additivity and consistency, then extend via Carath\u00e9odory\u2019s extension theorem."
-  },
-  {
-    "id": 88,
-    "title": "Artin\u2013Wedderburn Theorem",
-    "statement": "Every semisimple Artinian ring is isomorphic to a finite product of matrix rings over division rings.",
-    "course": "Graduate, Abstract Algebra",
-    "difficulty": 7.5,
-    "proof_structure": "Decompose the regular module into simple modules so their endomorphism rings produce matrix blocks and assemble the product."
-  },
-  {
-    "id": 89,
+    "id": 75,
     "title": "Nullstellensatz (Hilbert\u2019s Nullstellensatz)",
     "statement": "Over an algebraically closed field $k$, maximal ideals of $$k[x_1,\\dots,x_n]$$ are exactly ideals of the form $$(x_1-a_1,\\dots,x_n-a_n).$$",
     "course": "Graduate, Algebraic Geometry",
@@ -712,91 +600,11 @@
     "proof_structure": "For a maximal ideal $M$, study the field $k[x_1,\\dots,x_n]/M$ and show it is an algebraic extension of $k$, hence equals $k$."
   },
   {
-    "id": 90,
-    "title": "de Rham Theorem",
-    "statement": "For a smooth manifold $M$, de Rham cohomology is naturally isomorphic to singular cohomology with real coefficients: $$H^k_{dR}(M)\\cong H^k(M;\\mathbb R).$$",
-    "course": "Graduate, Differential Geometry",
-    "difficulty": 8.0,
-    "proof_structure": "Integrate differential forms over simplices to build a cochain map, then prove it is an isomorphism using local exactness and Mayer\u2013Vietoris patching."
-  },
-  {
-    "id": 91,
+    "id": 76,
     "title": "Gelfand\u2013Naimark Theorem",
     "statement": "Every commutative $C^*$-algebra with identity is isometrically isomorphic to the algebra of continuous functions on its space of maximal ideals.",
     "course": "Graduate, Functional Analysis",
     "difficulty": 8.0,
     "proof_structure": "Map elements to continuous functions via the Gelfand transform (evaluation at characters), then use Stone\u2013Weierstrass to show it is a surjective isometry."
-  },
-  {
-    "id": 92,
-    "title": "Stone\u2019s Theorem on One-Parameter Unitary Groups",
-    "statement": "Every strongly continuous unitary group $(U_t)_{t\\in\\mathbb R}$ on a Hilbert space has the form $$U_t=e^{itA}$$ for a unique self-adjoint operator $A$.",
-    "course": "Graduate, Functional Analysis",
-    "difficulty": 8.0,
-    "proof_structure": "Use the spectral theorem to exponentiate a self-adjoint operator, and recover the generator from the strong derivative or resolvent."
-  },
-  {
-    "id": 93,
-    "title": "G\u00f6del\u2019s First Incompleteness Theorem",
-    "statement": "Any consistent effectively axiomatized theory strong enough to encode arithmetic contains a true arithmetic statement that it cannot prove.",
-    "course": "Graduate, Logic",
-    "difficulty": 8.0,
-    "proof_structure": "Encode syntax as numbers (G\u00f6del numbering), then diagonalize to construct a sentence that asserts its own unprovability."
-  },
-  {
-    "id": 94,
-    "title": "Brouwer Invariance of Domain",
-    "statement": "If $U \\subset \\mathbb{R}^n$ is open and $f:U \\to \\mathbb{R}^n$ is continuous and injective, then $f(U)$ is open and $f$ is a homeomorphism onto its image.",
-    "course": "Graduate, Topology",
-    "difficulty": 8.0,
-    "proof_structure": "Show a continuous injective map cannot collapse local degree, using homology or degree theory to deduce openness and homeomorphism onto its image."
-  },
-  {
-    "id": 95,
-    "title": "Spectral Theorem (General Normal Operators)",
-    "statement": "Every bounded normal operator $T$ on a complex Hilbert space admits a spectral resolution $$T=\\int_{\\sigma(T)} z dE(z),$$ where $E$ is a projection-valued measure.",
-    "course": "Graduate, Functional Analysis",
-    "difficulty": 8.0,
-    "proof_structure": "Build the continuous functional calculus for normal operators and extend it to measurable sets to produce spectral projections."
-  },
-  {
-    "id": 96,
-    "title": "Prime Number Theorem",
-    "statement": "If $\\pi(x)$ is the number of primes $\\le x$, then $$\\pi(x)\\sim \\frac{x}{\\log x}.$$",
-    "course": "Graduate, Analytic Number Theory",
-    "difficulty": 8.5,
-    "proof_structure": "Study the Riemann zeta function $\\zeta(s)$, relate its logarithmic derivative to primes, prove suitable zero-free behavior near $\\Re(s)=1$, then use Tauberian or contour arguments."
-  },
-  {
-    "id": 97,
-    "title": "G\u00f6del\u2019s Second Incompleteness Theorem",
-    "statement": "Any consistent, effectively axiomatized theory strong enough for arithmetic cannot prove its own consistency.",
-    "course": "Graduate, Logic",
-    "difficulty": 8.5,
-    "proof_structure": "Formalize the First Incompleteness Theorem inside the theory itself; if the theory proved its own consistency, it would prove its G\u00f6del sentence, contradiction."
-  },
-  {
-    "id": 98,
-    "title": "Hodge Decomposition Theorem",
-    "statement": "On a compact Riemannian manifold, every differential form decomposes uniquely as $$\\omega = d\\alpha + \\delta\\beta + h,$$ where $h$ is harmonic.",
-    "course": "Graduate, Differential Geometry",
-    "difficulty": 8.5,
-    "proof_structure": "Study the Laplacian $$\\Delta = d\\delta + \\delta d$$ as a self-adjoint elliptic operator and use Hilbert space orthogonal decomposition to split forms into exact, coexact, and harmonic parts."
-  },
-  {
-    "id": 99,
-    "title": "Riemann\u2013Roch Theorem",
-    "statement": "For a divisor $D$ on a compact Riemann surface, $$\\ell(D) - \\ell(K-D) = \\deg(D) + 1 - g,$$ where $\\ell(D)$ is the dimension of meromorphic functions with poles bounded by $D$, $K$ is the canonical divisor, and $g$ is the genus.",
-    "course": "Graduate, Algebraic Geometry",
-    "difficulty": 8.5,
-    "proof_structure": "Compare spaces of meromorphic functions and differentials via residue pairing and compute dimensions with cohomological arguments."
-  },
-  {
-    "id": 100,
-    "title": "Prime Number Theorem for Arithmetic Progressions",
-    "statement": "For any coprime integers $a$ and $d$, the number of primes $p \\le x$ with $p \\equiv a \\pmod d$ is asymptotically $\\frac{1}{\\varphi(d)} \\frac{x}{\\log x}$.",
-    "course": "Graduate, Analytic Number Theory",
-    "difficulty": 9.0,
-    "proof_structure": "Use Dirichlet characters and $L$-series, prove $L(1,\\chi)\\neq 0$ for nonprincipal characters, then translate logarithmic sums into the asymptotic prime count."
   }
 ]
