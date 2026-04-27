@@ -42,10 +42,10 @@
   {
     "id": 6,
     "title": "Triangle Inequality",
-    "statement": "In any normed space,\n\n$$|x+y|\\le |x|+|y|.$$\n\nFor real numbers this becomes:\n\n$$|a+b|\\le |a|+|b|.$$",
+    "statement": "For all $x,y\\in\\mathbb{R}^n$ with the Euclidean norm $\\|x\\|=\\sqrt{x_1^2+\\cdots+x_n^2}$,\n\n$$\\|x+y\\|\\le \\|x\\|+\\|y\\|.$$",
     "course": "Undergraduate, Linear Algebra",
     "difficulty": 3.0,
-    "proof_structure": "Square both sides (or use Cauchy\u2013Schwarz in inner product spaces) to show $$|x+y|^2\\le (|x|+|y|)^2$$ and take square roots."
+    "proof_structure": "Square both sides; the inequality reduces to $x\\cdot y\\le \\|x\\|\\,\\|y\\|$, which is the Cauchy\u2013Schwarz inequality."
   },
   {
     "id": 7,

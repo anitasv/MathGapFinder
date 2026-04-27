@@ -62,19 +62,16 @@ $$(x+y)^n = \sum_{k=0}^{n}\binom{n}{k}x^{n-k}y^k.$$
 
 6. **Triangle Inequality**
 
-**Statement:** In any normed space,
+**Statement:** For all $x,y\in\mathbb{R}^n$ with the Euclidean norm $\|x\|=\sqrt{x_1^2+\cdots+x_n^2}$,
 
-$$|x+y|\le |x|+|y|.$$
-
-For real numbers this becomes:
-
-$$|a+b|\le |a|+|b|.$$
+$$\|x+y\|\le \|x\|+\|y\|.$$
 
 **Course:** Undergraduate, Linear Algebra
 
 **Difficulty:** 3.0
 
-**Proof hint:** Square both sides (or use Cauchy–Schwarz in inner product spaces) to show $$|x+y|^2\le (|x|+|y|)^2$$ and take square roots.
+**Proof hint:** Square both sides; the inequality reduces to $x\cdot y\le \|x\|\,\|y\|$, which is the Cauchy–Schwarz inequality.
+
 
 ---
 
