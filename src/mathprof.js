@@ -187,63 +187,10 @@ function restartQuiz() {
 }
 
 
-// The source (Theorems.MD / theorems.json) uses pandoc-style math
-// delimiters: every (...) wraps inline math and every [...] wraps
-// display math. Convert them to MathJax delimiters \( \) and \[ \].
-// We scan top-level balanced groups so nested parens like
-// "(c\in(a,b))" are kept intact inside a single \( ... \) wrapper.
-function convertMathDelimiters(s) {
-    if (!s) return s;
-    let out = '';
-    let i = 0;
-    while (i < s.length) {
-        const ch = s[i];
-        if (ch === '(' || ch === '[') {
-            const open = ch;
-            const close = ch === '(' ? ')' : ']';
-            // Find matching close, tracking nesting of the same kind.
-            let depth = 1;
-            let j = i + 1;
-            while (j < s.length && depth > 0) {
-                if (s[j] === open) depth++;
-                else if (s[j] === close) depth--;
-                if (depth === 0) break;
-                j++;
-            }
-            if (depth === 0) {
-                const inner = s.slice(i + 1, j);
-                // Only treat as math if the contents have a LaTeX
-                // control sequence, a digit, or a math operator.
-                // Plain prose like "(in probability or almost surely)"
-                // should remain literal parentheses.
-                // Math iff contents contain a LaTeX control
-                // sequence (e.g. \frac, \mu, \in) or a digit.
-                // Otherwise it's plain prose like "(f)", "[a,b]",
-                // "(in probability or almost surely)".
-                // Math if contents contain a LaTeX control sequence
-                // (e.g. \frac, \mu, \in), a digit, curly braces, OR
-                // every alphabetic "word" is a single letter
-                // (e.g. "a,b", "f", "x y").
-                const hasControlOrNumOrBraces = /\\[a-zA-Z]+|\d|[{}]/.test(inner);
-                const words = inner.match(/[A-Za-z]+/g) || [];
-                const allSingleLetters = words.length > 0 &&
-                    words.every(w => w.length === 1);
-                const isMath = hasControlOrNumOrBraces || allSingleLetters;
-                if (isMath) {
-                    out += (open === '(' ? '\\(' : '\\[') + inner +
-                           (open === '(' ? '\\)' : '\\]');
-                } else {
-                    out += open + inner + close;
-                }
-                i = j + 1;
-                continue;
-            }
-        }
-        out += ch;
-        i++;
-    }
-    return out;
-}
+// Theorem source uses GitHub-flavored math delimiters: $...$ for
+// inline and $$...$$ for display. MathJax is configured in
+// mathprof.html to recognize both, so we render statements/proof
+// hints verbatim with no preprocessing.
 
 
 async function loadTheorems() {
@@ -661,8 +608,8 @@ function renderTheorem() {
     container.innerHTML = `
         <div class="title">${t.id}. ${t.title}</div>
         <div id="inline-refs"></div>
-        <div class="statement"><strong>Statement:</strong> ${convertMathDelimiters(t.statement)}</div>
-        ${t.proof_structure ? `<details class="proof-hint"><summary>💡 Show proof hint</summary><div class="hint-body">${convertMathDelimiters(t.proof_structure)}</div></details>` : ''}
+        <div class="statement"><strong>Statement:</strong> ${t.statement}</div>
+        ${t.proof_structure ? `<details class="proof-hint"><summary>💡 Show proof hint</summary><div class="hint-body">${t.proof_structure}</div></details>` : ''}
         <div class="options">
             ${optionsHTML}
         </div>
