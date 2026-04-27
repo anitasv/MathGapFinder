@@ -33,6 +33,55 @@
       }
     ]
   },
+  "High School, Geometry": {
+    "textbooks": [
+      "Harold R. Jacobs, *Geometry: Seeing, Doing, Understanding*",
+      "Edwin Moise & Floyd Downs, *Geometry*",
+      "Richard Rusczyk, *Introduction to Geometry* (AoPS)"
+    ],
+    "courses": [
+      {
+        "title": "Khan Academy — Geometry",
+        "url": "https://www.khanacademy.org/math/geometry"
+      },
+      {
+        "title": "MIT Highlights for High School — Geometry",
+        "url": "https://ocw.mit.edu/high-school/mathematics/"
+      }
+    ]
+  },
+  "High School, Trigonometry": {
+    "textbooks": [
+      "I. M. Gelfand & Mark Saul, *Trigonometry*",
+      "Charles P. McKeague & Mark D. Turner, *Trigonometry*"
+    ],
+    "courses": [
+      {
+        "title": "Khan Academy — Trigonometry",
+        "url": "https://www.khanacademy.org/math/trigonometry"
+      },
+      {
+        "title": "MIT OCW RES.18-001 — Calculus Online Textbook (trig review)",
+        "url": "https://ocw.mit.edu/courses/res-18-001-calculus-online-textbook-spring-2005/"
+      }
+    ]
+  },
+  "High School, Statistics": {
+    "textbooks": [
+      "David S. Moore, *The Basic Practice of Statistics*",
+      "Freedman, Pisani & Purves, *Statistics*"
+    ],
+    "courses": [
+      {
+        "title": "Khan Academy — Statistics & Probability",
+        "url": "https://www.khanacademy.org/math/statistics-probability"
+      },
+      {
+        "title": "MIT OCW 18.05 — Introduction to Probability and Statistics",
+        "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/"
+      }
+    ]
+  },
   "High School, Precalculus": {
     "textbooks": [
       "Michael Sullivan, *Precalculus*",
@@ -235,6 +284,152 @@
       {
         "title": "MIT OCW 18.102 — Introduction to Functional Analysis",
         "url": "https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/"
+      }
+    ]
+  },
+  "Undergraduate, Vector Calculus": {
+    "textbooks": [
+      "Hubbard & Hubbard, *Vector Calculus, Linear Algebra, and Differential Forms*",
+      "Marsden & Tromba, *Vector Calculus*",
+      "H. M. Schey, *Div, Grad, Curl, and All That*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.02 — Multivariable Calculus",
+        "url": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/"
+      }
+    ]
+  },
+  "Undergraduate, Ordinary Differential Equations": {
+    "textbooks": [
+      "Morris Tenenbaum & Harry Pollard, *Ordinary Differential Equations*",
+      "V. I. Arnold, *Ordinary Differential Equations*",
+      "Boyce & DiPrima, *Elementary Differential Equations*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.03 — Differential Equations",
+        "url": "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/"
+      },
+      {
+        "title": "MIT OCW 18.03SC (video)",
+        "url": "https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/"
+      }
+    ]
+  },
+  "Undergraduate, Partial Differential Equations": {
+    "textbooks": [
+      "Walter Strauss, *Partial Differential Equations: An Introduction*",
+      "Lawrence C. Evans, *Partial Differential Equations*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.152 — Introduction to PDEs",
+        "url": "https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/"
+      }
+    ]
+  },
+  "Undergraduate, Discrete Mathematics": {
+    "textbooks": [
+      "Kenneth Rosen, *Discrete Mathematics and Its Applications*",
+      "Susanna Epp, *Discrete Mathematics with Applications*",
+      "Lehman, Leighton & Meyer, *Mathematics for Computer Science* ([free PDF](https://courses.csail.mit.edu/6.042/spring18/mcs.pdf))"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 6.042J — Mathematics for Computer Science",
+        "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/"
+      }
+    ]
+  },
+  "Undergraduate, Combinatorics": {
+    "textbooks": [
+      "Richard Stanley, *Enumerative Combinatorics, Vol. 1*",
+      "J. H. van Lint & R. M. Wilson, *A Course in Combinatorics*",
+      "Miklós Bóna, *A Walk Through Combinatorics*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.211 — Combinatorial Analysis",
+        "url": "https://ocw.mit.edu/courses/18-211-combinatorial-analysis-fall-2005/"
+      }
+    ]
+  },
+  "Undergraduate, Graph Theory": {
+    "textbooks": [
+      "Reinhard Diestel, *Graph Theory* ([free PDF](https://diestel-graph-theory.com/))",
+      "Douglas West, *Introduction to Graph Theory*",
+      "Bondy & Murty, *Graph Theory*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.217 — Graph Theory and Additive Combinatorics",
+        "url": "https://ocw.mit.edu/courses/18-217-graph-theory-and-additive-combinatorics-fall-2019/"
+      }
+    ]
+  },
+  "Undergraduate, Numerical Analysis": {
+    "textbooks": [
+      "Burden & Faires, *Numerical Analysis*",
+      "Endre Süli & David Mayers, *An Introduction to Numerical Analysis*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.330 — Introduction to Numerical Analysis",
+        "url": "https://ocw.mit.edu/courses/18-330-introduction-to-numerical-analysis-spring-2012/"
+      }
+    ]
+  },
+  "Undergraduate, Differential Geometry": {
+    "textbooks": [
+      "Manfredo do Carmo, *Differential Geometry of Curves and Surfaces*",
+      "Andrew Pressley, *Elementary Differential Geometry*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.950 — Differential Geometry",
+        "url": "https://ocw.mit.edu/courses/18-950-differential-geometry-fall-2008/"
+      }
+    ]
+  },
+  "Undergraduate, Set Theory": {
+    "textbooks": [
+      "Paul Halmos, *Naive Set Theory*",
+      "Karel Hrbacek & Thomas Jech, *Introduction to Set Theory*",
+      "Herbert Enderton, *Elements of Set Theory*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.510 — Introduction to Mathematical Logic and Set Theory",
+        "url": "https://ocw.mit.edu/courses/18-510-introduction-to-mathematical-logic-and-set-theory-fall-2014/"
+      }
+    ]
+  },
+  "Undergraduate, Mathematical Statistics": {
+    "textbooks": [
+      "George Casella & Roger Berger, *Statistical Inference*",
+      "John Rice, *Mathematical Statistics and Data Analysis*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.650 — Statistics for Applications",
+        "url": "https://ocw.mit.edu/courses/18-650-statistics-for-applications-fall-2016/"
+      }
+    ]
+  },
+  "Undergraduate, Optimization": {
+    "textbooks": [
+      "Stephen Boyd & Lieven Vandenberghe, *Convex Optimization* ([free PDF](https://web.stanford.edu/~boyd/cvxbook/))",
+      "Dimitris Bertsimas & John Tsitsiklis, *Introduction to Linear Optimization*"
+    ],
+    "courses": [
+      {
+        "title": "Stanford EE364A — Convex Optimization I (Boyd)",
+        "url": "https://web.stanford.edu/class/ee364a/"
+      },
+      {
+        "title": "MIT OCW 6.251J — Introduction to Mathematical Programming",
+        "url": "https://ocw.mit.edu/courses/6-251j-introduction-to-mathematical-programming-fall-2009/"
       }
     ]
   },
@@ -478,6 +673,202 @@
       {
         "title": "MIT OCW 18.099 — Analytic Number Theory (seminar)",
         "url": "https://ocw.mit.edu/courses/18-099-analytic-number-theory-spring-2002/"
+      }
+    ]
+  },
+  "Graduate, Mathematical Logic": {
+    "textbooks": [
+      "Herbert Enderton, *A Mathematical Introduction to Logic*",
+      "Peter Smith, *An Introduction to Gödel's Theorems*",
+      "Joseph Shoenfield, *Mathematical Logic*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 24.242 — Logic II",
+        "url": "https://ocw.mit.edu/courses/24-242-logic-ii-spring-2004/"
+      },
+      {
+        "title": "MIT OCW 18.504 — Seminar in Logic",
+        "url": "https://ocw.mit.edu/courses/18-504-seminar-in-logic-fall-2010/"
+      }
+    ]
+  },
+  "Graduate, Measure-Theoretic Probability": {
+    "textbooks": [
+      "Rick Durrett, *Probability: Theory and Examples*",
+      "Patrick Billingsley, *Probability and Measure*",
+      "David Williams, *Probability with Martingales*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.175 — Theory of Probability",
+        "url": "https://ocw.mit.edu/courses/18-175-theory-of-probability-spring-2014/"
+      }
+    ]
+  },
+  "Graduate, Stochastic Processes": {
+    "textbooks": [
+      "Sheldon Ross, *Stochastic Processes*",
+      "Karatzas & Shreve, *Brownian Motion and Stochastic Calculus*",
+      "Bernt Øksendal, *Stochastic Differential Equations*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.176 — Stochastic Calculus",
+        "url": "https://ocw.mit.edu/courses/18-176-stochastic-calculus-spring-2014/"
+      },
+      {
+        "title": "MIT OCW 6.262 — Discrete Stochastic Processes",
+        "url": "https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/"
+      }
+    ]
+  },
+  "Graduate, Mathematical Statistics": {
+    "textbooks": [
+      "E. L. Lehmann & George Casella, *Theory of Point Estimation*",
+      "E. L. Lehmann & Joseph Romano, *Testing Statistical Hypotheses*",
+      "A. W. van der Vaart, *Asymptotic Statistics*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.655 — Mathematical Statistics",
+        "url": "https://ocw.mit.edu/courses/18-655-mathematical-statistics-spring-2016/"
+      }
+    ]
+  },
+  "Graduate, Partial Differential Equations": {
+    "textbooks": [
+      "Lawrence C. Evans, *Partial Differential Equations*",
+      "Michael Taylor, *Partial Differential Equations I–III*",
+      "David Gilbarg & Neil Trudinger, *Elliptic Partial Differential Equations of Second Order*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.155 — Differential Analysis I",
+        "url": "https://ocw.mit.edu/courses/18-155-differential-analysis-fall-2004/"
+      },
+      {
+        "title": "MIT OCW 18.156 — Differential Analysis II",
+        "url": "https://ocw.mit.edu/courses/18-156-differential-analysis-ii-partial-differential-equations-and-fourier-analysis-spring-2004/"
+      }
+    ]
+  },
+  "Graduate, Dynamical Systems": {
+    "textbooks": [
+      "Morris Hirsch, Stephen Smale & Robert Devaney, *Differential Equations, Dynamical Systems, and an Introduction to Chaos*",
+      "V. I. Arnold, *Ordinary Differential Equations*",
+      "Anatole Katok & Boris Hasselblatt, *Introduction to the Modern Theory of Dynamical Systems*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.385J — Nonlinear Dynamics and Chaos",
+        "url": "https://ocw.mit.edu/courses/18-385j-nonlinear-dynamics-and-chaos-fall-2014/"
+      }
+    ]
+  },
+  "Graduate, Riemannian Geometry": {
+    "textbooks": [
+      "Manfredo do Carmo, *Riemannian Geometry*",
+      "John M. Lee, *Riemannian Manifolds: An Introduction to Curvature*",
+      "Peter Petersen, *Riemannian Geometry*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.965 — Geometry of Manifolds",
+        "url": "https://ocw.mit.edu/courses/18-965-geometry-of-manifolds-fall-2004/"
+      }
+    ]
+  },
+  "Graduate, Galois Theory": {
+    "textbooks": [
+      "David Cox, *Galois Theory*",
+      "Emil Artin, *Galois Theory*",
+      "Serge Lang, *Algebra* (Galois theory chapters)"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.702 — Algebra II",
+        "url": "https://ocw.mit.edu/courses/18-702-algebra-ii-spring-2011/"
+      }
+    ]
+  },
+  "Graduate, Representation Theory": {
+    "textbooks": [
+      "Jean-Pierre Serre, *Linear Representations of Finite Groups*",
+      "William Fulton & Joe Harris, *Representation Theory: A First Course*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.712 — Introduction to Representation Theory",
+        "url": "https://ocw.mit.edu/courses/18-712-introduction-to-representation-theory-fall-2010/"
+      }
+    ]
+  },
+  "Graduate, Algebraic Number Theory": {
+    "textbooks": [
+      "Jürgen Neukirch, *Algebraic Number Theory*",
+      "Serge Lang, *Algebraic Number Theory*",
+      "James Milne, *Algebraic Number Theory* ([free notes](https://www.jmilne.org/math/CourseNotes/ant.html))"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.785 — Number Theory I",
+        "url": "https://ocw.mit.edu/courses/18-785-number-theory-i-fall-2021/"
+      },
+      {
+        "title": "MIT OCW 18.786 — Number Theory II",
+        "url": "https://ocw.mit.edu/courses/18-786-topics-in-algebraic-number-theory-spring-2010/"
+      }
+    ]
+  },
+  "Graduate, Harmonic Analysis": {
+    "textbooks": [
+      "Elias Stein & Rami Shakarchi, *Fourier Analysis* (Princeton Lectures I)",
+      "Elias Stein, *Singular Integrals and Differentiability Properties of Functions*",
+      "Loukas Grafakos, *Classical Fourier Analysis*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.103 — Fourier Analysis",
+        "url": "https://ocw.mit.edu/courses/18-103-fourier-analysis-fall-2013/"
+      }
+    ]
+  },
+  "Graduate, Category Theory": {
+    "textbooks": [
+      "Saunders Mac Lane, *Categories for the Working Mathematician*",
+      "Emily Riehl, *Category Theory in Context* ([free PDF](https://emilyriehl.github.io/files/context.pdf))",
+      "Tom Leinster, *Basic Category Theory* ([free arXiv](https://arxiv.org/abs/1612.09375))"
+    ],
+    "courses": [
+      {
+        "title": "Bartosz Milewski — Category Theory for Programmers (lectures)",
+        "url": "https://github.com/hmemcpy/milewski-ctfp-pdf"
+      }
+    ]
+  },
+  "Graduate, Convex Analysis": {
+    "textbooks": [
+      "R. Tyrrell Rockafellar, *Convex Analysis*",
+      "Stephen Boyd & Lieven Vandenberghe, *Convex Optimization*",
+      "Jean-Baptiste Hiriart-Urruty & Claude Lemaréchal, *Fundamentals of Convex Analysis*"
+    ],
+    "courses": [
+      {
+        "title": "Stanford EE364B — Convex Optimization II",
+        "url": "https://web.stanford.edu/class/ee364b/"
+      }
+    ]
+  },
+  "Graduate, Numerical Linear Algebra": {
+    "textbooks": [
+      "Lloyd N. Trefethen & David Bau, *Numerical Linear Algebra*",
+      "Gene Golub & Charles Van Loan, *Matrix Computations*"
+    ],
+    "courses": [
+      {
+        "title": "MIT OCW 18.335J — Introduction to Numerical Methods",
+        "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/"
       }
     ]
   },

@@ -125,35 +125,42 @@ welcome. The workflow is:
    parentheses `(...)` / `[...]` instead of `\(...\)` / `\[...\]`,
    which is the source of most of the rendering bugs — see below.)
 
-2. **Regenerate `data/theorems.json`:**
+2. **Sort and renumber `docs/Theorems.MD`** (by tier High School →
+   Undergraduate → Graduate, then difficulty):
+
+   ```sh
+   python src/sort_theorems.py
+   ```
+
+3. **Regenerate `data/theorems.json`:**
 
    ```sh
    python src/parse_theorems.py
    ```
 
-3. **Regenerate `docs/Courses.MD`:**
+4. **Regenerate `docs/Courses.MD`:**
 
    ```sh
    python src/list_courses.py
    ```
 
-4. **If `git diff docs/Courses.MD` shows a new course**, add a matching
+5. **If `git diff docs/Courses.MD` shows a new course**, add a matching
    `### Subject` section under the right `## Level` heading in
    `docs/References.md`, with at least one textbook and one online
    course. Use the same `Level, Subject` naming used in the theorem's
    `Course:` field, otherwise the app won't be able to match
    references to the course.
 
-5. **Regenerate `data/references.json`:**
+6. **Regenerate `data/references.json`:**
 
    ```sh
    python src/parse_references.py
    ```
 
-6. **Test locally** with `python -m http.server 8080`, and also do a
+7. **Test locally** with `python -m http.server 8080`, and also do a
    release build (`python src/release.py`) and test `dist/index.html`.
 
-7. Open a pull request including the regenerated `data/theorems.json`,
+8. Open a pull request including the regenerated `data/theorems.json`,
    `docs/Courses.MD`, and (if changed) `data/references.json`.
 
 ## Contributing to the code
